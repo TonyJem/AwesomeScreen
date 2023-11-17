@@ -24,7 +24,7 @@ extension AwesomeEmptyView.State {
             title = "title"
             subtitle = "subtitle"
         }
-        
+
         return .init(
             title: title,
             subtitle: subtitle,
