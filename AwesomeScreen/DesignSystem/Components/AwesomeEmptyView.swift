@@ -14,8 +14,10 @@ struct AwesomeEmptyView: View {
             Image(uiImage: viewState.image)
 
             Text(viewState.title)
+                .foregroundColor(.white)
 
             Text(viewState.subtitle)
+                .foregroundColor(.white)
         }
     }
 

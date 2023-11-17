@@ -8,7 +8,6 @@ extension ControlUnits {
 
         var body: some View {
             AwesomeEmptyView(viewState: viewState)
-                .background(Color.purple)
         }
 
     }
