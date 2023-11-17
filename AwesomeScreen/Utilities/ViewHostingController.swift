@@ -20,7 +20,7 @@ public final class ViewHostingController<T: View> {
 
         // TODO: Need to decide where do we want to set background color
         // Should we leave it here - or is better to move into more relevant place ?
-        hostingController.view.backgroundColor = .black
+        hostingController.view.backgroundColor = .Branded.black
     }
 
     // MARK: - Public

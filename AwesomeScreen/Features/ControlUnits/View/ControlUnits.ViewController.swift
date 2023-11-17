@@ -13,7 +13,6 @@ class ControlUnitsViewController: UIViewController {
     // MARK: - Private
 
     private func setupView() {
-        view.backgroundColor = .green
 
         title = "Control Units"
 
