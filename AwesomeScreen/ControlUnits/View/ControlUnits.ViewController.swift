@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ControlUnitsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
