@@ -17,6 +17,7 @@
 		3A2519E12B07E963000F062A /* AwesomeEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519E02B07E963000F062A /* AwesomeEmptyView.swift */; };
 		3A2519E42B07EDC6000F062A /* ViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519E32B07EDC6000F062A /* ViewHostingController.swift */; };
 		3A2519E62B07F571000F062A /* AwesomeEmptyView.States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519E52B07F571000F062A /* AwesomeEmptyView.States.swift */; };
+		3A2519E82B07FDDC000F062A /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519E72B07FDDC000F062A /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3A2519E02B07E963000F062A /* AwesomeEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeEmptyView.swift; sourceTree = "<group>"; };
 		3A2519E32B07EDC6000F062A /* ViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHostingController.swift; sourceTree = "<group>"; };
 		3A2519E52B07F571000F062A /* AwesomeEmptyView.States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeEmptyView.States.swift; sourceTree = "<group>"; };
+		3A2519E72B07FDDC000F062A /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				3A2519DF2B07E923000F062A /* Components */,
+				3A2519E72B07FDDC000F062A /* Images.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				3A2519DD2B07E88D000F062A /* ControlUnits.ContentView.swift in Sources */,
 				3A2519E42B07EDC6000F062A /* ViewHostingController.swift in Sources */,
 				3A2519E12B07E963000F062A /* AwesomeEmptyView.swift in Sources */,
+				3A2519E82B07FDDC000F062A /* Images.swift in Sources */,
 				3A2519D92B07E727000F062A /* ControlUnits.swift in Sources */,
 				3A2519E62B07F571000F062A /* AwesomeEmptyView.States.swift in Sources */,
 				3A2519C42B07D6D3000F062A /* AppDelegate.swift in Sources */,

@@ -2,14 +2,20 @@ import SwiftUI
 
 struct AwesomeEmptyView: View {
 
-    var body: some View {
-        ZStack {
-            Color.red
-            Button("Hello, AwesomeEmptyView!") {
+    var viewState: AwesomeEmptyView.ViewState
 
-            }
-            .font(.title)
-            .padding()
+    init(viewState: AwesomeEmptyView.ViewState) {
+        self.viewState = viewState
+    }
+
+    var body: some View {
+        VStack {
+
+            Image(uiImage: viewState.image)
+
+            Text(viewState.title)
+
+            Text(viewState.subtitle)
         }
     }
 

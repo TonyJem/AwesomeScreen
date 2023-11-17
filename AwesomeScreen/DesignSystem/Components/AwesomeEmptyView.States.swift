@@ -20,7 +20,7 @@ extension AwesomeEmptyView.State {
 
         switch self {
         case .emptyControlUnits:
-            image = UIImage()
+            image = .awesomeImage(.ecu)
             title = "title"
             subtitle = "subtitle"
         }
