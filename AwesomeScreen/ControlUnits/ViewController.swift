@@ -6,6 +6,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .green
+
+        title = "Control Units"
+
     }
 
 

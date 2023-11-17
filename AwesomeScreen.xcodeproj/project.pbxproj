@@ -56,12 +56,20 @@
 			children = (
 				3A2519C32B07D6D3000F062A /* AppDelegate.swift */,
 				3A2519C52B07D6D3000F062A /* SceneDelegate.swift */,
-				3A2519C72B07D6D3000F062A /* ViewController.swift */,
+				3A2519D72B07E647000F062A /* ControlUnits */,
 				3A2519CC2B07D6D6000F062A /* Assets.xcassets */,
 				3A2519CE2B07D6D6000F062A /* LaunchScreen.storyboard */,
 				3A2519D12B07D6D6000F062A /* Info.plist */,
 			);
 			path = AwesomeScreen;
+			sourceTree = "<group>";
+		};
+		3A2519D72B07E647000F062A /* ControlUnits */ = {
+			isa = PBXGroup;
+			children = (
+				3A2519C72B07D6D3000F062A /* ViewController.swift */,
+			);
+			path = ControlUnits;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
