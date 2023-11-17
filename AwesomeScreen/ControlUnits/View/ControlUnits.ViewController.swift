@@ -17,10 +17,11 @@ class ControlUnitsViewController: UIViewController {
 
         title = "Control Units"
 
-//        let contentView = ControlUnits.ContentView()
+        let contentView = ControlUnits.ContentView()
 
+        let host = ViewHostingController(contentView)
+
+        host.add(to: view)
     }
 
-
 }
-
