@@ -3,7 +3,7 @@ import SwiftUI
 struct AwesomeEmptyView: View {
     var body: some View {
         ZStack {
-            Color.blue
+            Color.red
             Button("Hello, AwesomeEmptyView!") {
 
             }
