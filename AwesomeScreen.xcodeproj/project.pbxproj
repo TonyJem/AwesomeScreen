@@ -23,6 +23,7 @@
 		3A2519F32B080AE6000F062A /* LocalizedTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519F22B080AE6000F062A /* LocalizedTranslations.swift */; };
 		3A2519F62B080C93000F062A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519F52B080C93000F062A /* String.swift */; };
 		3A2519F92B080FCF000F062A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519F82B080FCF000F062A /* Colors.swift */; };
+		3A2519FB2B081B65000F062A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519FA2B081B65000F062A /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		3A2519F22B080AE6000F062A /* LocalizedTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTranslations.swift; sourceTree = "<group>"; };
 		3A2519F52B080C93000F062A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3A2519F82B080FCF000F062A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3A2519FA2B081B65000F062A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				3A2519DF2B07E923000F062A /* Components */,
 				3A2519E72B07FDDC000F062A /* Images.swift */,
 				3A2519F82B080FCF000F062A /* Colors.swift */,
+				3A2519FA2B081B65000F062A /* Fonts.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A2519FB2B081B65000F062A /* Fonts.swift in Sources */,
 				3A2519C82B07D6D3000F062A /* ControlUnits.ViewController.swift in Sources */,
 				3A2519DD2B07E88D000F062A /* ControlUnits.ContentView.swift in Sources */,
 				3A2519E42B07EDC6000F062A /* ViewHostingController.swift in Sources */,

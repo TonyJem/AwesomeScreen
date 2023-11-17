@@ -2,10 +2,11 @@ import UIKit
 import CoreGraphics
 import SwiftUI
 
+// TODO: Check naming for colors. Make it in accordace to Figma's names.
+
 /**
  * This private namespace defines available colors as hex RGB values.
  */
-
 private enum HexColor {
 
     static let white: Int = 0xffffff

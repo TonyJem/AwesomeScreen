@@ -14,11 +14,13 @@ struct AwesomeEmptyView: View {
             Image(uiImage: viewState.image)
 
             Text(viewState.title)
+                .font(Font(UIFont.Branded.title))
                 .foregroundColor(Color(.Branded.white))
 
             // TODO: May be is possibel to create Color extension with Branded
             // need to check this option!
             Text(viewState.subtitle)
+                .font(Font(UIFont.Branded.subtitle))
                 .foregroundColor(Color(.Branded.white))
         }
     }

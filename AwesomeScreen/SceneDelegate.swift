@@ -1,5 +1,8 @@
 import UIKit
 
+// TODO: Need to sort all folders in project in ABC
+// TODO: Might it would be relevant to deveide DesignSystem into separate Module
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
