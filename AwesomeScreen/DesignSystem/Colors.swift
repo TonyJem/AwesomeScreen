@@ -27,7 +27,14 @@ public protocol BrandColorSupporting {
 }
 
 extension UIColor {
-
+    /**
+     * Create a color with a given RGB representation and alpha value.
+     *
+     * - Parameters:
+     *  - hexValue: the RGB representation of color;
+     *  - alpha: the alpha value of color;
+     * - Returns: The `UIColor` object.
+     */
     internal static func color(with hexValue: Int, alpha: CGFloat = 1.0) -> UIColor {
         .init(
             red: CGFloat((hexValue & 0xff0000) >> 16) / 255.0,
