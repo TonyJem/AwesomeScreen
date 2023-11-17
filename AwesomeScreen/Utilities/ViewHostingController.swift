@@ -1,13 +1,17 @@
 import UIKit
 import SwiftUI
 
-/// `SwiftUI` wrapper class
+/// `SwiftUI` wrapper class.
 public final class ViewHostingController<T: View> {
 
     private let hostingController: UIHostingController<T>
 
+    /// ViewController hosting the SwiftUI view inside.
+    /// When embedding into another UIViewController,
+    /// remember to add it as a child.
     public var viewController: UIViewController { hostingController }
 
+    /// View hosted in the SwiftUI's HostingController.
     public var view: UIView { hostingController.view }
 
     public init(_ rootView: T) {
@@ -17,6 +21,7 @@ public final class ViewHostingController<T: View> {
 
     // MARK: - Public
 
+    /// Adds the `SwiftUIView` to any `UIView`.
     public func add(to parentView: UIView, useSafeArea: Bool = false) {
         parentView.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -41,10 +46,12 @@ public final class ViewHostingController<T: View> {
 
 }
 
+// TODO: Remove this extention if is not in use !!!
 extension UIViewController {
 
+    /// Adds the `SwiftUIView` to any specific `UIView`
+    /// within another `UIViewController`
     func add(childViewController viewController: UIViewController, to parentView: UIView) {
-
         guard let view = viewController.view else { return }
 
         addChild(viewController)
