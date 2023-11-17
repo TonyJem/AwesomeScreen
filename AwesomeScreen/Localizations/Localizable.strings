@@ -1,0 +1,4 @@
+// MARK: - AwesomeEmptyView.ViewState
+
+"AwesomeEmptyView.EmptyControlUnits.Title" = "Control Unit List is Empty";
+"AwesomeEmptyView.EmptyControlUnits.Subtitle" = "Vehicle contains no control units.";
