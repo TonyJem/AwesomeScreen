@@ -6,8 +6,19 @@ extension ControlUnits {
 
         var body: some View {
 
-            Text("Hello! I'm ControlUnits.ListView!")
-                .foregroundColor(.red)
+            List {
+                ItemView()
+
+                ItemView()
+
+                ItemView()
+
+                ItemView()
+
+                ItemView()
+            }
+            .listStyle(.plain)
+            .padding(0.0)
 
         }
 
