@@ -26,23 +26,19 @@ struct AwesomeFailureView: View {
     }
 
     private func titleText() -> some View {
-        Text(viewState.title)
-            .fontWithLineHeight(
-                font: .Branded.title,
-                lineHeight: 24
-            )
-            .foregroundColor(Color(.Branded.foregroundPrimary))
-            .multilineTextAlignment(.center)
+        AwesomeText(
+            title: viewState.title,
+            style: .title
+        )
+        .multilineTextAlignment(.center)
     }
 
     private func subtitleText() -> some View {
-        Text(viewState.subtitle)
-            .fontWithLineHeight(
-                font: .Branded.subtitle,
-                lineHeight: 16
-            )
-            .foregroundColor(Color(.Branded.foregroundSecondary))
-            .multilineTextAlignment(.center)
+        AwesomeText(
+            title: viewState.subtitle,
+            style: .subtitle
+        )
+        .multilineTextAlignment(.center)
     }
 
 }

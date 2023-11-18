@@ -2,15 +2,15 @@ import SwiftUI
 
 public struct AwesomeText: View {
 
-    private let style: AwesomeTextStyle
     private let title: String
+    private let style: AwesomeTextStyle
 
     public init(
-        style: AwesomeTextStyle,
-        title: String
+        title: String,
+        style: AwesomeTextStyle
     ) {
-        self.style = style
         self.title = title
+        self.style = style
     }
 
     public var body: some View {

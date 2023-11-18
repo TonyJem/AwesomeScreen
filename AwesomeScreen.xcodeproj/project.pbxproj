@@ -107,11 +107,11 @@
 				3A2519E92B080816000F062A /* Localizations */,
 				3A2519E22B07ED63000F062A /* Utilities */,
 				3A2519F02B0809F9000F062A /* Features */,
-				3A2519C32B07D6D3000F062A /* AppDelegate.swift */,
-				3A2519C52B07D6D3000F062A /* SceneDelegate.swift */,
 				3A2519CC2B07D6D6000F062A /* Assets.xcassets */,
 				3A2519CE2B07D6D6000F062A /* LaunchScreen.storyboard */,
 				3A2519D12B07D6D6000F062A /* Info.plist */,
+				3A2519C32B07D6D3000F062A /* AppDelegate.swift */,
+				3A2519C52B07D6D3000F062A /* SceneDelegate.swift */,
 			);
 			path = AwesomeScreen;
 			sourceTree = "<group>";

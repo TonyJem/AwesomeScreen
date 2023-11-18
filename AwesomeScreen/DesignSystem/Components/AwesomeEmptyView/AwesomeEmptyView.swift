@@ -24,28 +24,22 @@ struct AwesomeEmptyView: View {
     }
 
     private func titleText() -> some View {
-        Text(viewState.title)
-            .fontWithLineHeight(
-                font: .Branded.title,
-                lineHeight: 24
-            )
-            .foregroundColor(Color(.Branded.foregroundPrimary))
-            .multilineTextAlignment(.center)
+        AwesomeText(
+            title: viewState.title,
+            style: .title
+        )
+        .multilineTextAlignment(.center)
     }
 
     // TODO: May be is possible to create Color extension with Branded
     // need to check this option!
     // TODO: Check if I need to put limitation of number of row + truncation at the end may be...
-    // TODO: Need to decide if would be relevant create reusable atoms from text blocks with predifined properties
-    // or maybe custom "AwesomeText" component
     private func subtitleText() -> some View {
-        Text(viewState.subtitle)
-            .fontWithLineHeight(
-                font: .Branded.subtitle,
-                lineHeight: 16
-            )
-            .foregroundColor(Color(.Branded.foregroundSecondary))
-            .multilineTextAlignment(.center)
+        AwesomeText(
+            title: viewState.subtitle,
+            style: .subtitle
+        )
+        .multilineTextAlignment(.center)
     }
 
 }
