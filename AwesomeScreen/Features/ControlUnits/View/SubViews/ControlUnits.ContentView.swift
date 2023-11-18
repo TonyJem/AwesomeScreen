@@ -7,7 +7,8 @@ extension ControlUnits {
         let viewState = AwesomeEmptyView.State.emptyControlUnits.createViewState()
 
         var body: some View {
-            AwesomeEmptyView(viewState: viewState)
+//            AwesomeEmptyView(viewState: viewState)
+            AwesomeLoadingView()
         }
 
     }
