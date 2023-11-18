@@ -7,11 +7,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    // TODO: Need to create main coordinator
+    // and from that coordinator need to create VIPER module
+    // Think where it should be puted!
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController()
-        let viewController = ControlUnitsViewController()
+
+        let presenter = ControlUnits.Presenter()
+
+        let viewController = ControlUnits.ViewController(with: presenter)
+
         navigationController.viewControllers = [viewController]
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

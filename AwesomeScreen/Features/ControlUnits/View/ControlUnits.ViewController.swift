@@ -1,32 +1,52 @@
 import UIKit
 
-class ControlUnitsViewController: UIViewController {
+extension ControlUnits {
 
-    // MARK: - Lifecycle
+    final class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        private let presenter: Presenter
 
-        setupView()
-    }
+        // MARK: - Init
 
-    // MARK: - Private
+        init(with presenter: Presenter) {
+            self.presenter = presenter
+            super.init(nibName: nil, bundle: nil)
+        }
 
-    private func setupView() {
+        @available(*, unavailable)
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
 
-        // TODO: Need to dcide if we want to keep it here or move ot more relevant palce
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.white
-        ]
+        // MARK: - Lifecycle
 
-        // TODO: Move plain text to screen viewState and also use localized
-        title = "Control Units"
+        override func viewDidLoad() {
+            super.viewDidLoad()
 
-        let contentView = ControlUnits.ContentView()
+            setupView()
+        }
 
-        let host = ViewHostingController(contentView)
+        // MARK: - Private
 
-        host.add(to: view)
+        private func setupView() {
+
+            // TODO: Need to decide if we want to keep it here or move ot more relevant palce
+            navigationController?.navigationBar.titleTextAttributes = [
+                NSAttributedString.Key.foregroundColor: UIColor.white
+            ]
+            // TODO: Move plain text to screen viewState and also use localized
+            title = "Control Units"
+
+            // TODO: Think we have to set backgound color here, instead of settgin it in Host
+
+            let contentView = ControlUnits.ContentView(presenter: presenter)
+            let host = ViewHostingController(contentView)
+
+            // TODO: Check UI and decide if we really need to accept useSafeArea,
+            // May be is better jsut to center Empty view in the screen, or lift it up if useSafeArea=true
+            host.add(to: view, useSafeArea: true)
+        }
+
     }
 
 }
