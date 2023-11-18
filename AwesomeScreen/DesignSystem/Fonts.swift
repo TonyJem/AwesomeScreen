@@ -16,7 +16,6 @@ public protocol BrandFontSupporting {
 
 }
 
-
 extension UIFont {
 
     public enum Branded: BrandFontSupporting {

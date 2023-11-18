@@ -3,7 +3,8 @@ import Foundation
 // TODO: Add general comment here explaining the situation with spacings in general
 
 // TODO: Review after all project is finished and remove sapcings that are ugly or not used and comment this situation
-// TODO: Decide if rename spacing in accordance to names in Figma or leave it as it is. Shorter names seems are better for codebase readability... But let's try both concept and deside which is preferable...
+// TODO: Decide if rename spacing in accordance to names in Figma or leave it as it is.
+// Shorter names seems are better for codebase readability... But let's try both concept and deside which is preferable...
 
 extension ExpressibleByIntegerLiteral {
 
