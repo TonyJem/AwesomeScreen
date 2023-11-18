@@ -14,14 +14,24 @@ struct AwesomeEmptyView: View {
             Image(uiImage: viewState.image)
 
             Text(viewState.title)
-                .font(Font(UIFont.Branded.title))
+                .fontWithLineHeight(
+                    font: .Branded.title,
+                    lineHeight: 24
+                )
                 .foregroundColor(Color(.Branded.white))
+                .multilineTextAlignment(.center)
 
-            // TODO: May be is possibel to create Color extension with Branded
+            // TODO: May be is possible to create Color extension with Branded
             // need to check this option!
+            // TODO: Check if I need to put limitation of number of row + truncation at the end may be...
+            // TODO: Move Text into private functions or decide if it relevant to create reusable atoms from it
             Text(viewState.subtitle)
-                .font(Font(UIFont.Branded.subtitle))
+                .fontWithLineHeight(
+                    font: .Branded.subtitle,
+                    lineHeight: 16
+                )
                 .foregroundColor(Color(.Branded.white))
+                .multilineTextAlignment(.center)
         }
     }
 

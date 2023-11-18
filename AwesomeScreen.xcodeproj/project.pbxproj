@@ -24,6 +24,7 @@
 		3A2519F62B080C93000F062A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519F52B080C93000F062A /* String.swift */; };
 		3A2519F92B080FCF000F062A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519F82B080FCF000F062A /* Colors.swift */; };
 		3A2519FB2B081B65000F062A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519FA2B081B65000F062A /* Fonts.swift */; };
+		3A2519FE2B087E31000F062A /* FontWithLineHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519FD2B087E31000F062A /* FontWithLineHeight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		3A2519F52B080C93000F062A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3A2519F82B080FCF000F062A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3A2519FA2B081B65000F062A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		3A2519FD2B087E31000F062A /* FontWithLineHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWithLineHeight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		3A2519DE2B07E915000F062A /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				3A2519FC2B087DDA000F062A /* ViewModifiers */,
 				3A2519DF2B07E923000F062A /* Components */,
 				3A2519E72B07FDDC000F062A /* Images.swift */,
 				3A2519F82B080FCF000F062A /* Colors.swift */,
@@ -186,6 +189,14 @@
 				3A2519F52B080C93000F062A /* String.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		3A2519FC2B087DDA000F062A /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				3A2519FD2B087E31000F062A /* FontWithLineHeight.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +281,7 @@
 				3A2519E62B07F571000F062A /* AwesomeEmptyView.States.swift in Sources */,
 				3A2519F92B080FCF000F062A /* Colors.swift in Sources */,
 				3A2519C42B07D6D3000F062A /* AppDelegate.swift in Sources */,
+				3A2519FE2B087E31000F062A /* FontWithLineHeight.swift in Sources */,
 				3A2519EE2B0809B8000F062A /* AwesomeEmptyView.Localized.swift in Sources */,
 				3A2519F32B080AE6000F062A /* LocalizedTranslations.swift in Sources */,
 				3A2519C62B07D6D3000F062A /* SceneDelegate.swift in Sources */,
