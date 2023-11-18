@@ -14,7 +14,7 @@ struct AwesomeEmptyView: View {
 
             Image(uiImage: viewState.image)
 
-            VStack(spacing: .spacingXXS) {
+            VStack(spacing: .spacing2XSmall) {
                 titleText()
                 subtitleText()
             }

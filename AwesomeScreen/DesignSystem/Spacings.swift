@@ -11,9 +11,9 @@ extension ExpressibleByIntegerLiteral {
     // TODO: Add comment for each spacing
     public static var separatorHeight: Self { 1 }
 
-    public static var spacingXXXS: Self { 2 }
+    public static var spacing3XSmall: Self { 2 }
 
-    public static var spacingXXS: Self { 4 }
+    public static var spacing2XSmall: Self { 4 }
 
     public static var spacingXS: Self { 8 }
 

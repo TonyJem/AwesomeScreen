@@ -5,6 +5,9 @@ private enum FontSize {
 
     static let titleSmall: CGFloat = 18
     static let bodyMedium: CGFloat = 14
+    static let labelTiny: CGFloat = 10
+
+//    labelTiny
 
 }
 
@@ -12,7 +15,10 @@ private enum FontSize {
 public protocol BrandFontSupporting {
 
     static var titleSmall: UIFont { get }
+
     static var bodyMedium: UIFont { get }
+
+    static var labelTiny: UIFont { get }
 
 }
 
@@ -25,6 +31,9 @@ extension UIFont {
 
         /// size: 14, type: regular = 400.
         public static var bodyMedium: UIFont = UIFont.systemFont(ofSize: FontSize.bodyMedium, weight: .regular)
+
+        /// size: 10, type: medium = 500.
+        public static var labelTiny: UIFont = UIFont.systemFont(ofSize: FontSize.labelTiny, weight: .medium)
 
     }
 

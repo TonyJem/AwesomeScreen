@@ -10,7 +10,8 @@ private enum HexColor {
     static let white: Int = 0xFFFFFF
     static let black: Int = 0x000000
 
-    static let foregroundHighlight: Int = 0x5C9DFF
+    static let lightBlue: Int = 0x5C9DFF
+    static let lightRed: Int = 0xFF6161
 }
 
 /**
@@ -22,6 +23,14 @@ public protocol BrandColorSupporting {
     associatedtype ColorValue
 
     static var backgroundDark: ColorValue { get }
+
+    static var backgroundNeutral: ColorValue { get }
+
+    static var backgroundDanger: ColorValue { get }
+
+    static var foregroundOnNeutral: ColorValue { get }
+
+    static var foregroundOnDanger: ColorValue { get }
 
     static var foregroundPrimary: ColorValue { get }
 
@@ -56,11 +65,19 @@ extension UIColor {
 
         public static var backgroundDark: ColorValue { .color(with: HexColor.black) }
 
+        public static var backgroundNeutral: ColorValue { .color(with: HexColor.white, alpha: 0.7) }
+
+        public static var backgroundDanger: ColorValue { .color(with: HexColor.lightRed) }
+
+        public static var foregroundOnNeutral: ColorValue { .color(with: HexColor.black) }
+
+        public static var foregroundOnDanger: ColorValue { .color(with: HexColor.black) }
+
         public static var foregroundPrimary: ColorValue { .color(with: HexColor.white) }
 
         public static var foregroundSecondary: ColorValue { .color(with: HexColor.white, alpha: 0.7) }
 
-        public static var foregroundHighlight: ColorValue { .color(with: HexColor.foregroundHighlight) }
+        public static var foregroundHighlight: ColorValue { .color(with: HexColor.lightBlue) }
 
     }
 
@@ -73,6 +90,14 @@ extension CGColor {
     public enum Branded: BrandColorSupporting {
 
         public static var backgroundDark: ColorValue { UIColor.Branded.backgroundDark.cgColor }
+
+        public static var backgroundNeutral: ColorValue { UIColor.Branded.backgroundNeutral.cgColor }
+
+        public static var backgroundDanger: ColorValue { UIColor.Branded.backgroundDanger.cgColor }
+
+        public static var foregroundOnNeutral: ColorValue { UIColor.Branded.foregroundOnNeutral.cgColor }
+
+        public static var foregroundOnDanger: ColorValue { UIColor.Branded.foregroundOnDanger.cgColor }
 
         public static var foregroundPrimary: ColorValue { UIColor.Branded.foregroundPrimary.cgColor }
 

@@ -38,6 +38,7 @@
 		3A251A1B2B091144000F062A /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A1A2B091144000F062A /* LinkButton.swift */; };
 		3A251A1D2B0930CC000F062A /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A1C2B0930CC000F062A /* LoadingIndicator.swift */; };
 		3A251A1F2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A1E2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift */; };
+		3A251A212B0940CF000F062A /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A202B0940CF000F062A /* BadgeLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		3A251A1A2B091144000F062A /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 		3A251A1C2B0930CC000F062A /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		3A251A1E2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.ListView.ItemView.swift; sourceTree = "<group>"; };
+		3A251A202B0940CF000F062A /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				3A251A182B09035A000F062A /* AwesomeText.swift */,
 				3A251A1A2B091144000F062A /* LinkButton.swift */,
 				3A251A1C2B0930CC000F062A /* LoadingIndicator.swift */,
+				3A251A202B0940CF000F062A /* BadgeLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				3A251A1B2B091144000F062A /* LinkButton.swift in Sources */,
 				3A2519FB2B081B65000F062A /* Fonts.swift in Sources */,
 				3A2519C82B07D6D3000F062A /* ControlUnits.ViewController.swift in Sources */,
+				3A251A212B0940CF000F062A /* BadgeLabel.swift in Sources */,
 				3A2519DD2B07E88D000F062A /* ControlUnits.ContentView.swift in Sources */,
 				3A2519E42B07EDC6000F062A /* ViewHostingController.swift in Sources */,
 				3A2519E12B07E963000F062A /* AwesomeEmptyView.swift in Sources */,

@@ -4,6 +4,8 @@ import UIKit
 // TODO: Might it would be relevant to deveide DesignSystem into separate Module
 // TODO: Check if all clases that should be final are final ?
 // TODO: Clean SwiftLint errors or redifine rules
+// TODO: We can look at design System and ring all needd colors and elements that are needed
+// TODO: Probably all emtyScreens we can bring into one an set all needed Viewstates for it
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
