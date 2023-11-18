@@ -20,9 +20,9 @@ extension AwesomeFailureView.State {
 
         switch self {
         case .failureControlUnits:
-            title = L10n.AwesomeEmptyView.EmptyControlUnits.title
-            subtitle = L10n.AwesomeEmptyView.EmptyControlUnits.subtitle
-            primaryButtonTitle = L10n.AwesomeEmptyView.EmptyControlUnits.subtitle
+            title = L10n.AwesomeFailureView.ControlUnits.title
+            subtitle = L10n.AwesomeFailureView.ControlUnits.subtitle
+            primaryButtonTitle = L10n.AwesomeFailureView.ControlUnits.primaryButtonTitle
             primaryButtonAction = {
                 // Real action will be implemented later
                 // For now we just need to know if this button is tapped

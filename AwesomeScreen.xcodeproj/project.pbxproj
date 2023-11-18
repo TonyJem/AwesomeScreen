@@ -34,6 +34,7 @@
 		3A251A132B08F1F6000F062A /* AwesomeFailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A122B08F1F6000F062A /* AwesomeFailureView.swift */; };
 		3A251A152B08FD11000F062A /* AwesomeFailureView.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A142B08FD11000F062A /* AwesomeFailureView.Localized.swift */; };
 		3A251A172B08FEA6000F062A /* AwesomeFailureView.States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A162B08FEA6000F062A /* AwesomeFailureView.States.swift */; };
+		3A251A192B09035A000F062A /* AwesomeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A182B09035A000F062A /* AwesomeText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		3A251A122B08F1F6000F062A /* AwesomeFailureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeFailureView.swift; sourceTree = "<group>"; };
 		3A251A142B08FD11000F062A /* AwesomeFailureView.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeFailureView.Localized.swift; sourceTree = "<group>"; };
 		3A251A162B08FEA6000F062A /* AwesomeFailureView.States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeFailureView.States.swift; sourceTree = "<group>"; };
+		3A251A182B09035A000F062A /* AwesomeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				3A251A112B08F1D5000F062A /* AwesomeFailureView */,
 				3A251A072B08DF6F000F062A /* AwesomeLoadingView */,
 				3A2519EC2B080985000F062A /* AwesomeEmptyView */,
+				3A251A182B09035A000F062A /* AwesomeText.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				3A2519DD2B07E88D000F062A /* ControlUnits.ContentView.swift in Sources */,
 				3A2519E42B07EDC6000F062A /* ViewHostingController.swift in Sources */,
 				3A2519E12B07E963000F062A /* AwesomeEmptyView.swift in Sources */,
+				3A251A192B09035A000F062A /* AwesomeText.swift in Sources */,
 				3A2519E82B07FDDC000F062A /* Images.swift in Sources */,
 				3A2519D92B07E727000F062A /* ControlUnits.swift in Sources */,
 				3A2519F62B080C93000F062A /* String.swift in Sources */,

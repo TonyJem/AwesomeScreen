@@ -16,8 +16,10 @@ struct AwesomeFailureView: View {
                 subtitleText()
             }
 
-            Button("Try Again") {
-                print("🟢 didTap Action Button in AwesomeFailureView")
+            Button(action: viewState.primaryButtonAction) {
+                Text(viewState.primaryButtonTitle)
+                    .foregroundColor(.blue)
+                    .fontWithLineHeight(font: .Branded.title, lineHeight: 18)
             }
             .padding(.vertical, .spacingXS)
 
@@ -26,7 +28,7 @@ struct AwesomeFailureView: View {
     }
 
     private func titleText() -> some View {
-        Text("Unable to Load Control Unit List")
+        Text(viewState.title)
             .fontWithLineHeight(
                 font: .Branded.title,
                 lineHeight: 24
@@ -36,7 +38,7 @@ struct AwesomeFailureView: View {
     }
 
     private func subtitleText() -> some View {
-        Text("Please try again later.")
+        Text(viewState.subtitle)
             .fontWithLineHeight(
                 font: .Branded.subtitle,
                 lineHeight: 16
