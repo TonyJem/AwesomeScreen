@@ -16,10 +16,8 @@ struct AwesomeFailureView: View {
                 subtitleText()
             }
 
-            Button(action: viewState.primaryButtonAction) {
-                Text(viewState.primaryButtonTitle)
-                    .foregroundColor(Color(.Branded.foregroundHighlight))
-                    .fontWithLineHeight(font: .Branded.subtitle, lineHeight: 16)
+            LinkButton(title: viewState.primaryButtonTitle) {
+                viewState.primaryButtonAction()
             }
             .padding(.vertical, .spacingXS)
 
