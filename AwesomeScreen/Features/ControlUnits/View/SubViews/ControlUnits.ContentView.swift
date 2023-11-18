@@ -8,7 +8,8 @@ extension ControlUnits {
 
         var body: some View {
 //            AwesomeEmptyView(viewState: viewState)
-            AwesomeLoadingView()
+//            AwesomeLoadingView()
+            ListView()
         }
 
     }
