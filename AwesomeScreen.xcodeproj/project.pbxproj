@@ -29,6 +29,8 @@
 		3A251A052B089431000F062A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A042B089431000F062A /* ViewController.swift */; };
 		3A251A092B08DFA8000F062A /* AwesomeLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A082B08DFA8000F062A /* AwesomeLoadingView.swift */; };
 		3A251A0B2B08E2EF000F062A /* ControlUnits.ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A0A2B08E2EF000F062A /* ControlUnits.ListView.swift */; };
+		3A251A0E2B08E48E000F062A /* ControlUnits.Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A0D2B08E48E000F062A /* ControlUnits.Presenter.swift */; };
+		3A251A102B08E517000F062A /* ControlUnits.ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A0F2B08E517000F062A /* ControlUnits.ViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		3A251A042B089431000F062A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A251A082B08DFA8000F062A /* AwesomeLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeLoadingView.swift; sourceTree = "<group>"; };
 		3A251A0A2B08E2EF000F062A /* ControlUnits.ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.ListView.swift; sourceTree = "<group>"; };
+		3A251A0D2B08E48E000F062A /* ControlUnits.Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Presenter.swift; sourceTree = "<group>"; };
+		3A251A0F2B08E517000F062A /* ControlUnits.ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.ViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		3A2519D72B07E647000F062A /* ControlUnits */ = {
 			isa = PBXGroup;
 			children = (
+				3A251A0C2B08E464000F062A /* Presenter */,
 				3A2519DA2B07E851000F062A /* View */,
 				3A2519D82B07E727000F062A /* ControlUnits.swift */,
 			);
@@ -116,6 +121,7 @@
 			children = (
 				3A2519DB2B07E864000F062A /* SubViews */,
 				3A2519C72B07D6D3000F062A /* ControlUnits.ViewController.swift */,
+				3A251A0F2B08E517000F062A /* ControlUnits.ViewState.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +223,14 @@
 				3A251A082B08DFA8000F062A /* AwesomeLoadingView.swift */,
 			);
 			path = AwesomeLoadingView;
+			sourceTree = "<group>";
+		};
+		3A251A0C2B08E464000F062A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3A251A0D2B08E48E000F062A /* ControlUnits.Presenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +337,7 @@
 				3A2519F62B080C93000F062A /* String.swift in Sources */,
 				3A2519E62B07F571000F062A /* AwesomeEmptyView.States.swift in Sources */,
 				3A2519F92B080FCF000F062A /* Colors.swift in Sources */,
+				3A251A102B08E517000F062A /* ControlUnits.ViewState.swift in Sources */,
 				3A2519C42B07D6D3000F062A /* AppDelegate.swift in Sources */,
 				3A251A052B089431000F062A /* ViewController.swift in Sources */,
 				3A2519FE2B087E31000F062A /* FontWithLineHeight.swift in Sources */,
@@ -330,6 +345,7 @@
 				3A251A0B2B08E2EF000F062A /* ControlUnits.ListView.swift in Sources */,
 				3A251A002B088512000F062A /* Spacings.swift in Sources */,
 				3A251A092B08DFA8000F062A /* AwesomeLoadingView.swift in Sources */,
+				3A251A0E2B08E48E000F062A /* ControlUnits.Presenter.swift in Sources */,
 				3A2519F32B080AE6000F062A /* LocalizedTranslations.swift in Sources */,
 				3A2519C62B07D6D3000F062A /* SceneDelegate.swift in Sources */,
 			);

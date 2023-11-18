@@ -1,5 +1,7 @@
 import UIKit
 
+// TODO: Need to delete this file, while is not needed
+// Test View Controller - can be used for implementation tests
 class ViewController: UIViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
