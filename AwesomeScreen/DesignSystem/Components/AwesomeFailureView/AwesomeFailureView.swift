@@ -18,7 +18,7 @@ struct AwesomeFailureView: View {
 
             Button(action: viewState.primaryButtonAction) {
                 Text(viewState.primaryButtonTitle)
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color(.Branded.foregroundHighlight))
                     .fontWithLineHeight(font: .Branded.title, lineHeight: 18)
             }
             .padding(.vertical, .spacingXS)
@@ -33,7 +33,7 @@ struct AwesomeFailureView: View {
                 font: .Branded.title,
                 lineHeight: 24
             )
-            .foregroundColor(Color(.Branded.white))
+            .foregroundColor(Color(.Branded.foregroundPrimary))
             .multilineTextAlignment(.center)
     }
 
@@ -43,7 +43,7 @@ struct AwesomeFailureView: View {
                 font: .Branded.subtitle,
                 lineHeight: 16
             )
-            .foregroundColor(Color(.Branded.white))
+            .foregroundColor(Color(.Branded.foregroundPrimary))
             .multilineTextAlignment(.center)
     }
 

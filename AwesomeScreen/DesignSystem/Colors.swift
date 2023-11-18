@@ -9,9 +9,10 @@ import SwiftUI
  */
 private enum HexColor {
 
-    static let white: Int = 0xffffff
+    static let white: Int = 0xFFFFFF
     static let black: Int = 0x000000
 
+    static let foregroundHighlight: Int = 0x5C9DFF
 }
 
 /**
@@ -22,8 +23,10 @@ private enum HexColor {
 public protocol BrandColorSupporting {
     associatedtype ColorValue
 
-    static var white: ColorValue { get }
-    static var black: ColorValue { get }
+    static var backgroundDark: ColorValue { get }
+
+    static var foregroundPrimary: ColorValue { get }
+    static var foregroundHighlight: ColorValue { get }
 
 }
 
@@ -49,8 +52,10 @@ extension UIColor {
 
         public typealias ColorValue = UIColor
 
-        public static var white: ColorValue { .color(with: HexColor.white) }
-        public static var black: ColorValue { .color(with: HexColor.black) }
+        public static var backgroundDark: ColorValue { .color(with: HexColor.black) }
+
+        public static var foregroundPrimary: ColorValue { .color(with: HexColor.white) }
+        public static var foregroundHighlight: ColorValue { .color(with: HexColor.foregroundHighlight) }
 
     }
 
@@ -62,11 +67,11 @@ extension CGColor {
 
         public typealias ColorValue = CGColor
 
-        public static var white: ColorValue { UIColor.Branded.white.cgColor }
-        public static var black: ColorValue { UIColor.Branded.black.cgColor }
+        public static var backgroundDark: ColorValue { UIColor.Branded.backgroundDark.cgColor }
+
+        public static var foregroundPrimary: ColorValue { UIColor.Branded.foregroundPrimary.cgColor }
+        public static var foregroundHighlight: ColorValue { UIColor.Branded.foregroundHighlight.cgColor }
 
     }
 
 }
-
-

@@ -29,7 +29,7 @@ struct AwesomeEmptyView: View {
                 font: .Branded.title,
                 lineHeight: 24
             )
-            .foregroundColor(Color(.Branded.white))
+            .foregroundColor(Color(.Branded.foregroundPrimary))
             .multilineTextAlignment(.center)
     }
 
@@ -44,7 +44,7 @@ struct AwesomeEmptyView: View {
                 font: .Branded.subtitle,
                 lineHeight: 16
             )
-            .foregroundColor(Color(.Branded.white))
+            .foregroundColor(Color(.Branded.foregroundPrimary))
             .multilineTextAlignment(.center)
     }
 

@@ -3,6 +3,7 @@ import UIKit
 // TODO: Need to sort all folders in project in ABC
 // TODO: Might it would be relevant to deveide DesignSystem into separate Module
 // TODO: Check if all clases that should be final are final ?
+// TODO: Clean SwiftLint errors or redifine rules
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
