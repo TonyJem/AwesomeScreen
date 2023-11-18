@@ -31,8 +31,8 @@ public enum AwesomeTextStyle {
 
     fileprivate var font: UIFont {
         switch self {
-        case .title: return .Branded.title
-        case .subtitle: return .Branded.subtitle
+        case .title: return .Branded.titleSmall
+        case .subtitle: return .Branded.bodyMedium
         }
     }
 

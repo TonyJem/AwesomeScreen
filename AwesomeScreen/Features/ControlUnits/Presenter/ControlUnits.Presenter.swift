@@ -19,9 +19,10 @@ extension ControlUnits {
         // TODO: Here is temp implementation for testing reasons
         // Need to add real logic
         private func updateContent() {
-//            showEmptyControlUnits()
+            showEmptyControlUnits()
+//            showAvailableControlUnits()
+//            showLoadingControlUnits()
 //            showLoadingFailureControlUnits()
-            showLoadingControlUnits()
         }
 
         private func showEmptyControlUnits() {

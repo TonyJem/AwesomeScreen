@@ -12,7 +12,7 @@ public struct LinkButton: View {
 
     public init (
         title: String,
-        font: UIFont = .Branded.subtitle,
+        font: UIFont = .Branded.bodyMedium,
         titleLineHeight: CGFloat = 16.0,
         foregroundColor: Color = Color(.Branded.foregroundHighlight),
         action: @escaping (() -> Void)
