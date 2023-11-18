@@ -19,7 +19,7 @@ struct AwesomeFailureView: View {
             Button(action: viewState.primaryButtonAction) {
                 Text(viewState.primaryButtonTitle)
                     .foregroundColor(Color(.Branded.foregroundHighlight))
-                    .fontWithLineHeight(font: .Branded.title, lineHeight: 18)
+                    .fontWithLineHeight(font: .Branded.subtitle, lineHeight: 16)
             }
             .padding(.vertical, .spacingXS)
 
