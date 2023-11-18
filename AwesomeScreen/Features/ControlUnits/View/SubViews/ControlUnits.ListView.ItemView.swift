@@ -6,8 +6,27 @@ extension ControlUnits.ListView {
 
         var body: some View {
 
-            Text("Hello! I'm ControlUnits.ListView.ItemView!")
-                .foregroundColor(.red)
+            HStack {
+                Image(uiImage: .awesomeImage(.ecu))
+
+                VStack {
+
+                    BadgeLabel(.faulty)
+
+                    Text("Engine")
+                        .foregroundColor(.white)
+
+                    Text("ID 12")
+                        .foregroundColor(.gray)
+
+                }
+
+                Button {
+                    print("🟢🟢 didTap chevron_right Button in Item")
+                } label: {
+                    Image(uiImage: .awesomeImage(.chevronRight))
+                }
+            }
 
         }
 
