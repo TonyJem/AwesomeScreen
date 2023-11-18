@@ -2,6 +2,12 @@ import SwiftUI
 
 struct AwesomeFailureView: View {
 
+    var viewState: AwesomeFailureView.ViewState
+
+    init(viewState: AwesomeFailureView.ViewState) {
+        self.viewState = viewState
+    }
+
     var body: some View {
         VStack(spacing: .spacingM) {
 

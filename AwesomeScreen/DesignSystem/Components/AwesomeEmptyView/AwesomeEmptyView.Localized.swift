@@ -1,5 +1,6 @@
 import Foundation
 
+// TODO: Do naming in consistent way with AwesomeFailureView
 extension LocalizedTranslations {
 
     enum AwesomeEmptyView {

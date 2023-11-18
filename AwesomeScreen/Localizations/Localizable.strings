@@ -2,3 +2,8 @@
 
 "AwesomeEmptyView.EmptyControlUnits.Title" = "Control Unit List is Empty";
 "AwesomeEmptyView.EmptyControlUnits.Subtitle" = "Vehicle contains no control units.";
+
+// MARK: - AwesomeFailureView.ViewState
+"AwesomeFailureView.ControlUnits.Title" = "Unable to Load Control Unit List";
+"AwesomeFailureView.ControlUnits.Subtitle" = "Please try again later.";
+"AwesomeFailureView.ControlUnits.PrimaryButtonTitle" = "Try Again";
