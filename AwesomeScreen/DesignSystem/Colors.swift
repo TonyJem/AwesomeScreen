@@ -2,8 +2,6 @@ import UIKit
 import CoreGraphics
 import SwiftUI
 
-// TODO: Check naming for colors. Make it in accordace to Figma's names.
-
 /**
  * This private namespace defines available colors as hex RGB values.
  */
@@ -26,11 +24,15 @@ public protocol BrandColorSupporting {
     static var backgroundDark: ColorValue { get }
 
     static var foregroundPrimary: ColorValue { get }
+
+    static var foregroundSecondary: ColorValue { get }
+
     static var foregroundHighlight: ColorValue { get }
 
 }
 
 extension UIColor {
+
     /**
      * Create a color with a given RGB representation and alpha value.
      *
@@ -48,13 +50,16 @@ extension UIColor {
         )
     }
 
-    public enum Branded: BrandColorSupporting {
+    public typealias ColorValue = UIColor
 
-        public typealias ColorValue = UIColor
+    public enum Branded: BrandColorSupporting {
 
         public static var backgroundDark: ColorValue { .color(with: HexColor.black) }
 
         public static var foregroundPrimary: ColorValue { .color(with: HexColor.white) }
+
+        public static var foregroundSecondary: ColorValue { .color(with: HexColor.white, alpha: 0.7) }
+
         public static var foregroundHighlight: ColorValue { .color(with: HexColor.foregroundHighlight) }
 
     }
@@ -63,13 +68,16 @@ extension UIColor {
 
 extension CGColor {
 
-    public enum Branded: BrandColorSupporting {
+    public typealias ColorValue = CGColor
 
-        public typealias ColorValue = CGColor
+    public enum Branded: BrandColorSupporting {
 
         public static var backgroundDark: ColorValue { UIColor.Branded.backgroundDark.cgColor }
 
         public static var foregroundPrimary: ColorValue { UIColor.Branded.foregroundPrimary.cgColor }
+
+        public static var foregroundSecondary: ColorValue { UIColor.Branded.foregroundSecondary.cgColor }
+
         public static var foregroundHighlight: ColorValue { UIColor.Branded.foregroundHighlight.cgColor }
 
     }
