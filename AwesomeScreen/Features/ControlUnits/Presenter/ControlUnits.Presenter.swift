@@ -19,20 +19,25 @@ extension ControlUnits {
         // TODO: Here is temp implementation for testing reasons
         // Need to add real logic
         private func updateContent() {
-            showEmptyControlUnitsScreen()
+//            showEmptyControlUnits()
+            showLoadingFailureControlUnits()
         }
 
-        private func showEmptyControlUnitsScreen() {
+        private func showEmptyControlUnits() {
             let emptyControlUnitsScreenViewState = AwesomeEmptyView.State.emptyControlUnits.createViewState()
             viewState = .empty(emptyControlUnitsScreenViewState)
         }
 
-        private func showAvailableControlUnitsScreen() {
+        private func showAvailableControlUnits() {
             viewState = .unitsAvailable
         }
 
-        private func showLoadingControlUnitsScreen() {
+        private func showLoadingControlUnits() {
             viewState = .loading
+        }
+
+        private func showLoadingFailureControlUnits() {
+            viewState = .loadingFailure
         }
 
     }

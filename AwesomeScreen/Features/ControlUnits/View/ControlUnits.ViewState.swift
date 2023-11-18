@@ -8,6 +8,7 @@ extension ControlUnits {
 
         case empty(AwesomeEmptyView.ViewState)
         case loading
+        case loadingFailure
         case unitsAvailable
 
     }

@@ -20,6 +20,8 @@ extension ControlUnits {
                 AwesomeLoadingView()
             case .unitsAvailable:
                 ListView()
+            case .loadingFailure:
+                AwesomeFailureView()
             }
         }
 
