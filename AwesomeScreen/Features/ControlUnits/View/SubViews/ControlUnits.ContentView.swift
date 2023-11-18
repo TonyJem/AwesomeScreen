@@ -4,14 +4,9 @@ extension ControlUnits {
 
     struct ContentView: View {
 
-//        let viewState = AwesomeEmptyView.State.emptyControlUnits.createViewState()
-
         @ObservedObject var presenter: ControlUnits.Presenter
 
         var body: some View {
-//            AwesomeEmptyView(viewState: viewState)
-//            AwesomeLoadingView()
-//            ListView()
             contentView()
                 .onAppear(perform: presenter.viewDidAppear)
         }
