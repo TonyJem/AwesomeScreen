@@ -32,7 +32,7 @@ extension ControlUnits {
 
             // TODO: Need to decide if we want to keep it here or move ot more relevant palce
             navigationController?.navigationBar.titleTextAttributes = [
-                NSAttributedString.Key.foregroundColor: UIColor.white
+                NSAttributedString.Key.foregroundColor: UIColor(cgColor: .Branded.foregroundPrimary)
             ]
             // TODO: Move plain text to screen viewState and also use localized
             title = "Control Units"
