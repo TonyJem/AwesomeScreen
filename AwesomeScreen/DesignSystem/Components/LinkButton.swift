@@ -1,21 +1,14 @@
 import SwiftUI
 
-/*
- Button(action: viewState.primaryButtonAction) {
-     Text(viewState.primaryButtonTitle)
-         .foregroundColor(Color(.Branded.foregroundHighlight))
-         .fontWithLineHeight(font: .Branded.subtitle, lineHeight: 16)
- }
- */
-
+// TODO: Check properties and reconsder what should be private, public, let  and var and etc.
+// Need to do it in whole DesignSystem file!
 public struct LinkButton: View {
 
-    let font: UIFont
-    let titleLineHeight: CGFloat
-    let foregroundColor: Color
-
-    var title: String
-    var action: (() -> Void)
+    private let title: String
+    private let font: UIFont
+    private let titleLineHeight: CGFloat
+    private let foregroundColor: Color
+    private let action: (() -> Void)
 
     public init (
         title: String,
