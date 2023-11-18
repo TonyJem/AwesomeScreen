@@ -38,4 +38,37 @@ struct AwesomeFailureView: View {
             .foregroundColor(Color(.Branded.white))
             .multilineTextAlignment(.center)
     }
+
+}
+
+extension AwesomeFailureView {
+
+    final class ViewState {
+
+        var title: String
+        var subtitle: String
+        var primaryButtonTitle: String
+        var primaryButtonAction: (() -> Void)
+
+        init(
+            title: String,
+            subtitle: String,
+            primaryButtonTitle: String,
+            primaryButtonAction: @escaping (() -> Void)
+        ) {
+            self.title = title
+            self.subtitle = subtitle
+            self.primaryButtonTitle = primaryButtonTitle
+            self.primaryButtonAction = primaryButtonAction
+        }
+
+        static let intial: ViewState = ViewState(
+            title: "",
+            subtitle: "",
+            primaryButtonTitle: "") {
+                // Intentionally unimplemented.
+            }
+
+    }
+
 }
