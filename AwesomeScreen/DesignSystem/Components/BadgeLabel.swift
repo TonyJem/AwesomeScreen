@@ -2,19 +2,14 @@ import SwiftUI
 
 public struct BadgeLabel: View {
 
-    private let title: String
     private let config: Configuration
 
-    public init(
-        title: String,
-        config: BadgeLabel.Configuration
-    ) {
-        self.title = title
+    public init(_ config: BadgeLabel.Configuration) {
         self.config = config
     }
 
     public var body: some View {
-        Text(title)
+        Text(config.title)
             .fontWithLineHeight(
                 font: config.font,
                 lineHeight: config.lineHeight
@@ -35,9 +30,22 @@ extension BadgeLabel {
         case faulty
         case notReachable
 
+        fileprivate var title: String {
+            switch self {
+            case .faulty: return L10n.BadgeLabel.faultyTitle
+            case .notReachable: return L10n.BadgeLabel.notReachableTitle
+            }
+        }
+
         fileprivate var font: UIFont {
             switch self {
             case .faulty, .notReachable: return .Branded.labelTiny
+            }
+        }
+
+        fileprivate var lineHeight: CGFloat {
+            switch self {
+            case .faulty, .notReachable: return 12.0
             }
         }
 
@@ -55,11 +63,17 @@ extension BadgeLabel {
             }
         }
 
-        fileprivate var lineHeight: CGFloat {
-            switch self {
-            case .faulty, .notReachable: return 12.0
-            }
-        }
+    }
+
+}
+
+extension LocalizedTranslations {
+
+    enum BadgeLabel {
+
+        static let notReachableTitle = "BadgeLabel.NotReachable.Title".localized
+
+        static let faultyTitle = "BadgeLabel.Faulty.Title".localized
 
     }
 

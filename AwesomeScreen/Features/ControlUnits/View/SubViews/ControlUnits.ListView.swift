@@ -22,10 +22,10 @@ extension ControlUnits {
                 ItemView()
                     .listRowBackground(Color.black)
 
-                BadgeLabel(title: "notReachable", config: .notReachable)
+                BadgeLabel(.notReachable)
                     .listRowBackground(Color.black)
 
-                BadgeLabel(title: "faulty", config: .faulty)
+                BadgeLabel(.faulty)
                     .listRowBackground(Color.black)
             }
             .listStyle(.plain)
