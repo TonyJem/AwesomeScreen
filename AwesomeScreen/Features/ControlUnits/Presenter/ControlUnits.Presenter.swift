@@ -20,7 +20,8 @@ extension ControlUnits {
         // Need to add real logic
         private func updateContent() {
 //            showEmptyControlUnits()
-            showLoadingFailureControlUnits()
+//            showLoadingFailureControlUnits()
+            showLoadingControlUnits()
         }
 
         private func showEmptyControlUnits() {

@@ -36,6 +36,7 @@
 		3A251A172B08FEA6000F062A /* AwesomeFailureView.States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A162B08FEA6000F062A /* AwesomeFailureView.States.swift */; };
 		3A251A192B09035A000F062A /* AwesomeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A182B09035A000F062A /* AwesomeText.swift */; };
 		3A251A1B2B091144000F062A /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A1A2B091144000F062A /* LinkButton.swift */; };
+		3A251A1D2B0930CC000F062A /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A1C2B0930CC000F062A /* LoadingIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		3A251A162B08FEA6000F062A /* AwesomeFailureView.States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeFailureView.States.swift; sourceTree = "<group>"; };
 		3A251A182B09035A000F062A /* AwesomeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeText.swift; sourceTree = "<group>"; };
 		3A251A1A2B091144000F062A /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
+		3A251A1C2B0930CC000F062A /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				3A2519EC2B080985000F062A /* AwesomeEmptyView */,
 				3A251A182B09035A000F062A /* AwesomeText.swift */,
 				3A251A1A2B091144000F062A /* LinkButton.swift */,
+				3A251A1C2B0930CC000F062A /* LoadingIndicator.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A251A1D2B0930CC000F062A /* LoadingIndicator.swift in Sources */,
 				3A251A172B08FEA6000F062A /* AwesomeFailureView.States.swift in Sources */,
 				3A251A1B2B091144000F062A /* LinkButton.swift in Sources */,
 				3A2519FB2B081B65000F062A /* Fonts.swift in Sources */,
