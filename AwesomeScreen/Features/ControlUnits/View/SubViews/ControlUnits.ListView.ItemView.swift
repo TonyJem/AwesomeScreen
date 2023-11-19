@@ -22,14 +22,10 @@ extension ControlUnits.ListView {
         }
 
         var body: some View {
-
             HStack(spacing: 0) {
-
                 imageView()
-
                 VStack {
                     Spacer()
-
                     HStack(spacing: 0) {
                         VStack(alignment: .leading, spacing: 0) {
                             if let badgeConfig = viewState.badgeConfig {
@@ -38,24 +34,15 @@ extension ControlUnits.ListView {
                             } else {
                                 titleView(lineLimit: 2)
                             }
-
                             subtitleView()
                         }
-
                         Spacer()
-
                         buttonView()
                     }
-
                     Spacer()
-
-                    Rectangle()
-                        .fill(Color(.Branded.border))
-                        .frame(height: .separatorHeight)
+                    separatorView()
                 }
-
             }
-
         }
 
         private func imageView() -> some View {
@@ -81,8 +68,7 @@ extension ControlUnits.ListView {
         }
 
         private func titleView(lineLimit: Int) -> some View {
-
-            return AwesomeText(
+            AwesomeText(
                 title: viewState.title,
                 style: .labelLarge
             )
@@ -103,6 +89,12 @@ extension ControlUnits.ListView {
                 Image(uiImage: .awesomeImage(.chevronRight))
             }
             .padding(.spacingMedium)
+        }
+
+        private func separatorView() -> some View {
+            Rectangle()
+                .fill(Color(.Branded.border))
+                .frame(height: .separatorHeight)
         }
 
     }
