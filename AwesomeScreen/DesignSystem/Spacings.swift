@@ -17,7 +17,7 @@ extension ExpressibleByIntegerLiteral {
 
     public static var spacing2XSmall: Self { 4 }
 
-    public static var spacingXS: Self { 8 }
+    public static var spacingXSmall: Self { 8 }
 
     public static var spacingS: Self { 12 }
 

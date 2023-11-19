@@ -22,12 +22,15 @@ extension ControlUnits.ListView {
         }
 
         var body: some View {
-            HStack(spacing: 0) {
+            HStack(spacing: .zero) {
                 imageView()
+                    .padding( [.vertical, .trailing], .spacingMedium)
+                    .padding( .leading, .spacing2XSmall)
+
                 VStack {
                     Spacer()
                     HStack(spacing: .spacing2XSmall) {
-                        VStack(alignment: .leading, spacing: 0) {
+                        VStack(alignment: .leading, spacing: .zero) {
                             if let badgeConfig = viewState.badgeConfig {
                                 BadgeLabel(badgeConfig)
                                 titleView(lineLimit: 1)
@@ -38,6 +41,7 @@ extension ControlUnits.ListView {
                         }
                         Spacer()
                         buttonView()
+                            .padding(.spacingMedium)
                     }
                     Spacer()
                     separatorView()
@@ -52,7 +56,6 @@ extension ControlUnits.ListView {
                         width: Constants.imageSize.width,
                         height: Constants.imageSize.height
                     )
-                    .padding(.spacingMedium)
 
                 Image(uiImage: viewState.image)
                     .resizable()
@@ -88,7 +91,6 @@ extension ControlUnits.ListView {
             } label: {
                 Image(uiImage: .awesomeImage(.chevronRight))
             }
-            .padding(.spacingMedium)
         }
 
         private func separatorView() -> some View {

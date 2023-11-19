@@ -19,7 +19,7 @@ struct AwesomeFailureView: View {
             LinkButton(title: viewState.primaryButtonTitle) {
                 viewState.primaryButtonAction()
             }
-            .padding(.vertical, .spacingXS)
+            .padding(.vertical, .spacingXSmall)
 
         }
         .padding(.horizontal, .spacingXL)
