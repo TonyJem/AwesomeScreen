@@ -4,6 +4,12 @@ extension ControlUnits.ListView {
 
     struct ItemView: View {
 
+        private struct Constants {
+
+            static let imageSize: CGSize = CGSize(width: 120, height: 60)
+
+        }
+
         let viewState: ControlUnits.ListView.ItemView.ViewState
 
         init(viewState: ControlUnits.ListView.ItemView.ViewState) {
@@ -13,9 +19,28 @@ extension ControlUnits.ListView {
         var body: some View {
 
             HStack {
-                Image(uiImage: viewState.image)
 
-                VStack {
+                ZStack {
+                    Spacer()
+                        .frame(
+                            width: Constants.imageSize.width,
+                            height: Constants.imageSize.height
+                        )
+                        .padding(.spacingMedium)
+
+                    Image(uiImage: viewState.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(
+                            width: Constants.imageSize.width,
+                            height: Constants.imageSize.height,
+                            alignment: .center
+                        )
+                        .border(.red)
+                        .cornerRadius(4)
+                }
+
+                VStack(alignment: .leading, spacing: 0) {
 
                     if let badgeConfig = viewState.badgeConfig {
                         BadgeLabel(badgeConfig)

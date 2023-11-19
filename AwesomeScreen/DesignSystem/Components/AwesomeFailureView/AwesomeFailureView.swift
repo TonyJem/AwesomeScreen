@@ -9,7 +9,7 @@ struct AwesomeFailureView: View {
     }
 
     var body: some View {
-        VStack(spacing: .spacingM) {
+        VStack(spacing: .spacingMedium) {
 
             VStack(spacing: .spacing2XSmall) {
                 titleText()

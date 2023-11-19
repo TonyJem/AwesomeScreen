@@ -21,7 +21,7 @@ extension ExpressibleByIntegerLiteral {
 
     public static var spacingS: Self { 12 }
 
-    public static var spacingM: Self { 16 }
+    public static var spacingMedium: Self { 16 }
 
     public static var spacingL: Self { 24 }
 

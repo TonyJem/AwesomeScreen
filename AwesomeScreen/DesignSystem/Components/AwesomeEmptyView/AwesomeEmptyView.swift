@@ -10,7 +10,7 @@ struct AwesomeEmptyView: View {
     }
 
     var body: some View {
-        VStack(spacing: .spacingM) {
+        VStack(spacing: .spacingMedium) {
 
             Image(uiImage: viewState.image)
 
