@@ -24,7 +24,7 @@ extension ControlUnits.ListView {
         var body: some View {
             HStack(spacing: .zero) {
                 imageView()
-                    .padding( [.vertical, .trailing], .spacingMedium)
+                    .padding( .spacingMedium)
                     .padding( .leading, .spacing2XSmall)
 
                 VStack(spacing: .zero) {
