@@ -33,8 +33,12 @@ enum AwesomeImage: String, CaseIterable {
         return UIImage(named: self.rawValue)
     }
 
-    case ecu = "ecu"
-    case chevronRight = "chevronRight"
-    case testImage = "testImage"
+    case ecu
+    case chevronRight
 
+    case testImage00
+    case testImage01
+    case testImage02
+    case testImage03
+    case testImage04
 }
