@@ -4,6 +4,7 @@ import UIKit
 private enum FontSize {
 
     static let titleSmall: CGFloat = 18
+    static let labelLarge: CGFloat = 16
     static let bodyMedium: CGFloat = 14
     static let labelTiny: CGFloat = 10
 
@@ -18,6 +19,8 @@ public protocol BrandFontSupporting {
 
     static var bodyMedium: UIFont { get }
 
+    static var labelLarge: UIFont { get }
+
     static var labelTiny: UIFont { get }
 
 }
@@ -28,6 +31,9 @@ extension UIFont {
 
         /// size: 18, type: semibold = 600.
         public static var titleSmall: UIFont = UIFont.systemFont(ofSize: FontSize.titleSmall, weight: .semibold)
+
+        /// size: 16, type: medium = 500.
+        public static var labelLarge: UIFont = UIFont.systemFont(ofSize: FontSize.labelLarge, weight: .medium)
 
         /// size: 14, type: regular = 400.
         public static var bodyMedium: UIFont = UIFont.systemFont(ofSize: FontSize.bodyMedium, weight: .regular)

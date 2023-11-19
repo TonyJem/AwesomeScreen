@@ -58,7 +58,7 @@ extension ControlUnits {
 
             let itemViewState03 = ControlUnits.ListView.ItemView.ViewState(
                 id: "ID 01",
-                title: "Airbad",
+                title: "Airbag",
                 image: .awesomeImage(.testImage03),
                 badge: nil,
                 action: { print("🟡🟡🟡🟡 didTap on item03") }

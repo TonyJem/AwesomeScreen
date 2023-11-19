@@ -1,5 +1,7 @@
 import SwiftUI
 
+// TODO: Avoid clicking on all element
+// We need row do not respond to button action, only button arrea should respond on Tap
 extension ControlUnits.ListView {
 
     struct ItemView: View {
@@ -60,9 +62,11 @@ extension ControlUnits.ListView {
         }
 
         private func titleView() -> some View {
-            Text(viewState.title)
-                .foregroundColor(.white)
-                .fixedSize(horizontal: false, vertical: true)
+            AwesomeText(
+                title: viewState.title,
+                style: .labelLarge
+            )
+            .multilineTextAlignment(.leading)
         }
 
         private func subtitleView() -> some View {

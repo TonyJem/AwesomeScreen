@@ -26,7 +26,7 @@ struct AwesomeEmptyView: View {
     private func titleText() -> some View {
         AwesomeText(
             title: viewState.title,
-            style: .title
+            style: .titleSmall
         )
         .multilineTextAlignment(.center)
     }
