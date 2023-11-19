@@ -26,7 +26,7 @@ extension ControlUnits.ListView {
                 imageView()
                 VStack {
                     Spacer()
-                    HStack(spacing: 0) {
+                    HStack(spacing: .spacing2XSmall) {
                         VStack(alignment: .leading, spacing: 0) {
                             if let badgeConfig = viewState.badgeConfig {
                                 BadgeLabel(badgeConfig)

@@ -7,6 +7,7 @@ import UIKit
 // TODO: We can look at design System and ring all needd colors and elements that are needed
 // TODO: Probably all emtyScreens we can bring into one an set all needed Viewstates for it
 // TODO: Remove all test images from the Assets
+// TODO: Go across the whole code base and put Marks in consistent way
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
