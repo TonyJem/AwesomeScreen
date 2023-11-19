@@ -1,6 +1,9 @@
 import SwiftUI
 
-// TODO: Avoid clicking on all element
+// TODO: Need to check UI deferneces on different iOS versions
+// TODO: Native separator lines are visible <- need to remove it somehow
+// TODO: Trailing part of separator does not touch trailig side of the screen <- need to solve it someHow
+// TODO: Avoid clicking on whole element
 // We need row do not respond to button action, only button arrea should respond on Tap
 extension ControlUnits.ListView {
 
@@ -25,6 +28,8 @@ extension ControlUnits.ListView {
                 imageView()
 
                 VStack {
+                    Spacer()
+
                     HStack(spacing: 0) {
                         VStack(alignment: .leading, spacing: 0) {
                             if let badgeConfig = viewState.badgeConfig {
@@ -44,10 +49,7 @@ extension ControlUnits.ListView {
                     Rectangle()
                         .fill(.red)
                         .frame(height: .separatorHeight)
-
                 }
-                .frame(height: Constants.imageSize.height)
-                .padding(.vertical, .spacingMedium)
 
             }
 
