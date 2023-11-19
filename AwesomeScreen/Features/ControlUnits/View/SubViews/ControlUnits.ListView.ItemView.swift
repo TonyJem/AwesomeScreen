@@ -47,7 +47,7 @@ extension ControlUnits.ListView {
                     Spacer()
 
                     Rectangle()
-                        .fill(.red)
+                        .fill(Color(.Branded.border))
                         .frame(height: .separatorHeight)
                 }
 
@@ -72,7 +72,7 @@ extension ControlUnits.ListView {
                         height: Constants.imageSize.height,
                         alignment: .center
                     )
-                    .border(.red)
+                    .border(Color(.Branded.border))
                     .cornerRadius(4)
             }
         }

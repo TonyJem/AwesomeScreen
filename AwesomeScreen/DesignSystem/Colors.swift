@@ -28,6 +28,8 @@ public protocol BrandColorSupporting {
 
     static var backgroundDanger: ColorValue { get }
 
+    static var border: ColorValue { get }
+
     static var foregroundOnNeutral: ColorValue { get }
 
     static var foregroundOnDanger: ColorValue { get }
@@ -69,6 +71,8 @@ extension UIColor {
 
         public static var backgroundDanger: ColorValue { .color(with: HexColor.lightRed) }
 
+        public static var border: ColorValue { .color(with: HexColor.white, alpha: 0.12) }
+
         public static var foregroundOnNeutral: ColorValue { .color(with: HexColor.black) }
 
         public static var foregroundOnDanger: ColorValue { .color(with: HexColor.black) }
@@ -94,6 +98,8 @@ extension CGColor {
         public static var backgroundNeutral: ColorValue { UIColor.Branded.backgroundNeutral.cgColor }
 
         public static var backgroundDanger: ColorValue { UIColor.Branded.backgroundDanger.cgColor }
+
+        public static var border: ColorValue { UIColor.Branded.border.cgColor }
 
         public static var foregroundOnNeutral: ColorValue { UIColor.Branded.foregroundOnNeutral.cgColor }
 
