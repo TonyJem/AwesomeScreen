@@ -34,8 +34,11 @@ extension ControlUnits.ListView {
                         VStack(alignment: .leading, spacing: 0) {
                             if let badgeConfig = viewState.badgeConfig {
                                 BadgeLabel(badgeConfig)
+                                titleView(lineLimit: 1)
+                            } else {
+                                titleView(lineLimit: 2)
                             }
-                            titleView()
+
                             subtitleView()
                         }
 
@@ -77,12 +80,13 @@ extension ControlUnits.ListView {
             }
         }
 
-        private func titleView() -> some View {
-            AwesomeText(
+        private func titleView(lineLimit: Int) -> some View {
+
+            return AwesomeText(
                 title: viewState.title,
                 style: .labelLarge
             )
-            .multilineTextAlignment(.leading)
+            .lineLimit(lineLimit)
         }
 
         private func subtitleView() -> some View {
