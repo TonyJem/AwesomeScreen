@@ -17,7 +17,9 @@ extension ControlUnits.ListView {
 
                 VStack {
 
-                    BadgeLabel(.faulty)
+                    if let badgeConfig = viewState.badgeConfig {
+                        BadgeLabel(badgeConfig)
+                    }
 
                     Text(viewState.title)
                         .foregroundColor(.white)
@@ -48,20 +50,20 @@ extension ControlUnits.ListView.ItemView {
         let id: String
         let title: String
         let image: UIImage
-        let badge: String // Later need to change to custom Type describing badge style
+        let badgeConfig: BadgeLabel.Configuration?
         let action: (() -> Void)
 
         init(
             id: String,
             title: String,
             image: UIImage,
-            badge: String,
+            badge: BadgeLabel.Configuration?,
             action: @escaping (() -> Void)
         ) {
             self.id = id
             self.title = title
             self.image = image
-            self.badge = badge
+            self.badgeConfig = badge
             self.action = action
         }
 

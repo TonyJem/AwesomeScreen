@@ -36,7 +36,7 @@ extension ControlUnits {
                 id: "ID 12",
                 title: "Engine",
                 image: .awesomeImage(.testImage),
-                badge: "",
+                badge: nil,
                 action: { print("🟡 didTap on item00") }
             )
 
@@ -44,7 +44,7 @@ extension ControlUnits {
                 id: "ID 01",
                 title: "Engine 01",
                 image: .awesomeImage(.testImage),
-                badge: "",
+                badge: .faulty,
                 action: { print("🟡🟡 didTap on item01") }
             )
 
@@ -52,7 +52,7 @@ extension ControlUnits {
                 id: "ID 02",
                 title: "Engine 02",
                 image: .awesomeImage(.testImage),
-                badge: "",
+                badge: .notReachable,
                 action: { print("🟡🟡🟡 didTap on item02") }
             )
 
