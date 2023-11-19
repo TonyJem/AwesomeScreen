@@ -7,7 +7,7 @@ extension ControlUnits.ListView {
         var body: some View {
 
             HStack {
-                Image(uiImage: .awesomeImage(.ecu))
+                Image(uiImage: .awesomeImage(.testImage))
 
                 VStack {
 
@@ -15,6 +15,7 @@ extension ControlUnits.ListView {
 
                     Text("Engine")
                         .foregroundColor(.white)
+                        .fixedSize(horizontal: false, vertical: true)
 
                     Text("ID 12")
                         .foregroundColor(.gray)

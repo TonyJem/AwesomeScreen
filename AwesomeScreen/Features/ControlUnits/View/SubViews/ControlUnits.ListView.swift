@@ -11,7 +11,6 @@ extension ControlUnits {
                     .listRowBackground(Color.black)
 
                 ItemView()
-                    .listRowBackground(Color.black)
 
                 ItemView()
                     .listRowBackground(Color.black)

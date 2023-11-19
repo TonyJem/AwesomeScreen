@@ -35,5 +35,6 @@ enum AwesomeImage: String, CaseIterable {
 
     case ecu = "ecu"
     case chevronRight = "chevronRight"
+    case testImage = "testImage"
 
 }
