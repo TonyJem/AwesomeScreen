@@ -39,11 +39,7 @@ extension ControlUnits.ListView {
 
                 Spacer()
 
-                Button {
-                    viewState.action()
-                } label: {
-                    Image(uiImage: .awesomeImage(.chevronRight))
-                }
+                buttonView()
             }
 
         }
@@ -68,6 +64,15 @@ extension ControlUnits.ListView {
                     .border(.red)
                     .cornerRadius(4)
             }
+        }
+
+        private func buttonView() -> some View {
+            Button {
+                viewState.action()
+            } label: {
+                Image(uiImage: .awesomeImage(.chevronRight))
+            }
+            .padding(.spacingMedium)
         }
 
     }
