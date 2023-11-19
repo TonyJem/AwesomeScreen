@@ -27,13 +27,13 @@ extension ControlUnits.ListView {
                     .padding( [.vertical, .trailing], .spacingMedium)
                     .padding( .leading, .spacing2XSmall)
 
-                VStack {
+                VStack(spacing: .zero) {
                     Spacer()
-                    HStack(spacing: .spacing2XSmall) {
-                        VStack(alignment: .leading, spacing: .zero) {
+                    HStack(spacing: .zero) {
+                        VStack(alignment: .leading, spacing: .spacing2XSmall) {
                             if let badgeConfig = viewState.badgeConfig {
                                 BadgeLabel(badgeConfig)
-                                    .padding(.bottom, .spacing3XSmall)
+                                    .padding(.top, .spacing3XSmall)
                                 titleView(lineLimit: 1)
                             } else {
                                 titleView(lineLimit: 2)
