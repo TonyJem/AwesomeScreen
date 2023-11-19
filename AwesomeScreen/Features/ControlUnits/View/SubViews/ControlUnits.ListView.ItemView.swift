@@ -18,27 +18,9 @@ extension ControlUnits.ListView {
 
         var body: some View {
 
-            HStack {
+            HStack(spacing: 0) {
 
-                ZStack {
-                    Spacer()
-                        .frame(
-                            width: Constants.imageSize.width,
-                            height: Constants.imageSize.height
-                        )
-                        .padding(.spacingMedium)
-
-                    Image(uiImage: viewState.image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(
-                            width: Constants.imageSize.width,
-                            height: Constants.imageSize.height,
-                            alignment: .center
-                        )
-                        .border(.red)
-                        .cornerRadius(4)
-                }
+                imageView()
 
                 VStack(alignment: .leading, spacing: 0) {
 
@@ -55,6 +37,8 @@ extension ControlUnits.ListView {
 
                 }
 
+                Spacer()
+
                 Button {
                     viewState.action()
                 } label: {
@@ -62,6 +46,28 @@ extension ControlUnits.ListView {
                 }
             }
 
+        }
+
+        private func imageView() -> some View {
+            ZStack {
+                Spacer()
+                    .frame(
+                        width: Constants.imageSize.width,
+                        height: Constants.imageSize.height
+                    )
+                    .padding(.spacingMedium)
+
+                Image(uiImage: viewState.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(
+                        width: Constants.imageSize.width,
+                        height: Constants.imageSize.height,
+                        alignment: .center
+                    )
+                    .border(.red)
+                    .cornerRadius(4)
+            }
         }
 
     }
