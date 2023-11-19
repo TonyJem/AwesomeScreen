@@ -23,18 +23,11 @@ extension ControlUnits.ListView {
                 imageView()
 
                 VStack(alignment: .leading, spacing: 0) {
-
                     if let badgeConfig = viewState.badgeConfig {
                         BadgeLabel(badgeConfig)
                     }
-
-                    Text(viewState.title)
-                        .foregroundColor(.white)
-                        .fixedSize(horizontal: false, vertical: true)
-
-                    Text(viewState.id)
-                        .foregroundColor(.gray)
-
+                    titleView()
+                    subtitleView()
                 }
 
                 Spacer()
@@ -64,6 +57,17 @@ extension ControlUnits.ListView {
                     .border(.red)
                     .cornerRadius(4)
             }
+        }
+
+        private func titleView() -> some View {
+            Text(viewState.title)
+                .foregroundColor(.white)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+
+        private func subtitleView() -> some View {
+            Text(viewState.id)
+                .foregroundColor(.gray)
         }
 
         private func buttonView() -> some View {
