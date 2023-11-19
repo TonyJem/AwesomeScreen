@@ -33,6 +33,7 @@ extension ControlUnits.ListView {
                         VStack(alignment: .leading, spacing: .zero) {
                             if let badgeConfig = viewState.badgeConfig {
                                 BadgeLabel(badgeConfig)
+                                    .padding(.bottom, .spacing3XSmall)
                                 titleView(lineLimit: 1)
                             } else {
                                 titleView(lineLimit: 2)
