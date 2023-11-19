@@ -40,7 +40,19 @@
 		3A251A1F2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A1E2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift */; };
 		3A251A212B0940CF000F062A /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A202B0940CF000F062A /* BadgeLabel.swift */; };
 		3A251A252B0A6925000F062A /* ControlUnits.Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A242B0A6925000F062A /* ControlUnits.Interactor.swift */; };
+		3A251A2E2B0A8D97000F062A /* AwesomeScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A2D2B0A8D97000F062A /* AwesomeScreenTests.swift */; };
+		3A251A362B0A8EE1000F062A /* ControlUnits.Interactor.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A342B0A8E7E000F062A /* ControlUnits.Interactor.Tests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A251A2F2B0A8D97000F062A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A2519B82B07D6D3000F062A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A2519BF2B07D6D3000F062A;
+			remoteInfo = AwesomeScreen;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3A2519C02B07D6D3000F062A /* AwesomeScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,10 +90,20 @@
 		3A251A1E2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.ListView.ItemView.swift; sourceTree = "<group>"; };
 		3A251A202B0940CF000F062A /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 		3A251A242B0A6925000F062A /* ControlUnits.Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Interactor.swift; sourceTree = "<group>"; };
+		3A251A2B2B0A8D97000F062A /* AwesomeScreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeScreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A251A2D2B0A8D97000F062A /* AwesomeScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeScreenTests.swift; sourceTree = "<group>"; };
+		3A251A342B0A8E7E000F062A /* ControlUnits.Interactor.Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Interactor.Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3A2519BD2B07D6D3000F062A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A251A282B0A8D97000F062A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -95,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				3A2519C22B07D6D3000F062A /* AwesomeScreen */,
+				3A251A2C2B0A8D97000F062A /* AwesomeScreenTests */,
 				3A2519C12B07D6D3000F062A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				3A2519C02B07D6D3000F062A /* AwesomeScreen.app */,
+				3A251A2B2B0A8D97000F062A /* AwesomeScreenTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,9 +141,9 @@
 				3A2519F02B0809F9000F062A /* Features */,
 				3A2519CC2B07D6D6000F062A /* Assets.xcassets */,
 				3A2519CE2B07D6D6000F062A /* LaunchScreen.storyboard */,
-				3A2519D12B07D6D6000F062A /* Info.plist */,
 				3A2519C32B07D6D3000F062A /* AppDelegate.swift */,
 				3A2519C52B07D6D3000F062A /* SceneDelegate.swift */,
+				3A2519D12B07D6D6000F062A /* Info.plist */,
 			);
 			path = AwesomeScreen;
 			sourceTree = "<group>";
@@ -272,8 +296,17 @@
 			isa = PBXGroup;
 			children = (
 				3A251A242B0A6925000F062A /* ControlUnits.Interactor.swift */,
+				3A251A342B0A8E7E000F062A /* ControlUnits.Interactor.Tests.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3A251A2C2B0A8D97000F062A /* AwesomeScreenTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A251A2D2B0A8D97000F062A /* AwesomeScreenTests.swift */,
+			);
+			path = AwesomeScreenTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +330,24 @@
 			productReference = 3A2519C02B07D6D3000F062A /* AwesomeScreen.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3A251A2A2B0A8D97000F062A /* AwesomeScreenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A251A312B0A8D97000F062A /* Build configuration list for PBXNativeTarget "AwesomeScreenTests" */;
+			buildPhases = (
+				3A251A272B0A8D97000F062A /* Sources */,
+				3A251A282B0A8D97000F062A /* Frameworks */,
+				3A251A292B0A8D97000F062A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A251A302B0A8D97000F062A /* PBXTargetDependency */,
+			);
+			name = AwesomeScreenTests;
+			productName = AwesomeScreenTests;
+			productReference = 3A251A2B2B0A8D97000F062A /* AwesomeScreenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -310,6 +361,10 @@
 					3A2519BF2B07D6D3000F062A = {
 						CreatedOnToolsVersion = 13.3;
 					};
+					3A251A2A2B0A8D97000F062A = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 3A2519BF2B07D6D3000F062A;
+					};
 				};
 			};
 			buildConfigurationList = 3A2519BB2B07D6D3000F062A /* Build configuration list for PBXProject "AwesomeScreen" */;
@@ -321,11 +376,14 @@
 				Base,
 			);
 			mainGroup = 3A2519B72B07D6D3000F062A;
+			packageReferences = (
+			);
 			productRefGroup = 3A2519C12B07D6D3000F062A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				3A2519BF2B07D6D3000F062A /* AwesomeScreen */,
+				3A251A2A2B0A8D97000F062A /* AwesomeScreenTests */,
 			);
 		};
 /* End PBXProject section */
@@ -338,6 +396,13 @@
 				3A2519D02B07D6D6000F062A /* LaunchScreen.storyboard in Resources */,
 				3A2519EB2B080842000F062A /* Localizable.strings in Resources */,
 				3A2519CD2B07D6D6000F062A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A251A292B0A8D97000F062A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +468,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3A251A272B0A8D97000F062A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A251A362B0A8EE1000F062A /* ControlUnits.Interactor.Tests.swift in Sources */,
+				3A251A2E2B0A8D97000F062A /* AwesomeScreenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A251A302B0A8D97000F062A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A2519BF2B07D6D3000F062A /* AwesomeScreen */;
+			targetProxy = 3A251A2F2B0A8D97000F062A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3A2519CE2B07D6D6000F062A /* LaunchScreen.storyboard */ = {
@@ -589,6 +671,42 @@
 			};
 			name = Release;
 		};
+		3A251A322B0A8D97000F062A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8J73Q43L2S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lt.1011.AwesomeScreenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AwesomeScreen.app/AwesomeScreen";
+			};
+			name = Debug;
+		};
+		3A251A332B0A8D97000F062A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8J73Q43L2S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lt.1011.AwesomeScreenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AwesomeScreen.app/AwesomeScreen";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -606,6 +724,15 @@
 			buildConfigurations = (
 				3A2519D52B07D6D6000F062A /* Debug */,
 				3A2519D62B07D6D6000F062A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A251A312B0A8D97000F062A /* Build configuration list for PBXNativeTarget "AwesomeScreenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A251A322B0A8D97000F062A /* Debug */,
+				3A251A332B0A8D97000F062A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
