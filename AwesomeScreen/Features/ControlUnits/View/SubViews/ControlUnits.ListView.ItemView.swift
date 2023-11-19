@@ -24,17 +24,31 @@ extension ControlUnits.ListView {
 
                 imageView()
 
-                VStack(alignment: .leading, spacing: 0) {
-                    if let badgeConfig = viewState.badgeConfig {
-                        BadgeLabel(badgeConfig)
+                VStack {
+                    HStack(spacing: 0) {
+                        VStack(alignment: .leading, spacing: 0) {
+                            if let badgeConfig = viewState.badgeConfig {
+                                BadgeLabel(badgeConfig)
+                            }
+                            titleView()
+                            subtitleView()
+                        }
+
+                        Spacer()
+
+                        buttonView()
                     }
-                    titleView()
-                    subtitleView()
+
+                    Spacer()
+
+                    Rectangle()
+                        .fill(.red)
+                        .frame(height: .separatorHeight)
+
                 }
+                .frame(height: Constants.imageSize.height)
+                .padding(.vertical, .spacingMedium)
 
-                Spacer()
-
-                buttonView()
             }
 
         }
