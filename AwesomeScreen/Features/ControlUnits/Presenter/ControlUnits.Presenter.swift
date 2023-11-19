@@ -31,7 +31,40 @@ extension ControlUnits {
         }
 
         private func showAvailableControlUnits() {
-            viewState = .unitsAvailable
+
+            let itemViewState00 = ControlUnits.ListView.ItemView.ViewState(
+                id: "ID 12",
+                title: "Engine",
+                image: .awesomeImage(.testImage),
+                badge: "",
+                action: { print("🟡 didTap on item00") }
+            )
+
+            let itemViewState01 = ControlUnits.ListView.ItemView.ViewState(
+                id: "ID 01",
+                title: "Engine 01",
+                image: .awesomeImage(.testImage),
+                badge: "",
+                action: { print("🟡🟡 didTap on item01") }
+            )
+
+            let itemViewState02 = ControlUnits.ListView.ItemView.ViewState(
+                id: "ID 02",
+                title: "Engine 02",
+                image: .awesomeImage(.testImage),
+                badge: "",
+                action: { print("🟡🟡🟡 didTap on item02") }
+            )
+
+            let listItemViewStates: [ControlUnits.ListView.ItemView.ViewState] = [
+                itemViewState00,
+                itemViewState01,
+                itemViewState02
+            ]
+
+            let listViewState = ControlUnits.ListView.ViewState(listItemViewStates: listItemViewStates)
+
+            viewState = .unitsAvailable(listViewState)
         }
 
         private func showLoadingControlUnits() {

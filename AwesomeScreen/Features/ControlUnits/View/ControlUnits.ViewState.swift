@@ -9,7 +9,7 @@ extension ControlUnits {
         case empty(AwesomeEmptyView.ViewState)
         case loading
         case loadingFailure(AwesomeFailureView.ViewState)
-        case unitsAvailable
+        case unitsAvailable(ControlUnits.ListView.ViewState)
 
     }
 

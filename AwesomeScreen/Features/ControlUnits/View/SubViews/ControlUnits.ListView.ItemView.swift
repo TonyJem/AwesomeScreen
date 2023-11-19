@@ -4,20 +4,26 @@ extension ControlUnits.ListView {
 
     struct ItemView: View {
 
+        let viewState: ControlUnits.ListView.ItemView.ViewState
+
+        init(viewState: ControlUnits.ListView.ItemView.ViewState) {
+            self.viewState = viewState
+        }
+
         var body: some View {
 
             HStack {
-                Image(uiImage: .awesomeImage(.testImage))
+                Image(uiImage: viewState.image)
 
                 VStack {
 
                     BadgeLabel(.faulty)
 
-                    Text("Engine")
+                    Text(viewState.title)
                         .foregroundColor(.white)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    Text("ID 12")
+                    Text(viewState.id)
                         .foregroundColor(.gray)
 
                 }
@@ -37,8 +43,7 @@ extension ControlUnits.ListView {
 
 extension ControlUnits.ListView.ItemView {
 
-    // TODO: Later probably is needed to make ViewState: Identifiable
-    struct ViewState {
+    struct ViewState: Identifiable {
 
         let id: String
         let title: String

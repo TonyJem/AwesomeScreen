@@ -4,16 +4,19 @@ extension ControlUnits {
 
     struct ListView: View {
 
+        var viewState: ControlUnits.ListView.ViewState
+
+        init(viewState: ControlUnits.ListView.ViewState) {
+            self.viewState = viewState
+        }
+
         var body: some View {
 
             List {
-                ItemView()
-                    .listRowBackground(Color.black)
-
-                ItemView()
-
-                ItemView()
-                    .listRowBackground(Color.black)
+                ForEach(viewState.listItemViewStates) { viewState in
+                    ItemView(viewState: viewState)
+                        .listRowBackground(Color.black)
+                }
 
             }
             .listStyle(.plain)

@@ -14,12 +14,16 @@ extension ControlUnits {
         @ViewBuilder
         private func contentView() -> some View {
             switch presenter.viewState {
+
             case .empty(let viewState):
                 AwesomeEmptyView(viewState: viewState)
+
             case .loading:
                 AwesomeLoadingView()
-            case .unitsAvailable:
-                ListView()
+
+            case .unitsAvailable(let viewState):
+                ListView(viewState: viewState)
+
             case .loadingFailure(let viewState):
                 AwesomeFailureView(viewState: viewState)
             }
