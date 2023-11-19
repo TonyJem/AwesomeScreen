@@ -8,4 +8,3 @@ struct LocalizedTranslations {
         // Intentionally unimplemented. This struct is needed to delimit the namespace only.
     }
 }
-
