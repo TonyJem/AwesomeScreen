@@ -70,8 +70,10 @@ extension ControlUnits.ListView {
         }
 
         private func subtitleView() -> some View {
-            Text(viewState.id)
-                .foregroundColor(.gray)
+            AwesomeText(
+                title: viewState.id,
+                style: .bodyMedium
+            )
         }
 
         private func buttonView() -> some View {

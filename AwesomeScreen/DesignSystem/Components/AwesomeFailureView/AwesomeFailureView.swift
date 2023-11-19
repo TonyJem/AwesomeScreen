@@ -36,7 +36,7 @@ struct AwesomeFailureView: View {
     private func subtitleText() -> some View {
         AwesomeText(
             title: viewState.subtitle,
-            style: .subtitle
+            style: .bodyMedium
         )
         .multilineTextAlignment(.center)
     }

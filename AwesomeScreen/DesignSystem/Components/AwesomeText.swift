@@ -27,13 +27,13 @@ public struct AwesomeText: View {
 public enum AwesomeTextStyle {
 
     case titleSmall
-    case subtitle
+    case bodyMedium
     case labelLarge
 
     fileprivate var font: UIFont {
         switch self {
         case .titleSmall: return .Branded.titleSmall
-        case .subtitle: return .Branded.bodyMedium
+        case .bodyMedium: return .Branded.bodyMedium
         case .labelLarge: return .Branded.labelLarge
         }
     }
@@ -44,14 +44,14 @@ public enum AwesomeTextStyle {
                 .labelLarge:
             return Color(.Branded.foregroundPrimary)
 
-        case .subtitle: return Color(.Branded.foregroundSecondary)
+        case .bodyMedium: return Color(.Branded.foregroundSecondary)
         }
     }
 
     fileprivate var lineHeight: CGFloat {
         switch self {
         case .titleSmall: return 24.0
-        case .subtitle: return 16.0
+        case .bodyMedium: return 16.0
         case .labelLarge: return 20.0
         }
     }
