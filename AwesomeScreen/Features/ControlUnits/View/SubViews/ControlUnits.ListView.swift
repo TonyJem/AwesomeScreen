@@ -1,5 +1,6 @@
 import SwiftUI
 
+// TODO: Try to remove tiem separators (minor glitches I see here)
 extension ControlUnits {
 
     struct ListView: View {
@@ -16,6 +17,7 @@ extension ControlUnits {
                 ForEach(viewState.listItemViewStates) { viewState in
                     ItemView(viewState: viewState)
                         .listRowBackground(Color.black)
+                        .listRowInsets(EdgeInsets())
                 }
 
             }

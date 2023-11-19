@@ -29,7 +29,7 @@ extension ControlUnits.ListView {
                 }
 
                 Button {
-                    print("🟢🟢 didTap chevron_right Button in Item")
+                    viewState.action()
                 } label: {
                     Image(uiImage: .awesomeImage(.chevronRight))
                 }
