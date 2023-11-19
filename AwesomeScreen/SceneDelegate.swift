@@ -6,6 +6,7 @@ import UIKit
 // TODO: Clean SwiftLint errors or redifine rules
 // TODO: We can look at design System and ring all needd colors and elements that are needed
 // TODO: Probably all emtyScreens we can bring into one an set all needed Viewstates for it
+// TODO: Remove all test images from the Assets
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
