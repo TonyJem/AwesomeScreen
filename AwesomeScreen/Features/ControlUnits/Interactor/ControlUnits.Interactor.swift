@@ -1,6 +1,6 @@
 import Foundation
 
-protocol ControlUnitsIteractor {
+protocol ControlUnitsInteractor {
 
     func getControlUnitsViewStates() -> [ControlUnits.ListView.ItemView.ViewState]
 
@@ -8,7 +8,7 @@ protocol ControlUnitsIteractor {
 
 extension ControlUnits {
 
-    final class Interactor: ControlUnitsIteractor {
+    final class Interactor: ControlUnitsInteractor {
 
         // MARK: - Public
 

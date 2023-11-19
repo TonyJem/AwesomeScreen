@@ -8,6 +8,12 @@ extension ControlUnits {
 
         @Published var viewState: ViewState = .loading
 
+        private let interactor: ControlUnitsInteractor
+
+        init(interactor: ControlUnitsInteractor) {
+            self.interactor = interactor
+        }
+
         // MARK: - Public
 
         func viewDidAppear() {
