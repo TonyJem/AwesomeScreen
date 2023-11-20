@@ -17,7 +17,10 @@ class SampleControlUnitsRepository: ControlUnitsRepositoryInterface {
     private struct Constants {
         static var fileUrl: URL {
             get throws {
-                guard let url = Bundle.module.url(forResource: "MockControlUnits", withExtension: "json") else {
+//                guard let url = Bundle.module.url(forResource: "MockControlUnits", withExtension: "json") else {
+//                    throw Failure.mockFileNotFound
+//                }
+                guard let url = Bundle.main.url(forResource: "MockControlUnits", withExtension: "json") else {
                     throw Failure.mockFileNotFound
                 }
                 return url

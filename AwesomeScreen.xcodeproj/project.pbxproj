@@ -51,10 +51,10 @@
 		3A251A4D2B0B00D2000F062A /* ControlUnitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A4C2B0B00D2000F062A /* ControlUnitService.swift */; };
 		3A251A4F2B0B00EA000F062A /* ControlUnitServiceRandomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A4E2B0B00EA000F062A /* ControlUnitServiceRandomizer.swift */; };
 		3A251A532B0B0145000F062A /* ControlUnit+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A522B0B0145000F062A /* ControlUnit+Equatable.swift */; };
-		3A251A552B0B015D000F062A /* ControlUnit+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A542B0B015D000F062A /* ControlUnit+Mock.swift */; };
-		3A251A572B0B0177000F062A /* ControlUnitServiceRandomizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A562B0B0177000F062A /* ControlUnitServiceRandomizerMock.swift */; };
-		3A251A592B0B0190000F062A /* ControlUnitsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A582B0B0190000F062A /* ControlUnitsRepositoryMock.swift */; };
-		3A251A5D2B0B01E5000F062A /* VehicleAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A5A2B0B01B7000F062A /* VehicleAPITests.swift */; };
+		3A251A5E2B0B02E2000F062A /* VehicleAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A5A2B0B01B7000F062A /* VehicleAPITests.swift */; };
+		3A251A5F2B0B03D5000F062A /* ControlUnitsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A582B0B0190000F062A /* ControlUnitsRepositoryMock.swift */; };
+		3A251A602B0B04A1000F062A /* ControlUnitServiceRandomizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A562B0B0177000F062A /* ControlUnitServiceRandomizerMock.swift */; };
+		3A251A612B0B04E2000F062A /* ControlUnit+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A542B0B015D000F062A /* ControlUnit+Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -564,7 +564,6 @@
 				3A2519C82B07D6D3000F062A /* ControlUnits.ViewController.swift in Sources */,
 				3A251A212B0940CF000F062A /* BadgeLabel.swift in Sources */,
 				3A2519DD2B07E88D000F062A /* ControlUnits.ContentView.swift in Sources */,
-				3A251A5D2B0B01E5000F062A /* VehicleAPITests.swift in Sources */,
 				3A2519E42B07EDC6000F062A /* ViewHostingController.swift in Sources */,
 				3A2519E12B07E963000F062A /* AwesomeEmptyView.swift in Sources */,
 				3A251A192B09035A000F062A /* AwesomeText.swift in Sources */,
@@ -576,10 +575,8 @@
 				3A2519E62B07F571000F062A /* AwesomeEmptyView.States.swift in Sources */,
 				3A2519F92B080FCF000F062A /* Colors.swift in Sources */,
 				3A251A102B08E517000F062A /* ControlUnits.ViewState.swift in Sources */,
-				3A251A552B0B015D000F062A /* ControlUnit+Mock.swift in Sources */,
 				3A2519C42B07D6D3000F062A /* AppDelegate.swift in Sources */,
 				3A251A152B08FD11000F062A /* AwesomeFailureView.Localized.swift in Sources */,
-				3A251A592B0B0190000F062A /* ControlUnitsRepositoryMock.swift in Sources */,
 				3A251A052B089431000F062A /* ViewController.swift in Sources */,
 				3A251A4F2B0B00EA000F062A /* ControlUnitServiceRandomizer.swift in Sources */,
 				3A251A432B0AFF71000F062A /* ControlUnitServiceFailure.swift in Sources */,
@@ -589,7 +586,6 @@
 				3A251A532B0B0145000F062A /* ControlUnit+Equatable.swift in Sources */,
 				3A251A132B08F1F6000F062A /* AwesomeFailureView.swift in Sources */,
 				3A251A252B0A6925000F062A /* ControlUnits.Interactor.swift in Sources */,
-				3A251A572B0B0177000F062A /* ControlUnitServiceRandomizerMock.swift in Sources */,
 				3A251A0B2B08E2EF000F062A /* ControlUnits.ListView.swift in Sources */,
 				3A251A002B088512000F062A /* Spacings.swift in Sources */,
 				3A251A092B08DFA8000F062A /* AwesomeLoadingView.swift in Sources */,
@@ -604,8 +600,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A251A5E2B0B02E2000F062A /* VehicleAPITests.swift in Sources */,
 				3A251A362B0A8EE1000F062A /* ControlUnits.Interactor.Tests.swift in Sources */,
+				3A251A602B0B04A1000F062A /* ControlUnitServiceRandomizerMock.swift in Sources */,
+				3A251A5F2B0B03D5000F062A /* ControlUnitsRepositoryMock.swift in Sources */,
 				3A251A2E2B0A8D97000F062A /* AwesomeScreenTests.swift in Sources */,
+				3A251A612B0B04E2000F062A /* ControlUnit+Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

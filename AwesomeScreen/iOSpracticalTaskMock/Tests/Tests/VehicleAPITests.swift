@@ -1,5 +1,6 @@
 import XCTest
-@testable import VehicleAPI
+@testable import AwesomeScreen
+//@testable import VehicleAPI
 
 /// Primitive test to ensure basic functionallity of the VehicleAPI
 final class VehicleAPITests: XCTestCase {
@@ -91,7 +92,8 @@ final class VehicleAPITests: XCTestCase {
         shouldLoadEmptyList: Bool = false,
         repositoryResult: [ControlUnit] = []
     ) {
-        repositoryMock.controlUnits_result = repositoryResult
+//        repositoryMock.controlUnits_result = repositoryResult
+        repositoryMock.controlUnitsResult = repositoryResult
         randomizerMock.shouldLoadSuccessfully = shouldLoadSuccessfully
         randomizerMock.shouldLoadEmptyList = shouldLoadEmptyList
     }

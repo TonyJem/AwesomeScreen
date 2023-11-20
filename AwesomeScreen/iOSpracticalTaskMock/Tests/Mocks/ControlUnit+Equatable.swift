@@ -1,4 +1,5 @@
-import VehicleAPI
+import Foundation
+//@testable import VehicleAPI
 
 extension ControlUnit: Equatable {
     public static func == (lhs: ControlUnit, rhs: ControlUnit) -> Bool {
