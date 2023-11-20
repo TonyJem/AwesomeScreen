@@ -1,0 +1,7 @@
+@testable import VehicleAPI
+
+class ControlUnitServiceRandomizerMock: ControlUnitServiceRandomizerInterface {
+    // MARK: - Declarations
+    var shouldLoadSuccessfully: Bool = true
+    var shouldLoadEmptyList: Bool = false
+}

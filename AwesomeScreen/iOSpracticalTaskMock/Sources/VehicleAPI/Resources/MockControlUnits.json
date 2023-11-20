@@ -1,0 +1,162 @@
+[
+    {
+        "id": "0",
+        "name": "Engine Control Unit",
+        "status": "ok",
+        "protocol": "OBD-II",
+        "serialNumber": "123456789",
+        "imageUrlString": "https://picsum.photos/id/0/300/200"
+    },
+    {
+        "id": "1",
+        "name": "Brake Control Module",
+        "status": "faulty",
+        "protocol": "CAN",
+        "serialNumber": "987654321",
+        "imageUrlString": "https://picsum.photos/id/1/300/200"
+    },
+    {
+        "id": "2",
+        "name": "Transmission Control Unit",
+        "status": "ok",
+        "protocol": "LIN",
+        "serialNumber": "246813579",
+        "imageUrlString": "https://picsum.photos/id/2/300/200"
+    },
+    {
+        "id": "3",
+        "name": "Tire Pressure Sensor",
+        "status": "ok",
+        "protocol": "FlexRay",
+        "serialNumber": "987123456",
+        "imageUrlString": "https://picsum.photos/id/3/300/200"
+    },
+    {
+        "id": "4",
+        "name": "Alternator Regulator",
+        "status": "faulty",
+        "protocol": "J1939",
+        "serialNumber": "321456789",
+        "imageUrlString": "https://picsum.photos/id/4/300/200"
+    },
+    {
+        "id": "5",
+        "name": "Radiator Fan Control Module",
+        "status": "ok",
+        "protocol": "MOST",
+        "serialNumber": "123987456",
+        "imageUrlString": "https://picsum.photos/id/5/300/200"
+    },
+    {
+        "id": "6",
+        "name": "Air Suspension Control Unit",
+        "status": "ok",
+        "protocol": null,
+        "serialNumber": "789654123",
+        "imageUrlString": "https://picsum.photos/id/6/300/200"
+    },
+    {
+        "id": "7",
+        "name": "Ignition Control Module",
+        "status": "faulty",
+        "protocol": "KWP2000",
+        "serialNumber": "654321789",
+        "imageUrlString": "https://picsum.photos/id/7/300/200"
+    },
+    {
+        "id": "8",
+        "name": "Electronic Power Steering Control Unit",
+        "status": "ok",
+        "protocol": "ISO 9141-2",
+        "serialNumber": "987321654",
+        "imageUrlString": "https://picsum.photos/id/8/300/200"
+    },
+    {
+        "id": "9",
+        "name": "Fuel Pump Control Module",
+        "status": "ok",
+        "protocol": "UDS",
+        "serialNumber": "456789321",
+        "imageUrlString": "https://picsum.photos/id/9/300/200"
+    },
+    {
+        "id": "10",
+        "name": "Exhaust Gas Recirculation Control Unit",
+        "status": "ok",
+        "protocol": "J1708",
+        "serialNumber": "123789456",
+        "imageUrlString": "https://picsum.photos/id/10/300/200"
+    },
+    {
+        "id": "11",
+        "name": "Mass Air Flow Sensor",
+        "status": "faulty",
+        "protocol": "J1587",
+        "serialNumber": "789456321",
+        "imageUrlString": "https://picsum.photos/id/11/300/200"
+    },
+    {
+        "id": "12",
+        "name": "Catalytic Converter Control Module",
+        "status": "ok",
+        "protocol": "UDS",
+        "serialNumber": "456321987",
+        "imageUrlString": "https://picsum.photos/id/12/300/200"
+    },
+    {
+        "id": "13",
+        "name": "Serpentine Belt Tensioner Control Unit",
+        "status": "ok",
+        "protocol": null,
+        "serialNumber": "987456321",
+        "imageUrlString": "https://picsum.photos/id/13/300/200"
+    },
+    {
+        "id": "14",
+        "name": "Throttle Body Control Module",
+        "status": "faulty",
+        "protocol": "OBD-II",
+        "serialNumber": "321987654",
+        "imageUrlString": "https://picsum.photos/id/14/300/200"
+    },
+    {
+        "id": "15",
+        "name": "Radiator Hose Pressure Sensor",
+        "status": "ok",
+        "protocol": "FlexRay",
+        "serialNumber": "987321456",
+        "imageUrlString": "https://picsum.photos/id/15/300/200"
+    },
+    {
+        "id": "16",
+        "name": "Wheel Hub Assembly Control Module",
+        "status": "ok",
+        "protocol": "CAN",
+        "serialNumber": "456987321",
+        "imageUrlString": "https://picsum.photos/id/16/300/200"
+    },
+    {
+        "id": "17",
+        "name": "Shock Absorber Control Unit",
+        "status": "faulty",
+        "protocol": "KWP2000",
+        "serialNumber": "987654123",
+        "imageUrlString": "https://picsum.photos/id/17/300/200"
+    },
+    {
+        "id": "18",
+        "name": "Fuel Injector Control Module",
+        "status": "ok",
+        "protocol": "ISO 9141-2",
+        "serialNumber": "321654987",
+        "imageUrlString": "https://picsum.photos/id/18/300/200"
+    },
+    {
+        "id": "19",
+        "name": "Wheel Bearing Control Unit",
+        "status": "ok",
+        "protocol": "J1939",
+        "serialNumber": "987123789",
+        "imageUrlString": "https://picsum.photos/id/19/300/200"
+    }
+]
