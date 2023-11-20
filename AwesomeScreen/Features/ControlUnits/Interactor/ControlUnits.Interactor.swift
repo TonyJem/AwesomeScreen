@@ -37,11 +37,51 @@ extension ControlUnits {
             switch result {
             case .success(let items):
                 print("🟣🟢🟣 Success")
-                print("🟣🟢🟣 items.count: \(items.count)")
+                print("🟢🟢🟢 items.count: \(items.count)")
+
+                guard !items.isEmpty else {
+                    debugPrint("🟣🟣🟣 Show Empty Screeen!")
+                    return
+                }
+
+                items.forEach { controlUnit in
+                    debugPrint("🟢 Control Unit name: \(controlUnit.name)")
+                }
             case .failure(let error):
-                print("🟣🟣🟣 Failure")
-                print("🟣🟣🟣 error: \(error)")
+                print("🔴 Failure")
+                print("🔴🔴🔴 Can't fetch items MOCK error: \(error)")
             }
+        }
+
+        private func createControlUnitsViewStates(from: units) -> [ControlUnits.ListView.ItemView.ViewState] {
+
+        }
+
+        private func createControlUnitViewState(
+            from controlUnit: ControlUnit
+        ) -> ControlUnits.ListView.ItemView.ViewState {
+
+            let badgeConfig: BadgeLabel.Configuration?
+
+            if controlUnit.status == "ok" {
+                badgeConfig = nil
+            } else {
+                if controlUnit.status == "faulty" {
+                    badgeConfig = .faulty
+                } else {
+                    badgeConfig = .notReachable
+                }
+            }
+
+            return ControlUnits.ListView.ItemView.ViewState(
+                id: controlUnit.id,
+                title: controlUnit.name,
+                image: .awesomeImage(.testImage00),
+                badge: badgeConfig,
+                action: {
+                    debugPrint("🟢 didTap on ControlUnit: \(controlUnit.name)")
+                }
+            )
         }
 
         private func createMockViewStates() -> [ControlUnits.ListView.ItemView.ViewState] {

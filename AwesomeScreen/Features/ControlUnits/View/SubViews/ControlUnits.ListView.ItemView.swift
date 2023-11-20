@@ -114,6 +114,7 @@ extension ControlUnits.ListView.ItemView {
         let badgeConfig: BadgeLabel.Configuration?
         let action: (() -> Void)
 
+        // TODO: Rename "badge" into "badgeConfig"
         init(
             id: String,
             title: String,
