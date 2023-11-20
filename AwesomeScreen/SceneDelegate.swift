@@ -26,7 +26,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController()
 
-        let interactor = ControlUnits.Interactor()
+        let controlUnitsService = ControlUnitService()
+
+        let interactor = ControlUnits.Interactor(controlUnitService: controlUnitsService)
 
         let presenter = ControlUnits.Presenter(interactor: interactor)
 

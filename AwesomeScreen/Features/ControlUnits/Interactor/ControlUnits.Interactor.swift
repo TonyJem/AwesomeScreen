@@ -10,9 +10,25 @@ extension ControlUnits {
 
     final class Interactor: ControlUnitsInteractor {
 
+        private let controlUnitService: ControlUnitServiceInterface
+
+        init(controlUnitService: ControlUnitServiceInterface) {
+            self.controlUnitService = controlUnitService
+        }
+
         // MARK: - Public
 
         func getControlUnitsViewStates() -> [ControlUnits.ListView.ItemView.ViewState] {
+
+            let controlUnitsResult = controlUnitService.controlUnits { result in
+                switch result {
+                case .success(_):
+                    print("🟢🟣🟢 Success")
+                case .failure(_):
+                    print("🟢🟣🟢 Failure")
+                }
+            }
+
             return createMockViewStates()
         }
 
