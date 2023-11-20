@@ -20,19 +20,29 @@ extension ControlUnits {
 
         func getControlUnitsViewStates() -> [ControlUnits.ListView.ItemView.ViewState] {
 
-            let controlUnitsResult = controlUnitService.controlUnits { result in
-                switch result {
-                case .success(_):
-                    print("🟢🟣🟢 Success")
-                case .failure(_):
-                    print("🟢🟣🟢 Failure")
-                }
-            }
+            getControlUnits()
 
             return createMockViewStates()
         }
 
         // MARK: - Private
+
+        private func getControlUnits() {
+            controlUnitService.controlUnits { [weak self] result in
+                self?.onDidUpdateControlUnits(result)
+            }
+        }
+
+        private func onDidUpdateControlUnits(_ result: Result<[ControlUnit], Error>) {
+            switch result {
+            case .success(let items):
+                print("🟣🟢🟣 Success")
+                print("🟣🟢🟣 items.count: \(items.count)")
+            case .failure(let error):
+                print("🟣🟣🟣 Failure")
+                print("🟣🟣🟣 error: \(error)")
+            }
+        }
 
         private func createMockViewStates() -> [ControlUnits.ListView.ItemView.ViewState] {
             let itemViewState00 = ControlUnits.ListView.ItemView.ViewState(

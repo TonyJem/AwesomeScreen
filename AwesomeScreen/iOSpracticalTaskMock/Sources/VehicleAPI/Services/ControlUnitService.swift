@@ -43,9 +43,13 @@ struct ControlUnitService: ControlUnitServiceInterface {
     }
 
     func controlUnits(completion: @escaping (_ result: Result<[ControlUnit], Error>) -> Void) {
+        debugPrint("🚀 Mocked fetch item process started...")
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
             let result: Result<[ControlUnit], Error>
-            defer { completion(result) }
+            defer {
+                debugPrint("🏁 Mocked fetch item process and we got some result:")
+                completion(result)
+            }
 
             guard randomizer.shouldLoadSuccessfully else {
                 result = .failure(Failure.unableToLoadControlUnits)
