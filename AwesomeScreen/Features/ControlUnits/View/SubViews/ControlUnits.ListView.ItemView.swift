@@ -114,6 +114,8 @@ extension ControlUnits.ListView.ItemView {
         let badgeConfig: BadgeLabel.Configuration?
         let action: (() -> Void)
 
+        // TODO: Rename "badge" into "badgeConfig"
+        // TODO: Change Logic bage should be not optional. Need to insert Ok status also. Notreachable on all other states evene for "".
         init(
             id: String,
             title: String,

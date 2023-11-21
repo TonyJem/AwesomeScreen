@@ -10,6 +10,8 @@ extension ControlUnits {
 
         private let interactor: ControlUnitsInteractor
 
+        private var itemViewStates: [ControlUnits.ListView.ItemView.ViewState]?
+
         init(interactor: ControlUnitsInteractor) {
             self.interactor = interactor
         }
@@ -18,17 +20,32 @@ extension ControlUnits {
 
         func viewDidAppear() {
             updateContent()
+            interactor.getControlUnits()
+        }
+
+        func onDidUpdateViewStates(with result: Result<[ControlUnits.ListView.ItemView.ViewState], Error>) {
+            switch result {
+            case .success(let viewStates):
+                itemViewStates = viewStates
+                updateContent()
+            case .failure:
+                showLoadingFailureControlUnits()
+            }
         }
 
         // MARK: - Private
 
-        // TODO: Here is temp implementation for testing reasons
-        // Need to add real logic
         private func updateContent() {
-//            showEmptyControlUnits()
-            showAvailableControlUnits()
-//            showLoadingControlUnits()
-//            showLoadingFailureControlUnits()
+            guard let viewStates = itemViewStates else {
+                showLoadingControlUnits()
+                return
+            }
+
+            if viewStates.isEmpty {
+                showEmptyControlUnits()
+            } else {
+                showAvailableControlUnits(with: viewStates)
+            }
         }
 
         private func showEmptyControlUnits() {
@@ -36,9 +53,8 @@ extension ControlUnits {
             viewState = .empty(emptyControlUnitsScreenViewState)
         }
 
-        private func showAvailableControlUnits() {
-            let listItemViewStates = interactor.getControlUnitsViewStates()
-            let listViewState = ControlUnits.ListView.ViewState(listItemViewStates: listItemViewStates)
+        private func showAvailableControlUnits(with viewStates: [ControlUnits.ListView.ItemView.ViewState]) {
+            let listViewState = ControlUnits.ListView.ViewState(listItemViewStates: viewStates)
             viewState = .unitsAvailable(listViewState)
         }
 
