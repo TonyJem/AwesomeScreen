@@ -44,7 +44,9 @@ struct ControlUnitService: ControlUnitServiceInterface {
 
     func controlUnits(completion: @escaping (_ result: Result<[ControlUnit], Error>) -> Void) {
         debugPrint("🚀 Mocked fetch item process didStart...")
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+        // TODO: Before finalizing project need to return to original 2 sec delay!
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             let result: Result<[ControlUnit], Error>
             defer {
                 debugPrint("🏁 Mocked fetch item process didFinish and we got some result.")
