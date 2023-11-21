@@ -20,6 +20,17 @@ extension ControlUnits {
             updateContent()
         }
 
+        func onDidUpdateViewStates(with result: Result<[ControlUnits.ListView.ItemView.ViewState], Error>) {
+            switch result {
+            case .success(let viewStates):
+                debugPrint("🟢🟢 In Presenter viewStates.count: \(viewStates.count)")
+
+            case .failure(let error):
+                debugPrint("🔴🔴 In Presenter failure with Error: \(error)")
+            }
+
+        }
+
         // MARK: - Private
 
         // TODO: Here is temp implementation for testing reasons

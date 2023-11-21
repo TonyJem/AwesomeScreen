@@ -32,6 +32,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let presenter = ControlUnits.Presenter(interactor: interactor)
 
+        interactor.onDidUpdateViewStates = { [weak presenter] result in
+            presenter?.onDidUpdateViewStates(with: result)
+        }
+
         let viewController = ControlUnits.ViewController(with: presenter)
 
         navigationController.viewControllers = [viewController]
