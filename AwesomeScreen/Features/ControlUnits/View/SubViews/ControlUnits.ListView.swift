@@ -5,6 +5,8 @@ extension ControlUnits {
 
     struct ListView: View {
 
+        // TODO: Neet to think and decide if we need this viewState,
+        // if there are only viewstates inside - let use them directly!
         var viewState: ControlUnits.ListView.ViewState
 
         init(viewState: ControlUnits.ListView.ViewState) {

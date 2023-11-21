@@ -43,11 +43,11 @@ struct ControlUnitService: ControlUnitServiceInterface {
     }
 
     func controlUnits(completion: @escaping (_ result: Result<[ControlUnit], Error>) -> Void) {
-        debugPrint("🚀 Mocked fetch item process started...")
+        debugPrint("🚀 Mocked fetch item process didStart...")
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
             let result: Result<[ControlUnit], Error>
             defer {
-                debugPrint("🏁 Mocked fetch item process and we got some result:")
+                debugPrint("🏁 Mocked fetch item process didFinish and we got some result.")
                 completion(result)
             }
 
