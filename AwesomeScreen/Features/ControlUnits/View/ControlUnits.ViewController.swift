@@ -44,7 +44,7 @@ extension ControlUnits {
 
             // TODO: Check UI and decide if we really need to accept useSafeArea,
             // May be is better jsut to center Empty view in the screen, or lift it up if useSafeArea=true
-            host.add(to: view)
+            host.add(to: view, useSafeArea: true)
         }
 
     }
