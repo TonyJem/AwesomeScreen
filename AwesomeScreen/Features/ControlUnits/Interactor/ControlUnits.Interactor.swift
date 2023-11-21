@@ -72,7 +72,7 @@ extension ControlUnits {
             return ControlUnits.ListView.ItemView.ViewState(
                 id: controlUnit.id,
                 title: controlUnit.name,
-                image: .awesomeImage(.testImage00),
+                imageUrlString: controlUnit.imageUrlString,
                 configuration: badgeConfiguration(for: controlUnit.status),
                 action: {
                     debugPrint("🟢 didTap on ControlUnit: \(controlUnit.name)")

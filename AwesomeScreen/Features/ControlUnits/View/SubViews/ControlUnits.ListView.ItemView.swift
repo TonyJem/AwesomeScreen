@@ -58,7 +58,7 @@ extension ControlUnits.ListView {
                         height: Constants.imageSize.height
                     )
 
-                AwesomeImageView(urlString: "https://picsum.photos/id/0/300/200")
+                AwesomeImageView(urlString: viewState.imageUrlString)
                     .aspectRatio(contentMode: .fit)
                     .frame(
                         width: Constants.imageSize.width,
@@ -111,20 +111,22 @@ extension ControlUnits.ListView.ItemView {
 
         let id: String
         let title: String
-        let image: UIImage
+        let imageUrlString: String
         let configuration: BadgeLabel.Configuration?
         let action: (() -> Void)
 
+        // TODO: Try remove this init, looks like is not needed
+        // Try to find more redundant inits
         init(
             id: String,
             title: String,
-            image: UIImage,
+            imageUrlString: String,
             configuration: BadgeLabel.Configuration?,
             action: @escaping (() -> Void)
         ) {
             self.id = id
             self.title = title
-            self.image = image
+            self.imageUrlString = imageUrlString
             self.configuration = configuration
             self.action = action
         }
