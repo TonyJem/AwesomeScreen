@@ -20,6 +20,7 @@ extension ControlUnits {
                 // Use image from Figma assets
                 Button {
                     print("🟢 didTap Status button!")
+                    viewState.filterAction()
                 } label: {
                     Label("Status", systemImage: "arrow.up.arrow.down")
                         .padding(EdgeInsets())
@@ -49,9 +50,14 @@ extension ControlUnits.ListView {
 
         let listItemViewStates: [ControlUnits.ListView.ItemView.ViewState]
 
-        init(listItemViewStates: [ControlUnits.ListView.ItemView.ViewState]
+        let filterAction: (() -> Void)
+
+        init(
+            listItemViewStates: [ControlUnits.ListView.ItemView.ViewState],
+            filterAction: @escaping (() -> Void)
         ) {
             self.listItemViewStates = listItemViewStates
+            self.filterAction = filterAction
         }
 
     }

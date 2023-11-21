@@ -10,6 +10,8 @@ extension ControlUnits {
 
         private let interactor: ControlUnitsInteractor
 
+        weak var view: UIViewController?
+
         private var itemViewStates: [ControlUnits.ListView.ItemView.ViewState]?
 
         init(interactor: ControlUnitsInteractor) {
@@ -60,7 +62,10 @@ extension ControlUnits {
         }
 
         private func showAvailableControlUnits(with viewStates: [ControlUnits.ListView.ItemView.ViewState]) {
-            let listViewState = ControlUnits.ListView.ViewState(listItemViewStates: viewStates)
+            let listViewState = ControlUnits.ListView.ViewState(
+                listItemViewStates: viewStates,
+                filterAction: didTapFilterAction
+            )
             viewState = .unitsAvailable(listViewState)
         }
 
@@ -73,6 +78,38 @@ extension ControlUnits {
                 with: updateItems
             )
             viewState = .loadingFailure(failureControlUnitsScreenViewState)
+        }
+
+        private func didTapFilterAction() {
+            createBottomMenu()
+
+        }
+
+        private func createBottomMenu() {
+            let alertController = UIAlertController(title: "Sort by", message: nil, preferredStyle: .actionSheet)
+
+            let sortByIdButton = UIAlertAction(title: "Sort by ID", style: .default, handler: { (action) -> Void in
+                print("🟢 didTap sort By Id Button")
+            })
+
+            let sortByNameButton = UIAlertAction(title: "Sort by Name", style: .default, handler: { (action) -> Void in
+                print("🟡 didTap sort By Name Button")
+            })
+
+            let sortByStatusButton = UIAlertAction(title: "Sort by Status", style: .default, handler: { (action) -> Void in
+                print("🟣 didTap sort By Status Button")
+            })
+
+            let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
+                print("Cancel button tapped")
+            })
+
+            alertController.addAction(sortByIdButton)
+            alertController.addAction(sortByNameButton)
+            alertController.addAction(sortByStatusButton)
+            alertController.addAction(cancelButton)
+
+            view?.present(alertController, animated: true, completion: nil)
         }
 
     }
