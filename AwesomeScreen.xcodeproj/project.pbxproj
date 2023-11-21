@@ -26,7 +26,6 @@
 		3A2519FB2B081B65000F062A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519FA2B081B65000F062A /* Fonts.swift */; };
 		3A2519FE2B087E31000F062A /* FontWithLineHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519FD2B087E31000F062A /* FontWithLineHeight.swift */; };
 		3A251A002B088512000F062A /* Spacings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2519FF2B088512000F062A /* Spacings.swift */; };
-		3A251A052B089431000F062A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A042B089431000F062A /* ViewController.swift */; };
 		3A251A092B08DFA8000F062A /* AwesomeLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A082B08DFA8000F062A /* AwesomeLoadingView.swift */; };
 		3A251A0B2B08E2EF000F062A /* ControlUnits.ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A0A2B08E2EF000F062A /* ControlUnits.ListView.swift */; };
 		3A251A0E2B08E48E000F062A /* ControlUnits.Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A0D2B08E48E000F062A /* ControlUnits.Presenter.swift */; };
@@ -89,7 +88,6 @@
 		3A2519FA2B081B65000F062A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3A2519FD2B087E31000F062A /* FontWithLineHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWithLineHeight.swift; sourceTree = "<group>"; };
 		3A2519FF2B088512000F062A /* Spacings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacings.swift; sourceTree = "<group>"; };
-		3A251A042B089431000F062A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A251A082B08DFA8000F062A /* AwesomeLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeLoadingView.swift; sourceTree = "<group>"; };
 		3A251A0A2B08E2EF000F062A /* ControlUnits.ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.ListView.swift; sourceTree = "<group>"; };
 		3A251A0D2B08E48E000F062A /* ControlUnits.Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Presenter.swift; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				3A2519D72B07E647000F062A /* ControlUnits */,
-				3A251A042B089431000F062A /* ViewController.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -577,7 +574,6 @@
 				3A251A102B08E517000F062A /* ControlUnits.ViewState.swift in Sources */,
 				3A2519C42B07D6D3000F062A /* AppDelegate.swift in Sources */,
 				3A251A152B08FD11000F062A /* AwesomeFailureView.Localized.swift in Sources */,
-				3A251A052B089431000F062A /* ViewController.swift in Sources */,
 				3A251A4F2B0B00EA000F062A /* ControlUnitServiceRandomizer.swift in Sources */,
 				3A251A432B0AFF71000F062A /* ControlUnitServiceFailure.swift in Sources */,
 				3A2519FE2B087E31000F062A /* FontWithLineHeight.swift in Sources */,
