@@ -26,33 +26,26 @@ extension ControlUnits {
         func onDidUpdateViewStates(with result: Result<[ControlUnits.ListView.ItemView.ViewState], Error>) {
             switch result {
             case .success(let viewStates):
-                debugPrint("🟢🟢 In Presenter viewStates.count: \(viewStates.count)")
                 itemViewStates = viewStates
                 updateContent()
-
-            case .failure(let error):
-                debugPrint("🔴🔴 In Presenter failure with Error: \(error)")
+            case .failure:
+                showLoadingFailureControlUnits()
             }
-
         }
 
         // MARK: - Private
 
-        // TODO: Here is temp implementation for testing reasons
-        // Need to add real logic
         private func updateContent() {
-
             guard let viewStates = itemViewStates else {
                 showLoadingControlUnits()
                 return
             }
 
-            showAvailableControlUnits(with: viewStates)
-
-//            showEmptyControlUnits()
-//            showAvailableControlUnits()
-//            showLoadingControlUnits()
-//            showLoadingFailureControlUnits()
+            if viewStates.isEmpty {
+                showEmptyControlUnits()
+            } else {
+                showAvailableControlUnits(with: viewStates)
+            }
         }
 
         private func showEmptyControlUnits() {
@@ -61,9 +54,6 @@ extension ControlUnits {
         }
 
         private func showAvailableControlUnits(with viewStates: [ControlUnits.ListView.ItemView.ViewState]) {
-//            let listItemViewStates = interactor.getControlUnitsViewStates()
-//            let listViewState = ControlUnits.ListView.ViewState(listItemViewStates: listItemViewStates)
-//            viewState = .unitsAvailable(listViewState)
             let listViewState = ControlUnits.ListView.ViewState(listItemViewStates: viewStates)
             viewState = .unitsAvailable(listViewState)
         }

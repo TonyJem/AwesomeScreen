@@ -43,7 +43,6 @@ extension ControlUnits {
             }
         }
 
-
         private func notifyPresenter(with result: Result<[ItemViewState], Error>) {
             guard let onDidUpdateViewStates = onDidUpdateViewStates else {
                 assertionFailure("Please assign onDidUpdateViewStates to enable Presenter to get notification")
