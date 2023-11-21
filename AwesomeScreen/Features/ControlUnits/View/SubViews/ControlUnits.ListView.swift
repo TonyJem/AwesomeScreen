@@ -14,18 +14,28 @@ extension ControlUnits {
         }
 
         var body: some View {
+            VStack(alignment: .leading) {
 
-            List {
-                ForEach(viewState.listItemViewStates) { viewState in
-                    ItemView(viewState: viewState)
-                        .listRowBackground(Color.black)
-                        .listRowInsets(EdgeInsets())
+            // TODO: Finalise this button UI and move into separate privateFunc
+                // Use image from Figma assets
+                Button {
+                    print("🟢 didTap Status button!")
+                } label: {
+                    Label("Status", systemImage: "arrow.up.arrow.down")
+                        .padding(EdgeInsets())
                 }
 
-            }
-            .listStyle(.plain)
-            .padding(0.0)
+                List {
+                    ForEach(viewState.listItemViewStates) { viewState in
+                        ItemView(viewState: viewState)
+                            .listRowBackground(Color.black)
+                            .listRowInsets(EdgeInsets())
+                    }
 
+                }
+                .listStyle(.plain)
+                .padding(0.0)
+            }
         }
 
     }
