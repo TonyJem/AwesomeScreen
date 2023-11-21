@@ -58,8 +58,7 @@ extension ControlUnits.ListView {
                         height: Constants.imageSize.height
                     )
 
-                Image(uiImage: viewState.image)
-                    .resizable()
+                AwesomeImageView(urlString: "https://picsum.photos/id/0/300/200")
                     .aspectRatio(contentMode: .fit)
                     .frame(
                         width: Constants.imageSize.width,

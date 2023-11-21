@@ -54,6 +54,8 @@
 		3A251A5F2B0B03D5000F062A /* ControlUnitsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A582B0B0190000F062A /* ControlUnitsRepositoryMock.swift */; };
 		3A251A602B0B04A1000F062A /* ControlUnitServiceRandomizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A562B0B0177000F062A /* ControlUnitServiceRandomizerMock.swift */; };
 		3A251A612B0B04E2000F062A /* ControlUnit+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A542B0B015D000F062A /* ControlUnit+Mock.swift */; };
+		3A251A662B0D2897000F062A /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A652B0D2897000F062A /* ImageLoaderService.swift */; };
+		3A251A682B0D291E000F062A /* AwesomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A672B0D291E000F062A /* AwesomeImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		3A251A562B0B0177000F062A /* ControlUnitServiceRandomizerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnitServiceRandomizerMock.swift; sourceTree = "<group>"; };
 		3A251A582B0B0190000F062A /* ControlUnitsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnitsRepositoryMock.swift; sourceTree = "<group>"; };
 		3A251A5A2B0B01B7000F062A /* VehicleAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAPITests.swift; sourceTree = "<group>"; };
+		3A251A652B0D2897000F062A /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
+		3A251A672B0D291E000F062A /* AwesomeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +228,7 @@
 				3A251A072B08DF6F000F062A /* AwesomeLoadingView */,
 				3A2519EC2B080985000F062A /* AwesomeEmptyView */,
 				3A251A182B09035A000F062A /* AwesomeText.swift */,
+				3A251A672B0D291E000F062A /* AwesomeImageView.swift */,
 				3A251A1A2B091144000F062A /* LinkButton.swift */,
 				3A251A1C2B0930CC000F062A /* LoadingIndicator.swift */,
 				3A251A202B0940CF000F062A /* BadgeLabel.swift */,
@@ -269,6 +274,7 @@
 		3A2519F42B080C7F000F062A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3A251A642B0D2884000F062A /* ImageLoader */,
 				3A2519F72B080CA2000F062A /* Foundation */,
 			);
 			path = Core;
@@ -425,6 +431,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		3A251A642B0D2884000F062A /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				3A251A652B0D2897000F062A /* ImageLoaderService.swift */,
+			);
+			path = ImageLoader;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -562,6 +576,7 @@
 				3A251A212B0940CF000F062A /* BadgeLabel.swift in Sources */,
 				3A2519DD2B07E88D000F062A /* ControlUnits.ContentView.swift in Sources */,
 				3A2519E42B07EDC6000F062A /* ViewHostingController.swift in Sources */,
+				3A251A682B0D291E000F062A /* AwesomeImageView.swift in Sources */,
 				3A2519E12B07E963000F062A /* AwesomeEmptyView.swift in Sources */,
 				3A251A192B09035A000F062A /* AwesomeText.swift in Sources */,
 				3A251A472B0AFFD1000F062A /* ControlUnitsRepositoryInterface.swift in Sources */,
@@ -581,6 +596,7 @@
 				3A251A1F2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift in Sources */,
 				3A251A532B0B0145000F062A /* ControlUnit+Equatable.swift in Sources */,
 				3A251A132B08F1F6000F062A /* AwesomeFailureView.swift in Sources */,
+				3A251A662B0D2897000F062A /* ImageLoaderService.swift in Sources */,
 				3A251A252B0A6925000F062A /* ControlUnits.Interactor.swift in Sources */,
 				3A251A0B2B08E2EF000F062A /* ControlUnits.ListView.swift in Sources */,
 				3A251A002B088512000F062A /* Spacings.swift in Sources */,
