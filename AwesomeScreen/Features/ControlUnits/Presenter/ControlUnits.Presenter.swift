@@ -63,8 +63,16 @@ extension ControlUnits {
         }
 
         private func showLoadingFailureControlUnits() {
-            let failureControlUnitsScreenViewState = AwesomeFailureView.State.failureControlUnits.createViewState()
+            let failureControlUnitsScreenViewState = AwesomeFailureView.State.failureControlUnits.createViewState(
+                with: updateItems
+            )
             viewState = .loadingFailure(failureControlUnitsScreenViewState)
+        }
+
+        private func updateItems() {
+            itemViewStates = nil
+            updateContent()
+            interactor.getControlUnits()
         }
 
     }
