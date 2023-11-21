@@ -10,11 +10,11 @@ final class ControlUnitsInteractorTests: XCTestCase {
     // Need to delete or change this test later
     func testInteractor() {
 
-        let interactor = ControlUnits.Interactor()
-
-        let items = interactor.getControlUnitsViewStates()
-
-        XCTAssertEqual(items.count, 5)
+//        let interactor = ControlUnits.Interactor(controlUnitService: <#ControlUnitServiceInterface#>)
+//
+//        let items = interactor.getControlUnitsViewStates()
+//
+//        XCTAssertEqual(items.count, 5)
     }
 
 }

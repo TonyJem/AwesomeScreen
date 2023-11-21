@@ -9,6 +9,7 @@ import UIKit
 // TODO: Remove all test images from the Assets
 // TODO: Go across the whole code base and put Marks in consistent way
 // TODO: Check all clases in project and decide what clases should be markd as "final"
+// TODO: Review logic in presenter and interacator and all viewstates to presenter
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

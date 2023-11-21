@@ -1,6 +1,6 @@
 import XCTest
 @testable import AwesomeScreen
-//@testable import VehicleAPI
+// @testable import VehicleAPI
 
 /// Primitive test to ensure basic functionallity of the VehicleAPI
 final class VehicleAPITests: XCTestCase {

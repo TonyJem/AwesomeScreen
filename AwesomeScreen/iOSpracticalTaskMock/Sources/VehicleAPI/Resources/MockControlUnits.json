@@ -82,7 +82,7 @@
     {
         "id": "10",
         "name": "Exhaust Gas Recirculation Control Unit",
-        "status": "ok",
+        "status": "",
         "protocol": "J1708",
         "serialNumber": "123789456",
         "imageUrlString": "https://picsum.photos/id/10/300/200"
@@ -122,7 +122,7 @@
     {
         "id": "15",
         "name": "Radiator Hose Pressure Sensor",
-        "status": "ok",
+        "status": "",
         "protocol": "FlexRay",
         "serialNumber": "987321456",
         "imageUrlString": "https://picsum.photos/id/15/300/200"

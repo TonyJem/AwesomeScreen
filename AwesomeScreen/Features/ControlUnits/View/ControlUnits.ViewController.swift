@@ -37,6 +37,15 @@ extension ControlUnits {
             // TODO: Move plain text to screen viewState and also use localized
             title = "Control Units"
 
+            let rightBarButton = UIBarButtonItem(
+                image: UIImage(systemName: "arrow.clockwise.icloud"),
+                style: .plain,
+                target: self,
+                action: #selector(didTapRefreshButton)
+            )
+            rightBarButton.tintColor = .Branded.foregroundHighlight
+            navigationItem.rightBarButtonItem = rightBarButton
+
             // TODO: Think we have to set backgound color here, instead of settgin it in Host
 
             let contentView = ControlUnits.ContentView(presenter: presenter)
@@ -44,7 +53,12 @@ extension ControlUnits {
 
             // TODO: Check UI and decide if we really need to accept useSafeArea,
             // May be is better jsut to center Empty view in the screen, or lift it up if useSafeArea=true
-            host.add(to: view)
+            host.add(to: view, useSafeArea: true)
+        }
+
+        @objc private func didTapRefreshButton() {
+            debugPrint("🟢 addTapped")
+            presenter.updateItems()
         }
 
     }

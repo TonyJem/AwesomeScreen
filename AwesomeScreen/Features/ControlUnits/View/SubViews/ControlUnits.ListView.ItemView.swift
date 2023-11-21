@@ -31,7 +31,7 @@ extension ControlUnits.ListView {
                     Spacer()
                     HStack(spacing: .zero) {
                         VStack(alignment: .leading, spacing: .spacing2XSmall) {
-                            if let badgeConfig = viewState.badgeConfig {
+                            if let badgeConfig = viewState.configuration {
                                 BadgeLabel(badgeConfig)
                                     .padding(.top, .spacing3XSmall)
                                 titleView(lineLimit: 1)
@@ -104,6 +104,8 @@ extension ControlUnits.ListView {
 
 }
 
+// TODO: Think if might be relevant to remove ItemView from ListView hierarchy
+// just to avoid long type and redundant naming, a ?
 extension ControlUnits.ListView.ItemView {
 
     struct ViewState: Identifiable {
@@ -111,22 +113,20 @@ extension ControlUnits.ListView.ItemView {
         let id: String
         let title: String
         let image: UIImage
-        let badgeConfig: BadgeLabel.Configuration?
+        let configuration: BadgeLabel.Configuration?
         let action: (() -> Void)
 
-        // TODO: Rename "badge" into "badgeConfig"
-        // TODO: Change Logic bage should be not optional. Need to insert Ok status also. Notreachable on all other states evene for "".
         init(
             id: String,
             title: String,
             image: UIImage,
-            badge: BadgeLabel.Configuration?,
+            configuration: BadgeLabel.Configuration?,
             action: @escaping (() -> Void)
         ) {
             self.id = id
             self.title = title
             self.image = image
-            self.badgeConfig = badge
+            self.configuration = configuration
             self.action = action
         }
 

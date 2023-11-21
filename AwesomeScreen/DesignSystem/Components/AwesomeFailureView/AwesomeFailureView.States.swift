@@ -12,7 +12,7 @@ extension AwesomeFailureView {
 
 extension AwesomeFailureView.State {
 
-    func createViewState() -> AwesomeFailureView.ViewState {
+    func createViewState(with action: @escaping (() -> Void)) -> AwesomeFailureView.ViewState {
         var title: String
         var subtitle: String
         var primaryButtonTitle: String
@@ -24,9 +24,7 @@ extension AwesomeFailureView.State {
             subtitle = L10n.AwesomeFailureView.ControlUnits.subtitle
             primaryButtonTitle = L10n.AwesomeFailureView.ControlUnits.primaryButtonTitle
             primaryButtonAction = {
-                // Real action will be implemented later
-                // For now we just need to know if this button is tapped
-                print("🟢 didTap Action Button in AwesomeFailureView")
+                action()
             }
         }
 

@@ -33,6 +33,12 @@ extension ControlUnits {
             }
         }
 
+        func updateItems() {
+            itemViewStates = nil
+            updateContent()
+            interactor.getControlUnits()
+        }
+
         // MARK: - Private
 
         private func updateContent() {
@@ -63,7 +69,9 @@ extension ControlUnits {
         }
 
         private func showLoadingFailureControlUnits() {
-            let failureControlUnitsScreenViewState = AwesomeFailureView.State.failureControlUnits.createViewState()
+            let failureControlUnitsScreenViewState = AwesomeFailureView.State.failureControlUnits.createViewState(
+                with: updateItems
+            )
             viewState = .loadingFailure(failureControlUnitsScreenViewState)
         }
 
