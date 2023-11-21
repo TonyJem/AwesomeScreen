@@ -37,12 +37,14 @@ extension ControlUnits {
             // TODO: Move plain text to screen viewState and also use localized
             title = "Control Units"
 
-            navigationItem.rightBarButtonItem = UIBarButtonItem(
+            let rightBarButton = UIBarButtonItem(
                 image: UIImage(systemName: "arrow.clockwise.icloud"),
                 style: .plain,
                 target: self,
                 action: #selector(didTapRefreshButton)
             )
+            rightBarButton.tintColor = .Branded.foregroundHighlight
+            navigationItem.rightBarButtonItem = rightBarButton
 
             // TODO: Think we have to set backgound color here, instead of settgin it in Host
 
