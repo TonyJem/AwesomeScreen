@@ -53,8 +53,9 @@ extension ControlUnits {
             }
         }
 
-        private func createControlUnitsViewStates(from: units) -> [ControlUnits.ListView.ItemView.ViewState] {
-
+        private func createControlUnitsViewStates(from units: [ControlUnit]) -> [ControlUnits.ListView.ItemView.ViewState] {
+            guard !units.isEmpty else { return [] }
+            return units.map { createControlUnitViewState(from: $0) }
         }
 
         private func createControlUnitViewState(
