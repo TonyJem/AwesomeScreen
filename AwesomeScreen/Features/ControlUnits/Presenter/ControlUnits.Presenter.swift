@@ -10,6 +10,8 @@ extension ControlUnits {
 
         private let interactor: ControlUnitsInteractor
 
+        private var itemViewStates: [ControlUnits.ListView.ItemView.ViewState]?
+
         init(interactor: ControlUnitsInteractor) {
             self.interactor = interactor
         }
@@ -18,12 +20,15 @@ extension ControlUnits {
 
         func viewDidAppear() {
             updateContent()
+            interactor.getControlUnits()
         }
 
         func onDidUpdateViewStates(with result: Result<[ControlUnits.ListView.ItemView.ViewState], Error>) {
             switch result {
             case .success(let viewStates):
                 debugPrint("🟢🟢 In Presenter viewStates.count: \(viewStates.count)")
+                itemViewStates = viewStates
+                updateContent()
 
             case .failure(let error):
                 debugPrint("🔴🔴 In Presenter failure with Error: \(error)")
@@ -36,8 +41,16 @@ extension ControlUnits {
         // TODO: Here is temp implementation for testing reasons
         // Need to add real logic
         private func updateContent() {
+
+            guard let viewStates = itemViewStates else {
+                showLoadingControlUnits()
+                return
+            }
+
+            showAvailableControlUnits(with: viewStates)
+
 //            showEmptyControlUnits()
-            showAvailableControlUnits()
+//            showAvailableControlUnits()
 //            showLoadingControlUnits()
 //            showLoadingFailureControlUnits()
         }
@@ -47,9 +60,11 @@ extension ControlUnits {
             viewState = .empty(emptyControlUnitsScreenViewState)
         }
 
-        private func showAvailableControlUnits() {
-            let listItemViewStates = interactor.getControlUnitsViewStates()
-            let listViewState = ControlUnits.ListView.ViewState(listItemViewStates: listItemViewStates)
+        private func showAvailableControlUnits(with viewStates: [ControlUnits.ListView.ItemView.ViewState]) {
+//            let listItemViewStates = interactor.getControlUnitsViewStates()
+//            let listViewState = ControlUnits.ListView.ViewState(listItemViewStates: listItemViewStates)
+//            viewState = .unitsAvailable(listViewState)
+            let listViewState = ControlUnits.ListView.ViewState(listItemViewStates: viewStates)
             viewState = .unitsAvailable(listViewState)
         }
 

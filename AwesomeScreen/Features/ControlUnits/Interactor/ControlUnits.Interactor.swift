@@ -10,6 +10,8 @@ protocol ControlUnitsInteractor {
 
     func getControlUnitsViewStates() -> [ControlUnits.ListView.ItemView.ViewState]
 
+    func getControlUnits()
+
 }
 
 extension ControlUnits {
@@ -35,6 +37,13 @@ extension ControlUnits {
             return createMockViewStates()
         }
 
+        func getControlUnits() {
+            controlUnitService.controlUnits { [weak self] result in
+                self?.onDidUpdateControlUnits(result)
+            }
+        }
+
+
         private func notifyPresenter(with result: Result<[ItemViewState], Error>) {
             guard let onDidUpdateViewStates = onDidUpdateViewStates else {
                 assertionFailure("Please assign onDidUpdateViewStates to enable Presenter to get notification")
@@ -48,12 +57,6 @@ extension ControlUnits {
         }
 
         // MARK: - Private
-
-        private func getControlUnits() {
-            controlUnitService.controlUnits { [weak self] result in
-                self?.onDidUpdateControlUnits(result)
-            }
-        }
 
         private func onDidUpdateControlUnits(_ result: Result<[ControlUnit], Error>) {
             switch result {
