@@ -104,6 +104,8 @@ extension ControlUnits.ListView {
 
 }
 
+// TODO: Think if might be relevant to remove ItemView from ListView hierarchy
+// just to avoid long type and redundant naming, a ?
 extension ControlUnits.ListView.ItemView {
 
     struct ViewState: Identifiable {
