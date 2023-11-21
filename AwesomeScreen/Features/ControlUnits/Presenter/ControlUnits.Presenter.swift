@@ -33,6 +33,12 @@ extension ControlUnits {
             }
         }
 
+        func updateItems() {
+            itemViewStates = nil
+            updateContent()
+            interactor.getControlUnits()
+        }
+
         // MARK: - Private
 
         private func updateContent() {
@@ -67,12 +73,6 @@ extension ControlUnits {
                 with: updateItems
             )
             viewState = .loadingFailure(failureControlUnitsScreenViewState)
-        }
-
-        private func updateItems() {
-            itemViewStates = nil
-            updateContent()
-            interactor.getControlUnits()
         }
 
     }
