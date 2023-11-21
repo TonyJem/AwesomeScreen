@@ -31,7 +31,7 @@ extension ControlUnits.ListView {
                     Spacer()
                     HStack(spacing: .zero) {
                         VStack(alignment: .leading, spacing: .spacing2XSmall) {
-                            if let badgeConfig = viewState.badgeConfig {
+                            if let badgeConfig = viewState.configuration {
                                 BadgeLabel(badgeConfig)
                                     .padding(.top, .spacing3XSmall)
                                 titleView(lineLimit: 1)
@@ -111,7 +111,7 @@ extension ControlUnits.ListView.ItemView {
         let id: String
         let title: String
         let image: UIImage
-        let badgeConfig: BadgeLabel.Configuration?
+        let configuration: BadgeLabel.Configuration?
         let action: (() -> Void)
 
         // TODO: Rename "badge" into "badgeConfig"
@@ -120,13 +120,13 @@ extension ControlUnits.ListView.ItemView {
             id: String,
             title: String,
             image: UIImage,
-            badge: BadgeLabel.Configuration?,
+            configuration: BadgeLabel.Configuration?,
             action: @escaping (() -> Void)
         ) {
             self.id = id
             self.title = title
             self.image = image
-            self.badgeConfig = badge
+            self.configuration = configuration
             self.action = action
         }
 

@@ -52,7 +52,7 @@ extension ControlUnits {
             switch result {
             case .success(let newControlUnits):
                 controlUnits = newControlUnits
-                let viewStates = createControlUnitsViewStates(from: controlUnits)
+                let viewStates = createViewStates(from: controlUnits)
                 notifyPresenter(with: .success(viewStates))
 
             case .failure(let error):
@@ -60,41 +60,33 @@ extension ControlUnits {
             }
         }
 
-        private func createControlUnitsViewStates(
+        private func createViewStates(
             from units: [ControlUnit]
         ) -> [ControlUnits.ListView.ItemView.ViewState] {
+
             guard !units.isEmpty else { return [] }
-            return units.map { createControlUnitViewState(from: $0) }
+            return units.map { transform(from: $0) }
         }
 
-        // TODO: Refactor badge Logic
-        // It should not be optional
-        // add "ok" state and look how to set all possible options in properway
-        private func createControlUnitViewState(
-            from controlUnit: ControlUnit
-        ) -> ControlUnits.ListView.ItemView.ViewState {
-
-            let badgeConfig: BadgeLabel.Configuration?
-
-            if controlUnit.status == "ok" {
-                badgeConfig = nil
-            } else {
-                if controlUnit.status == "faulty" {
-                    badgeConfig = .faulty
-                } else {
-                    badgeConfig = .notReachable
-                }
-            }
-
+        private func transform(from controlUnit: ControlUnit) -> ControlUnits.ListView.ItemView.ViewState {
             return ControlUnits.ListView.ItemView.ViewState(
                 id: controlUnit.id,
                 title: controlUnit.name,
                 image: .awesomeImage(.testImage00),
-                badge: badgeConfig,
+                configuration: badgeConfiguration(for: controlUnit.status),
                 action: {
                     debugPrint("🟢 didTap on ControlUnit: \(controlUnit.name)")
                 }
             )
+        }
+
+        private func badgeConfiguration(for status: String) -> BadgeLabel.Configuration? {
+            guard status != "ok" else { return nil } // if status is "ok" - we do not need to create the badge
+            if status == "faulty" {
+                return .faulty
+            } else {
+                return .notReachable
+            }
         }
 
     }
