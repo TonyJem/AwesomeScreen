@@ -1,16 +1,10 @@
 disabled_rules: # rule identifiers to exclude from running
   - todo
-  - colon
-  - comma
-  - control_statement
-  - identifier_name #rule for checking variable conditions (Upper case , lower case , underscore )
-  - force_cast
-  - shorthand_operator
+  - nesting
 
 cyclomatic_complexity:
   warning: 25 # two nested ifs are acceptable
   error: 50   # six nested ifs shows warning, 6 causes compile error
-
 
 opt_in_rules: # some rules are only opt-in
   # - empty_count
