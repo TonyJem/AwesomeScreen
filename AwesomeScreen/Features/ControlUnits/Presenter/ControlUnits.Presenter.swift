@@ -61,12 +61,15 @@ extension ControlUnits {
             viewState = .empty(emptyControlUnitsScreenViewState)
         }
 
+        // TODO: move titles to localizable
         private func showAvailableControlUnits(with viewStates: [ControlUnits.ListView.ItemView.ViewState]) {
-            let listViewState = ControlUnits.ListView.ViewState(
+            let controlUnitsViewState = ControlUnits.ListView.ViewState(
                 listItemViewStates: viewStates,
-                filterAction: didTapSortButton
+                sortButtonTitle: "Title",
+                sortButtonImage: .awesomeImage(.sortOutline),
+                sortButtonAction: didTapSortButton
             )
-            viewState = .unitsAvailable(listViewState)
+            viewState = .unitsAvailable(controlUnitsViewState)
         }
 
         private func showLoadingControlUnits() {

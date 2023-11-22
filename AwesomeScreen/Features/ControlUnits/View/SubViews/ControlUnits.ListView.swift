@@ -5,8 +5,6 @@ extension ControlUnits {
 
     struct ListView: View {
 
-        // TODO: Neet to think and decide if we need this viewState,
-        // if there are only viewstates inside - let use them directly!
         var viewState: ControlUnits.ListView.ViewState
 
         init(viewState: ControlUnits.ListView.ViewState) {
@@ -19,7 +17,7 @@ extension ControlUnits {
                 .padding(.leading, .spacingMedium)
 
                 List {
-                    ForEach(viewState.listItemViewStates) { viewState in
+                    ForEach(viewState.controlUnitsViewStates) { viewState in
                         ItemView(viewState: viewState)
                             .listRowBackground(Color.black)
                             .listRowInsets(EdgeInsets())
@@ -31,14 +29,11 @@ extension ControlUnits {
             }
         }
 
-        // TODO: move title and action to viewstate
         private func sortButton() -> some View {
             SmallButton(
-                title: "Status",
-                image: .awesomeImage(.sortOutline),
-                action: {
-                    debugPrint("🟢 didTap Sort button!")
-                }
+                title: viewState.sortButtonTitle,
+                image: viewState.sortButtonImage,
+                action: viewState.sortButtonAction
             )
         }
 
@@ -51,16 +46,21 @@ extension ControlUnits.ListView {
     // TODO: Perhaps is needed to make ViewState: Equatable <- we'll see when be setting SwiftUI bindings
     struct ViewState {
 
-        let listItemViewStates: [ControlUnits.ListView.ItemView.ViewState]
-
-        let filterAction: (() -> Void)
+        let controlUnitsViewStates: [ControlUnits.ListView.ItemView.ViewState]
+        let sortButtonTitle: String
+        let sortButtonImage: UIImage
+        let sortButtonAction: (() -> Void)
 
         init(
             listItemViewStates: [ControlUnits.ListView.ItemView.ViewState],
-            filterAction: @escaping (() -> Void)
+            sortButtonTitle: String,
+            sortButtonImage: UIImage,
+            sortButtonAction: @escaping (() -> Void)
         ) {
-            self.listItemViewStates = listItemViewStates
-            self.filterAction = filterAction
+            self.controlUnitsViewStates = listItemViewStates
+            self.sortButtonTitle = sortButtonTitle
+            self.sortButtonImage = sortButtonImage
+            self.sortButtonAction = sortButtonAction
         }
 
     }
