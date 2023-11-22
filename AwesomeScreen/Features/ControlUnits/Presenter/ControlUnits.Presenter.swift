@@ -64,7 +64,7 @@ extension ControlUnits {
         private func showAvailableControlUnits(with viewStates: [ControlUnits.ListView.ItemView.ViewState]) {
             let listViewState = ControlUnits.ListView.ViewState(
                 listItemViewStates: viewStates,
-                filterAction: didTapFilterAction
+                filterAction: didTapSortButton
             )
             viewState = .unitsAvailable(listViewState)
         }
@@ -80,9 +80,8 @@ extension ControlUnits {
             viewState = .loadingFailure(failureControlUnitsScreenViewState)
         }
 
-        private func didTapFilterAction() {
+        private func didTapSortButton() {
             createBottomMenu()
-
         }
 
         private func createBottomMenu() {
@@ -106,13 +105,20 @@ extension ControlUnits {
                 }
             )
 
-            let sortByStatusButton = UIAlertAction(title: "Sort by Status", style: .default, handler: { (action) -> Void in
-                print("🟣 didTap sort By Status Button")
-            })
+            let sortByStatusButton = UIAlertAction(
+                title: "Sort by Status",
+                style: .default,
+                handler: { _ in
+                    print("🟣 didTap sort By Status Button")
+                    print("🟣🟣 Sort by Status is not implemented yet")
+                })
 
-            let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
-                print("Cancel button tapped")
-            })
+            let cancelButton = UIAlertAction(
+                title: "Cancel",
+                style: .cancel,
+                handler: { _ in
+                    print("Cancel button tapped")
+                })
 
             alertController.addAction(sortByIdButton)
             alertController.addAction(sortByNameButton)

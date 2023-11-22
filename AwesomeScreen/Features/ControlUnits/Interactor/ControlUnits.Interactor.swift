@@ -53,7 +53,10 @@ extension ControlUnits {
             guard !controlUnits.isEmpty else { return }
 
             controlUnits = controlUnits.sorted {
-                $0.id < $1.id
+                guard $0.id != $1.id else {
+                    return $0.name < $1.name
+                }
+                return $0.id < $1.id
             }
 
             let viewStates = createViewStates(from: controlUnits)
@@ -64,7 +67,10 @@ extension ControlUnits {
             guard !controlUnits.isEmpty else { return }
 
             controlUnits = controlUnits.sorted {
-                $0.name < $1.name
+                guard $0.name != $1.name else {
+                    return $0.id < $1.id
+                }
+                return $0.name < $1.name
             }
 
             let viewStates = createViewStates(from: controlUnits)
