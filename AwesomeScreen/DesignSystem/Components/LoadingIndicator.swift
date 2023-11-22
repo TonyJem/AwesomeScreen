@@ -3,6 +3,8 @@ import SwiftUI
 public struct LoadingIndicator: View {
 
     @State private var isLoading = false
+    @State private var degree = 270
+    @State private var spinnerLength = 0.6
 
     private let config: Configuration
 
@@ -20,7 +22,7 @@ public struct LoadingIndicator: View {
 
     public var body: some View {
         Circle()
-            .trim(from: 0, to: 0.60)
+            .trim(from: 0, to: spinnerLength)
             .stroke(
                 config.strokeColor,
                 style: StrokeStyle(
@@ -29,20 +31,25 @@ public struct LoadingIndicator: View {
                     lineJoin: .round
                 )
             )
+            .animation(
+                Animation
+                    .easeIn(duration: 1.125)
+                    .repeatForever(autoreverses: true))
             .frame(
                 width: config.width,
                 height: config.height
             )
             .rotationEffect(
-                Angle(degrees: isLoading ? 360 : 0)
+                Angle(degrees: Double(degree))
             )
             .animation(
                 Animation
-                    .timingCurve(0.5, 0.25, 0.35, 0.5, duration: 0.65)
-                    .repeatForever(autoreverses: false), value: isLoading
-            )
+                    .linear(duration: 0.75)
+                    .repeatForever(autoreverses: false))
             .onAppear {
                 self.isLoading = true
+                degree = 270 + 360
+                spinnerLength = 0
             }
     }
 
