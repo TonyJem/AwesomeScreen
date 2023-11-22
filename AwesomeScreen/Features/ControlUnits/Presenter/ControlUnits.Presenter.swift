@@ -88,13 +88,23 @@ extension ControlUnits {
         private func createBottomMenu() {
             let alertController = UIAlertController(title: "Sort by", message: nil, preferredStyle: .actionSheet)
 
-            let sortByIdButton = UIAlertAction(title: "Sort by ID", style: .default, handler: { (action) -> Void in
-                print("🟢 didTap sort By Id Button")
-            })
+            let sortByIdButton = UIAlertAction(
+                title: "Sort by ID",
+                style: .default,
+                handler: { [weak self] _ in
+                    print("🟢 didTap sort By Id Button")
+                    self?.interactor.sortControlUnits(by: .byId)
+                }
+            )
 
-            let sortByNameButton = UIAlertAction(title: "Sort by Name", style: .default, handler: { (action) -> Void in
-                print("🟡 didTap sort By Name Button")
-            })
+            let sortByNameButton = UIAlertAction(
+                title: "Sort by Name",
+                style: .default,
+                handler: { [weak self] _ in
+                    print("🟡 didTap sort By Name Button")
+                    self?.interactor.sortControlUnits(by: .byName)
+                }
+            )
 
             let sortByStatusButton = UIAlertAction(title: "Sort by Status", style: .default, handler: { (action) -> Void in
                 print("🟣 didTap sort By Status Button")
