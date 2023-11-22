@@ -35,6 +35,7 @@ enum AwesomeImage: String, CaseIterable {
 
     case ecu
     case chevronRight
+    case sortOutline = "sort_outline"
 
     case testImage00
     case testImage01

@@ -14,17 +14,9 @@ extension ControlUnits {
         }
 
         var body: some View {
-            VStack(alignment: .leading) {
-
-            // TODO: Finalise this button UI and move into separate privateFunc
-                // Use image from Figma assets
-                Button {
-                    print("🟢 didTap Status button!")
-                    viewState.filterAction()
-                } label: {
-                    Label("Status", systemImage: "arrow.up.arrow.down")
-                        .padding(EdgeInsets())
-                }
+            VStack(alignment: .leading, spacing: 0) {
+                sortButton()
+                .padding(.leading, .spacingMedium)
 
                 List {
                     ForEach(viewState.listItemViewStates) { viewState in
@@ -37,6 +29,17 @@ extension ControlUnits {
                 .listStyle(.plain)
                 .padding(0.0)
             }
+        }
+
+        // TODO: move title and action to viewstate
+        private func sortButton() -> some View {
+            SmallButton(
+                title: "Status",
+                image: .awesomeImage(.sortOutline),
+                action: {
+                    debugPrint("🟢 didTap Sort button!")
+                }
+            )
         }
 
     }

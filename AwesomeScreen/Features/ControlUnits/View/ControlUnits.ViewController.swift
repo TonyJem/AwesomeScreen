@@ -2,6 +2,7 @@ import UIKit
 
 extension ControlUnits {
 
+    // TODO: Create ControlUnitsView protocol
     final class ViewController: UIViewController {
 
         private let presenter: Presenter
@@ -57,7 +58,7 @@ extension ControlUnits {
         }
 
         @objc private func didTapRefreshButton() {
-            debugPrint("🟢 addTapped")
+            debugPrint("🟢 didTapRefreshButton")
             presenter.updateItems()
         }
 
