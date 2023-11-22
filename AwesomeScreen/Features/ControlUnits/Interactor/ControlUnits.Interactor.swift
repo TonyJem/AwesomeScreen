@@ -10,6 +10,8 @@ protocol ControlUnitsInteractor {
 
     func getControlUnits()
 
+    func sortControlUnits(by sort: ControlUnits.SortOption)
+
 }
 
 extension ControlUnits {
@@ -34,19 +36,40 @@ extension ControlUnits {
             }
         }
 
-        private func notifyPresenter(with result: Result<[ItemViewState], Error>) {
-            guard let onDidUpdateViewStates = onDidUpdateViewStates else {
-                assertionFailure("Please assign onDidUpdateViewStates to enable Presenter to get notification")
-                return
+        func sortControlUnits(by sort: ControlUnits.SortOption) {
+            switch sort {
+            case .byId:
+                sortById()
+            case .byName:
+                sortByName()
+            case .byStatus:
+                debugPrint("🔴 Not implemented yet")
             }
-
-            DispatchQueue.main.async {
-                onDidUpdateViewStates(result)
-            }
-
         }
 
         // MARK: - Private
+
+        private func sortById() {
+            guard !controlUnits.isEmpty else { return }
+
+            controlUnits = controlUnits.sorted {
+                $0.id < $1.id
+            }
+
+            let viewStates = createViewStates(from: controlUnits)
+            notifyPresenter(with: .success(viewStates))
+        }
+
+        private func sortByName() {
+            guard !controlUnits.isEmpty else { return }
+
+            controlUnits = controlUnits.sorted {
+                $0.name < $1.name
+            }
+
+            let viewStates = createViewStates(from: controlUnits)
+            notifyPresenter(with: .success(viewStates))
+        }
 
         private func onDidUpdateControlUnits(_ result: Result<[ControlUnit], Error>) {
             switch result {
@@ -58,6 +81,18 @@ extension ControlUnits {
             case .failure(let error):
                 notifyPresenter(with: .failure(error))
             }
+        }
+
+        private func notifyPresenter(with result: Result<[ItemViewState], Error>) {
+            guard let onDidUpdateViewStates = onDidUpdateViewStates else {
+                assertionFailure("Please assign onDidUpdateViewStates to enable Presenter to get notification")
+                return
+            }
+
+            DispatchQueue.main.async {
+                onDidUpdateViewStates(result)
+            }
+
         }
 
         private func createViewStates(

@@ -6,3 +6,15 @@ struct ControlUnits {
         // Intentionally unimplemented. This struct is needed to delimit the namespace only.
     }
 }
+
+extension ControlUnits {
+
+    enum SortOption {
+
+        case byId
+        case byName
+        case byStatus
+
+    }
+
+}

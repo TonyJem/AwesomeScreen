@@ -1,6 +1,6 @@
 [
     {
-        "id": "0",
+        "id": "00",
         "name": "Engine Control Unit",
         "status": "ok",
         "protocol": "OBD-II",
@@ -8,7 +8,7 @@
         "imageUrlString": "https://picsum.photos/id/0/300/200"
     },
     {
-        "id": "1",
+        "id": "01",
         "name": "Brake Control Module",
         "status": "faulty",
         "protocol": "CAN",
@@ -16,7 +16,7 @@
         "imageUrlString": "https://picsum.photos/id/1/300/200"
     },
     {
-        "id": "2",
+        "id": "02",
         "name": "Transmission Control Unit",
         "status": "ok",
         "protocol": "LIN",
@@ -24,7 +24,7 @@
         "imageUrlString": "https://picsum.photos/id/2/300/200"
     },
     {
-        "id": "3",
+        "id": "03",
         "name": "Tire Pressure Sensor",
         "status": "ok",
         "protocol": "FlexRay",
@@ -32,7 +32,7 @@
         "imageUrlString": "https://picsum.photos/id/3/300/200"
     },
     {
-        "id": "4",
+        "id": "04",
         "name": "Alternator Regulator",
         "status": "faulty",
         "protocol": "J1939",
@@ -40,7 +40,7 @@
         "imageUrlString": "https://picsum.photos/id/4/300/200"
     },
     {
-        "id": "5",
+        "id": "05",
         "name": "Radiator Fan Control Module",
         "status": "ok",
         "protocol": "MOST",
@@ -48,7 +48,7 @@
         "imageUrlString": "https://picsum.photos/id/5/300/200"
     },
     {
-        "id": "6",
+        "id": "06",
         "name": "Air Suspension Control Unit",
         "status": "ok",
         "protocol": null,
@@ -56,7 +56,7 @@
         "imageUrlString": "https://picsum.photos/id/6/300/200"
     },
     {
-        "id": "7",
+        "id": "07",
         "name": "Ignition Control Module",
         "status": "faulty",
         "protocol": "KWP2000",
@@ -64,7 +64,7 @@
         "imageUrlString": "https://picsum.photos/id/7/300/200"
     },
     {
-        "id": "8",
+        "id": "08",
         "name": "Electronic Power Steering Control Unit",
         "status": "ok",
         "protocol": "ISO 9141-2",
@@ -72,7 +72,7 @@
         "imageUrlString": "https://picsum.photos/id/8/300/200"
     },
     {
-        "id": "9",
+        "id": "09",
         "name": "Fuel Pump Control Module",
         "status": "ok",
         "protocol": "UDS",

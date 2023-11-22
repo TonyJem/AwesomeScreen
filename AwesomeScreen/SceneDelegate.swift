@@ -39,6 +39,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let viewController = ControlUnits.ViewController(with: presenter)
 
+        presenter.view = viewController
+
         navigationController.viewControllers = [viewController]
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

@@ -49,28 +49,3 @@ public final class ViewHostingController<T: View> {
     }
 
 }
-
-// TODO: Remove this extention if is not in use !!!
-extension UIViewController {
-
-    /// Adds the `SwiftUIView` to any specific `UIView`
-    /// within another `UIViewController`
-    func add(childViewController viewController: UIViewController, to parentView: UIView) {
-        guard let view = viewController.view else { return }
-
-        addChild(viewController)
-        parentView.addSubview(view)
-        viewController.didMove(toParent: self)
-
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            view.leadingAnchor.constraint(equalTo: parentView.leadingAnchor),
-            view.topAnchor.constraint(equalTo: parentView.topAnchor),
-            view.trailingAnchor.constraint(equalTo: parentView.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: parentView.bottomAnchor)
-        ])
-
-    }
-
-}
