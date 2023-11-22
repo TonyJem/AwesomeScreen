@@ -3,7 +3,7 @@ import SwiftUI
 public struct LoadingIndicator: View {
 
     @State private var isLoading = false
-    @State private var degree = 270
+    @State private var degree: Double = 270
     @State private var spinnerLength = 0.6
 
     private let config: Configuration
@@ -40,7 +40,7 @@ public struct LoadingIndicator: View {
                 height: config.height
             )
             .rotationEffect(
-                Angle(degrees: Double(degree))
+                Angle(degrees: degree)
             )
             .animation(
                 Animation
