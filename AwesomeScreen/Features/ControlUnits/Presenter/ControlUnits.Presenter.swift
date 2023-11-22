@@ -65,7 +65,7 @@ extension ControlUnits {
         private func showAvailableControlUnits(with viewStates: [ControlUnits.ListView.ItemView.ViewState]) {
             let controlUnitsViewState = ControlUnits.ListView.ViewState(
                 listItemViewStates: viewStates,
-                sortButtonTitle: "Title",
+                sortButtonTitle: L10n.ControlUnits.SortButton.statusTitle,
                 sortButtonImage: .awesomeImage(.sortOutline),
                 sortButtonAction: didTapSortButton
             )

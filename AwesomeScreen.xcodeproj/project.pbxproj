@@ -57,6 +57,7 @@
 		3A251A662B0D2897000F062A /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A652B0D2897000F062A /* ImageLoaderService.swift */; };
 		3A251A682B0D291E000F062A /* AwesomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A672B0D291E000F062A /* AwesomeImageView.swift */; };
 		3A251A6C2B0E5BEF000F062A /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A6B2B0E5BEF000F062A /* SmallButton.swift */; };
+		3A251A6E2B0E6D11000F062A /* ControlUnits.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		3A251A652B0D2897000F062A /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
 		3A251A672B0D291E000F062A /* AwesomeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeImageView.swift; sourceTree = "<group>"; };
 		3A251A6B2B0E5BEF000F062A /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
+		3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Localized.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				3A251A0C2B08E464000F062A /* Presenter */,
 				3A2519DA2B07E851000F062A /* View */,
 				3A2519D82B07E727000F062A /* ControlUnits.swift */,
+				3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */,
 			);
 			path = ControlUnits;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				3A251A102B08E517000F062A /* ControlUnits.ViewState.swift in Sources */,
 				3A2519C42B07D6D3000F062A /* AppDelegate.swift in Sources */,
 				3A251A152B08FD11000F062A /* AwesomeFailureView.Localized.swift in Sources */,
+				3A251A6E2B0E6D11000F062A /* ControlUnits.Localized.swift in Sources */,
 				3A251A4F2B0B00EA000F062A /* ControlUnitServiceRandomizer.swift in Sources */,
 				3A251A432B0AFF71000F062A /* ControlUnitServiceFailure.swift in Sources */,
 				3A2519FE2B087E31000F062A /* FontWithLineHeight.swift in Sources */,

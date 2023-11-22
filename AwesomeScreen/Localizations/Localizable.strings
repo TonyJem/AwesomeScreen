@@ -10,3 +10,9 @@
 // MARK: - BadgeLabel
 "BadgeLabel.NotReachable.Title" = "Not Reachable";
 "BadgeLabel.Faulty.Title" = "Faulty";
+
+
+// MARK: - ControlUnits Screen
+"ControlUnits.SortButton.StatusTitle" = "Status";
+"ControlUnits.SortButton.IdTitle" = "ID";
+"ControlUnits.SortButton.NameTitle" = "Name";
