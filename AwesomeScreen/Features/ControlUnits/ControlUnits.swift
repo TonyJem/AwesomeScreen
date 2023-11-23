@@ -9,7 +9,9 @@ struct ControlUnits {
 
 extension ControlUnits {
 
-    enum SortOption {
+    // TODO: Conform to protocol Iterable in order by naming
+    // and put comment that orer is important
+    enum SortRule {
 
         case byId
         case byName

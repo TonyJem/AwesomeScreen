@@ -14,6 +14,17 @@ extension ControlUnits {
 
         private var itemViewStates: [ControlUnits.ListView.ItemView.ViewState]?
 
+        var sortButtonTitle: String {
+            switch interactor.sortRule {
+            case .byId:
+                return L10n.ControlUnits.SortButton.idTitle
+            case .byName:
+                return L10n.ControlUnits.SortButton.nameTitle
+            case .byStatus:
+                return L10n.ControlUnits.SortButton.statusTitle
+            }
+        }
+
         init(interactor: ControlUnitsInteractor) {
             self.interactor = interactor
         }
@@ -35,6 +46,11 @@ extension ControlUnits {
             }
         }
 
+        // TODO: reduce complexity:
+        // we need only updateContent "doing everything" and include update items in it
+        // in interactor need to decouple fetching Units from srvice and providing same to Presenter
+        // ViewStates should be created in the Presenter not in Interactor
+        // Interactor shoul keep models, Presenter - viestates
         func updateItems() {
             itemViewStates = nil
             updateContent()
@@ -61,11 +77,10 @@ extension ControlUnits {
             viewState = .empty(emptyControlUnitsScreenViewState)
         }
 
-        // TODO: move titles to localizable
         private func showAvailableControlUnits(with viewStates: [ControlUnits.ListView.ItemView.ViewState]) {
             let controlUnitsViewState = ControlUnits.ListView.ViewState(
                 listItemViewStates: viewStates,
-                sortButtonTitle: L10n.ControlUnits.SortButton.statusTitle,
+                sortButtonTitle: sortButtonTitle,
                 sortButtonImage: .awesomeImage(.sortOutline),
                 sortButtonAction: didTapSortButton
             )
@@ -95,7 +110,8 @@ extension ControlUnits {
                 style: .default,
                 handler: { [weak self] _ in
                     print("🟢 didTap sort By Id Button")
-                    self?.interactor.sortControlUnits(by: .byId)
+                    self?.interactor.setSortRule(.byId)
+                    self?.updateItems()
                 }
             )
 
@@ -104,16 +120,18 @@ extension ControlUnits {
                 style: .default,
                 handler: { [weak self] _ in
                     print("🟡 didTap sort By Name Button")
-                    self?.interactor.sortControlUnits(by: .byName)
+                    self?.interactor.setSortRule(.byName)
+                    self?.updateItems()
                 }
             )
 
             let sortByStatusButton = UIAlertAction(
                 title: "Sort by Status",
                 style: .default,
-                handler: { _ in
+                handler: { [weak self] _ in
                     print("🟣 didTap sort By Status Button")
-                    print("🟣🟣 Sort by Status is not implemented yet")
+                    self?.interactor.setSortRule(.byStatus)
+                    self?.updateItems()
                 })
 
             let cancelButton = UIAlertAction(

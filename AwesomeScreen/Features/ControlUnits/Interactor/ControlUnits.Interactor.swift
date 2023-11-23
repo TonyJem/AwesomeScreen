@@ -8,9 +8,11 @@ protocol ControlUnitsInteractor {
 
     var onDidUpdateViewStates: ControlUnitsCompletion? { get set }
 
-    func getControlUnits()
+    var sortRule: ControlUnits.SortRule { get }
 
-    func sortControlUnits(by sort: ControlUnits.SortOption)
+    func setSortRule(_ rule: ControlUnits.SortRule)
+
+    func getControlUnits()
 
 }
 
@@ -19,6 +21,8 @@ extension ControlUnits {
     final class Interactor: ControlUnitsInteractor {
 
         var onDidUpdateViewStates: ControlUnitsCompletion?
+
+        var sortRule: ControlUnits.SortRule = .byId
 
         private let controlUnitService: ControlUnitServiceInterface
 
@@ -36,45 +40,43 @@ extension ControlUnits {
             }
         }
 
-        func sortControlUnits(by sort: ControlUnits.SortOption) {
-            switch sort {
+        func setSortRule(_ rule: ControlUnits.SortRule) {
+            sortRule = rule
+        }
+
+        // MARK: - Private
+
+        private func sortControlUnits() {
+            switch sortRule {
             case .byId:
                 sortById()
             case .byName:
                 sortByName()
             case .byStatus:
-                debugPrint("🔴 Not implemented yet")
+                sortByStatus()
             }
         }
 
-        // MARK: - Private
-
         private func sortById() {
-            guard !controlUnits.isEmpty else { return }
-
             controlUnits = controlUnits.sorted {
                 guard $0.id != $1.id else {
                     return $0.name < $1.name
                 }
                 return $0.id < $1.id
             }
-
-            let viewStates = createViewStates(from: controlUnits)
-            notifyPresenter(with: .success(viewStates))
         }
 
         private func sortByName() {
-            guard !controlUnits.isEmpty else { return }
-
             controlUnits = controlUnits.sorted {
                 guard $0.name != $1.name else {
                     return $0.id < $1.id
                 }
                 return $0.name < $1.name
             }
+        }
 
-            let viewStates = createViewStates(from: controlUnits)
-            notifyPresenter(with: .success(viewStates))
+        private func sortByStatus() {
+            debugPrint("🟣🟣🟣 Not implemented yet!")
         }
 
         private func onDidUpdateControlUnits(_ result: Result<[ControlUnit], Error>) {
