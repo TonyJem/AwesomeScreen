@@ -15,7 +15,7 @@ extension ControlUnits {
         private var itemViewStates: [ControlUnits.ListView.ItemView.ViewState]?
 
         var sortButtonTitle: String {
-            switch interactor.sortRule {
+            switch interactor.controlUnitsSortingRule {
             case .byId:
                 return L10n.ControlUnits.SortButton.idTitle
             case .byName:
@@ -110,7 +110,7 @@ extension ControlUnits {
                 style: .default,
                 handler: { [weak self] _ in
                     print("🟢 didTap sort By Id Button")
-                    self?.interactor.setSortRule(.byId)
+                    self?.interactor.setControlUnitsSortingRule(.byId)
 //                    self?.updateItems()
                 }
             )
@@ -120,7 +120,7 @@ extension ControlUnits {
                 style: .default,
                 handler: { [weak self] _ in
                     print("🟡 didTap sort By Name Button")
-                    self?.interactor.setSortRule(.byName)
+                    self?.interactor.setControlUnitsSortingRule(.byName)
 //                    self?.updateItems()
                 }
             )
@@ -130,7 +130,7 @@ extension ControlUnits {
                 style: .default,
                 handler: { [weak self] _ in
                     print("🔴 didTap sort By Status Button")
-                    self?.interactor.setSortRule(.byStatus)
+                    self?.interactor.setControlUnitsSortingRule(.byStatus)
 //                    self?.updateItems()
                 })
 
@@ -143,7 +143,7 @@ extension ControlUnits {
 
             sortByIdButton.setValue(true, forKey: "checked")
 
-            switch interactor.sortRule {
+            switch interactor.controlUnitsSortingRule {
             case .byId:
                 sortByIdButton.setValue(true, forKey: "checked")
                 sortByNameButton.setValue(false, forKey: "checked")

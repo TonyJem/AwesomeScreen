@@ -8,9 +8,9 @@ protocol ControlUnitsInteractor {
 
     var onDidUpdateViewStates: ControlUnitsCompletion? { get set }
 
-    var sortRule: ControlUnits.SortRule { get }
+    var controlUnitsSortingRule: ControlUnits.SortingRule { get }
 
-    func setSortRule(_ rule: ControlUnits.SortRule)
+    func setControlUnitsSortingRule(_ rule: ControlUnits.SortingRule)
 
     func getControlUnits()
 
@@ -22,7 +22,7 @@ extension ControlUnits {
 
         var onDidUpdateViewStates: ControlUnitsCompletion?
 
-        var sortRule: ControlUnits.SortRule = .byId
+        var controlUnitsSortingRule: ControlUnits.SortingRule = .byId
 
         private let controlUnitService: ControlUnitServiceInterface
 
@@ -40,14 +40,14 @@ extension ControlUnits {
             }
         }
 
-        func setSortRule(_ rule: ControlUnits.SortRule) {
-            sortRule = rule
+        func setControlUnitsSortingRule(_ rule: ControlUnits.SortingRule) {
+            controlUnitsSortingRule = rule
         }
 
         // MARK: - Private
 
         private func sortControlUnits() {
-            switch sortRule {
+            switch controlUnitsSortingRule {
             case .byId:
                 sortById()
             case .byName:

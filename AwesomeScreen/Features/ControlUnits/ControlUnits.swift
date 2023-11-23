@@ -11,7 +11,7 @@ extension ControlUnits {
 
     // TODO: Conform to protocol Iterable in order by naming
     // and put comment that orer is important
-    enum SortRule {
+    enum SortingRule {
 
         case byId
         case byName
