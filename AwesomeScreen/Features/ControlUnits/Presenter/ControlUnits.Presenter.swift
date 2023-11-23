@@ -12,7 +12,7 @@ extension ControlUnits {
 
         weak var view: UIViewController?
 
-        private var itemViewStates: [ControlUnits.ListView.ItemView.ViewState]?
+        private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState]?
 
         var sortButtonTitle: String {
             switch interactor.controlUnitsSortingRule {
@@ -39,7 +39,7 @@ extension ControlUnits {
         func onDidUpdateViewStates(with result: Result<[ControlUnits.ListView.ItemView.ViewState], Error>) {
             switch result {
             case .success(let viewStates):
-                itemViewStates = viewStates
+                controlUnitViewStates = viewStates
                 updateContent()
             case .failure:
                 showLoadingFailureControlUnits()
@@ -52,7 +52,7 @@ extension ControlUnits {
         // ViewStates should be created in the Presenter not in Interactor
         // Interactor shoul keep models, Presenter - viestates
         func updateItems() {
-            itemViewStates = nil
+            controlUnitViewStates = nil
             updateContent()
             interactor.getControlUnits()
         }
@@ -60,19 +60,19 @@ extension ControlUnits {
         // MARK: - Private
 
         private func updateContent() {
-            guard let viewStates = itemViewStates else {
-                showLoadingControlUnits()
+            guard let viewStates = controlUnitViewStates else {
+                showLoadingScreen()
                 return
             }
 
             if viewStates.isEmpty {
-                showEmptyControlUnits()
+                showEmptyScreen()
             } else {
                 showAvailableControlUnits(with: viewStates)
             }
         }
 
-        private func showEmptyControlUnits() {
+        private func showEmptyScreen() {
             let emptyControlUnitsScreenViewState = AwesomeEmptyView.State.emptyControlUnits.createViewState()
             viewState = .empty(emptyControlUnitsScreenViewState)
         }
@@ -87,7 +87,7 @@ extension ControlUnits {
             viewState = .unitsAvailable(controlUnitsViewState)
         }
 
-        private func showLoadingControlUnits() {
+        private func showLoadingScreen() {
             viewState = .loading
         }
 
