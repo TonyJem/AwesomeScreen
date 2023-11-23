@@ -50,7 +50,7 @@ extension ControlUnits {
         }
 
         func updateSearch(text: String) {
-            debugPrint("🟢 Text from Presenter: \(text)")
+            interactor.filterControlUnits(by: text)
         }
 
         // MARK: - Private

@@ -4,13 +4,17 @@ protocol ControlUnitsInteractor {
 
     var controlUnits: [ControlUnits.ControlUnitDomainModel] { get }
 
+    var filteredControlUnits: [ControlUnits.ControlUnitDomainModel] { get }
+
     var controlUnitsSortingRule: ControlUnits.SortingRule { get }
 
     var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)? { get set }
 
+    func getControlUnits()
+
     func sortControlUnits(_ rule: ControlUnits.SortingRule)
 
-    func getControlUnits()
+    func filterControlUnits(by searchText: String)
 
 }
 
@@ -27,7 +31,13 @@ extension ControlUnits {
         }
 
         var controlUnits: [ControlUnitDomainModel] = []
+
+        var isFiltering = false
+
+        var filteredControlUnits: [ControlUnitDomainModel] = []
+
         var controlUnitsSortingRule: ControlUnits.SortingRule = .byId
+
         var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)?
 
         private let controlUnitService: ControlUnitServiceInterface
@@ -37,11 +47,6 @@ extension ControlUnits {
         }
 
         // MARK: - Public
-
-        func sortControlUnits(_ rule: ControlUnits.SortingRule) {
-            controlUnitsSortingRule = rule
-            updateControlUnits(controlUnits)
-        }
 
         func getControlUnits() {
             controlUnitService.controlUnits { [weak self] result in
@@ -58,6 +63,25 @@ extension ControlUnits {
                     self?.notifyPresenter(with: .failure(error))
                 }
             }
+        }
+
+        func sortControlUnits(_ rule: ControlUnits.SortingRule) {
+            controlUnitsSortingRule = rule
+            updateControlUnits(controlUnits)
+        }
+
+        func filterControlUnits(by searchText: String) {
+            // TODO: Add isNotEmpty in extension
+            isFiltering = !searchText.isEmpty
+            if isFiltering {
+                filteredControlUnits = controlUnits.filter { controlUnit in
+                    return controlUnit.name.lowercased().contains(searchText.lowercased())
+                }
+                debugPrint("🟢 Filtered Count: \(filteredControlUnits.count)")
+            } else {
+                filteredControlUnits = []
+            }
+
         }
 
         // MARK: - Private
