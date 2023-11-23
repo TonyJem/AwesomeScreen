@@ -168,8 +168,9 @@ extension ControlUnits.Presenter {
             title: "Cancel",
             style: .cancel,
             handler: { _ in
-                print("🟣🟣🟣 didTap Cancel button")
-            })
+                debugPrint("🟣🟣🟣 didTap Cancel button")
+            }
+        )
 
         sortByIdButton.setValue(true, forKey: "checked")
 
