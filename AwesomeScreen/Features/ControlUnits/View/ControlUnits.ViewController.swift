@@ -57,6 +57,20 @@ extension ControlUnits {
 
             navigationItem.rightBarButtonItems = [updateButton, searchButton]
 
+            let search = UISearchController(searchResultsController: nil)
+            search.searchResultsUpdater = self
+            search.obscuresBackgroundDuringPresentation = false
+
+            search.searchBar.placeholder = "Search"
+            navigationItem.searchController = search
+
+            let textFieldInsideSearchBar = search.searchBar.value(forKey: "searchField") as? UITextField
+
+            textFieldInsideSearchBar?.textColor = .Branded.foregroundPrimary
+
+            let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
+            textFieldInsideSearchBarLabel?.textColor = .Branded.foregroundSecondary
+
             // TODO: Think we have to set backgound color here, instead of settgin it in Host
 
             let contentView = ControlUnits.ContentView(presenter: presenter)
@@ -74,6 +88,16 @@ extension ControlUnits {
         @objc private func didTapSearchButton() {
             debugPrint("🟢 didTapSearchButton")
         }
+
+    }
+
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension ControlUnits.ViewController: UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
 
     }
 
