@@ -87,6 +87,8 @@ extension ControlUnits {
             self.controlUnits = sorted(controlUnits)
         }
 
+        // TODO: improve sorting rules
+        // include all 3 types in rules
         private func sorted(_ controlUnits: [ControlUnitDomainModel]) -> [ControlUnitDomainModel] {
             switch controlUnitsSortingRule {
             case .byId:
@@ -108,9 +110,13 @@ extension ControlUnits {
                 return sortedControlUnits
 
             case .byStatus:
-                debugPrint("🟡 NOT implemented")
-                // TODO: Need to create and implement "byStatus" sorting logic
-                return controlUnits
+                let sortedControlUnits = controlUnits.sorted {
+                    guard $0.status != $1.status else {
+                        return $0.id < $1.id
+                    }
+                    return $0.status < $1.status
+                }
+                return sortedControlUnits
             }
         }
 

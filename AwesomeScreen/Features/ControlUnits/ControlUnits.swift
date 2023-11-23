@@ -12,11 +12,11 @@ extension ControlUnits {
     struct ControlUnitDomainModel {
 
         // Order of declaration defines the comparison result (.notReachable < .ok < .faulty)
-        enum Status {
+        enum Status: Comparable {
 
-            case notReachable
-            case ok
             case faulty
+            case ok
+            case notReachable
 
         }
 
@@ -34,9 +34,9 @@ extension ControlUnits {
     // Order of declaration defines the comparison result (.byStatus < .byName < .byId)
     enum SortingRule: Comparable {
 
-        case byStatus
-        case byName
         case byId
+        case byName
+        case byStatus
 
     }
 
