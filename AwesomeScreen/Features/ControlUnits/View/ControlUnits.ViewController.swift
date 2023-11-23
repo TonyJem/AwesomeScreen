@@ -7,6 +7,7 @@ extension ControlUnits {
 
         let searchController = UISearchController(searchResultsController: nil)
 
+        // TODO: Create PresenterProtocol
         private let presenter: Presenter
 
         // MARK: - Init
@@ -129,6 +130,10 @@ extension ControlUnits {
 extension ControlUnits.ViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
+
+        if let text = searchController.searchBar.text {
+            presenter.updateSearch(text: text)
+        }
 
     }
 

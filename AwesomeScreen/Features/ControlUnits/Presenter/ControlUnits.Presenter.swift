@@ -49,6 +49,10 @@ extension ControlUnits {
             interactor.getControlUnits()
         }
 
+        func updateSearch(text: String) {
+            debugPrint("🟢 Text from Presenter: \(text)")
+        }
+
         // MARK: - Private
 
         private func updateContent() {
