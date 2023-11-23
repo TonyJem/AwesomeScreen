@@ -12,7 +12,7 @@ extension AwesomeFailureView {
 
 extension AwesomeFailureView.State {
 
-    func createViewState(with action: @escaping (() -> Void)) -> AwesomeFailureView.ViewState {
+    func createViewState(reloadAction: @escaping (() -> Void)) -> AwesomeFailureView.ViewState {
         var title: String
         var subtitle: String
         var primaryButtonTitle: String
@@ -24,7 +24,7 @@ extension AwesomeFailureView.State {
             subtitle = L10n.AwesomeFailureView.ControlUnits.subtitle
             primaryButtonTitle = L10n.AwesomeFailureView.ControlUnits.primaryButtonTitle
             primaryButtonAction = {
-                action()
+                reloadAction()
             }
         }
 

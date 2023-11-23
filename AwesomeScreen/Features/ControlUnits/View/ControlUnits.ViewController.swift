@@ -59,7 +59,7 @@ extension ControlUnits {
 
         @objc private func didTapRefreshButton() {
             debugPrint("🟢 didTapRefreshButton")
-            presenter.updateItems()
+            presenter.reloadControlUnits()
         }
 
     }

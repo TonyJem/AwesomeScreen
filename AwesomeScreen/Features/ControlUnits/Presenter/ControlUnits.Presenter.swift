@@ -12,7 +12,7 @@ extension ControlUnits {
 
         weak var view: UIViewController?
 
-        private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState]?
+        private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState] = []
 
         var sortButtonTitle: String {
             switch interactor.controlUnitsSortingRule {
@@ -32,43 +32,31 @@ extension ControlUnits {
         // MARK: - Public
 
         func viewDidAppear() {
-            updateContent()
-            interactor.getControlUnits()
+            reloadControlUnits()
         }
 
-        func onDidUpdateViewStates(with result: Result<[ControlUnits.ListView.ItemView.ViewState], Error>) {
+        func onDidUpdateControlUnits(with result: Result<Void, Error>) {
             switch result {
-            case .success(let viewStates):
-                controlUnitViewStates = viewStates
+            case .success:
                 updateContent()
             case .failure:
-                showLoadingFailureControlUnits()
+                showFailureScreen()
             }
         }
 
-        // TODO: reduce complexity:
-        // we need only updateContent "doing everything" and include update items in it
-        // in interactor need to decouple fetching Units from srvice and providing same to Presenter
-        // ViewStates should be created in the Presenter not in Interactor
-        // Interactor shoul keep models, Presenter - viestates
-        func updateItems() {
-            controlUnitViewStates = nil
-            updateContent()
+        func reloadControlUnits() {
+            showLoadingScreen()
             interactor.getControlUnits()
         }
 
         // MARK: - Private
 
         private func updateContent() {
-            guard let viewStates = controlUnitViewStates else {
-                showLoadingScreen()
-                return
-            }
-
-            if viewStates.isEmpty {
+            updateControlUnitViewStates()
+            if controlUnitViewStates.isEmpty {
                 showEmptyScreen()
             } else {
-                showAvailableControlUnits(with: viewStates)
+                showAvailableControlUnits(with: controlUnitViewStates)
             }
         }
 
@@ -91,13 +79,49 @@ extension ControlUnits {
             viewState = .loading
         }
 
-        private func showLoadingFailureControlUnits() {
+        private func showFailureScreen() {
             let failureControlUnitsScreenViewState = AwesomeFailureView.State.failureControlUnits.createViewState(
-                with: updateItems
+                reloadAction: reloadControlUnits
             )
             viewState = .loadingFailure(failureControlUnitsScreenViewState)
         }
 
+    }
+
+}
+
+// MARK: - Update ControlUnits ViewStates
+
+extension ControlUnits.Presenter {
+
+    private func updateControlUnitViewStates() {
+        let controlUnits = interactor.controlUnits
+        if controlUnits.isEmpty {
+            controlUnitViewStates = []
+        } else {
+            controlUnitViewStates = controlUnits.map { transform(from: $0) }
+        }
+    }
+
+    private func transform(from controlUnit: ControlUnit) -> ControlUnits.ListView.ItemView.ViewState {
+        return ControlUnits.ListView.ItemView.ViewState(
+            id: controlUnit.id,
+            title: controlUnit.name,
+            imageUrlString: controlUnit.imageUrlString,
+            configuration: getBadgeConfiguration(for: controlUnit.status),
+            action: {
+                debugPrint("🟢 didTap on ControlUnit: \(controlUnit.name)")
+            }
+        )
+    }
+
+    private func getBadgeConfiguration(for status: String) -> BadgeLabel.Configuration? {
+        guard status != "ok" else { return nil } // if status is "ok" - we do not need to create the badge
+        if status == "faulty" {
+            return .faulty
+        } else {
+            return .notReachable
+        }
     }
 
 }
@@ -119,7 +143,7 @@ extension ControlUnits.Presenter {
             handler: { [weak self] _ in
                 print("🟢 didTap sort By Id Button")
                 self?.interactor.setControlUnitsSortingRule(.byId)
-                //                    self?.updateItems()
+                self?.updateContent()
             }
         )
 
@@ -129,7 +153,7 @@ extension ControlUnits.Presenter {
             handler: { [weak self] _ in
                 print("🟡 didTap sort By Name Button")
                 self?.interactor.setControlUnitsSortingRule(.byName)
-                //                    self?.updateItems()
+                self?.updateContent()
             }
         )
 
@@ -139,7 +163,7 @@ extension ControlUnits.Presenter {
             handler: { [weak self] _ in
                 print("🔴 didTap sort By Status Button")
                 self?.interactor.setControlUnitsSortingRule(.byStatus)
-                //                    self?.updateItems()
+                self?.updateContent()
             })
 
         let cancelButton = UIAlertAction(
