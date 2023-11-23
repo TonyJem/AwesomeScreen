@@ -8,7 +8,7 @@ protocol ControlUnitsInteractor {
 
     var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)? { get set }
 
-    func setControlUnitsSortingRule(_ rule: ControlUnits.SortingRule)
+    func sortControlUnits(_ rule: ControlUnits.SortingRule)
 
     func getControlUnits()
 
@@ -30,8 +30,9 @@ extension ControlUnits {
 
         // MARK: - Public
 
-        func setControlUnitsSortingRule(_ rule: ControlUnits.SortingRule) {
+        func sortControlUnits(_ rule: ControlUnits.SortingRule) {
             controlUnitsSortingRule = rule
+            updateControlUnits(controlUnits)
         }
 
         func getControlUnits() {
@@ -52,7 +53,7 @@ extension ControlUnits {
             self.controlUnits = sorted(controlUnits)
         }
 
-        private func sorted(_ controlUnits: [ControlUnit]) -> ([ControlUnit]) {
+        private func sorted(_ controlUnits: [ControlUnit]) -> [ControlUnit] {
             switch controlUnitsSortingRule {
             case .byId:
                 let sortedControlUnits = controlUnits.sorted {
@@ -65,10 +66,10 @@ extension ControlUnits {
 
             case .byName:
                 let sortedControlUnits = controlUnits.sorted {
-                    guard $0.id != $1.id else {
-                        return $0.name < $1.name
+                    guard $0.name != $1.name else {
+                        return $0.id < $1.id
                     }
-                    return $0.id < $1.id
+                    return $0.name < $1.name
                 }
                 return sortedControlUnits
 

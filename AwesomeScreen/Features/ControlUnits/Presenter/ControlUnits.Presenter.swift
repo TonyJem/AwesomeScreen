@@ -52,6 +52,7 @@ extension ControlUnits {
         // MARK: - Private
 
         private func updateContent() {
+
             updateControlUnitViewStates()
             if controlUnitViewStates.isEmpty {
                 showEmptyScreen()
@@ -141,8 +142,7 @@ extension ControlUnits.Presenter {
             title: L10n.ControlUnits.SortButton.idTitle,
             style: .default,
             handler: { [weak self] _ in
-                print("🟢 didTap sort By Id Button")
-                self?.interactor.setControlUnitsSortingRule(.byId)
+                self?.interactor.sortControlUnits(.byId)
                 self?.updateContent()
             }
         )
@@ -151,8 +151,7 @@ extension ControlUnits.Presenter {
             title: L10n.ControlUnits.SortButton.nameTitle,
             style: .default,
             handler: { [weak self] _ in
-                print("🟡 didTap sort By Name Button")
-                self?.interactor.setControlUnitsSortingRule(.byName)
+                self?.interactor.sortControlUnits(.byName)
                 self?.updateContent()
             }
         )
@@ -161,8 +160,7 @@ extension ControlUnits.Presenter {
             title: L10n.ControlUnits.SortButton.statusTitle,
             style: .default,
             handler: { [weak self] _ in
-                print("🔴 didTap sort By Status Button")
-                self?.interactor.setControlUnitsSortingRule(.byStatus)
+                self?.interactor.sortControlUnits(.byStatus)
                 self?.updateContent()
             })
 
@@ -170,7 +168,7 @@ extension ControlUnits.Presenter {
             title: "Cancel",
             style: .cancel,
             handler: { _ in
-                print("🟣🟣🟣 Cancel button tapped")
+                print("🟣🟣🟣 didTap Cancel button")
             })
 
         sortByIdButton.setValue(true, forKey: "checked")
