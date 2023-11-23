@@ -27,9 +27,7 @@ extension ControlUnits {
         }
 
         var controlUnits: [ControlUnitDomainModel] = []
-
         var controlUnitsSortingRule: ControlUnits.SortingRule = .byId
-
         var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)?
 
         private let controlUnitService: ControlUnitServiceInterface
@@ -87,13 +85,14 @@ extension ControlUnits {
             self.controlUnits = sorted(controlUnits)
         }
 
-        // TODO: improve sorting rules
-        // include all 3 types in rules
         private func sorted(_ controlUnits: [ControlUnitDomainModel]) -> [ControlUnitDomainModel] {
             switch controlUnitsSortingRule {
             case .byId:
                 let sortedControlUnits = controlUnits.sorted {
-                    guard $0.id != $1.id else {
+                    if $0.id == $1.id && $0.name == $1.name {
+                        return $0.status < $1.status
+                    }
+                    if $0.id == $1.id {
                         return $0.name < $1.name
                     }
                     return $0.id < $1.id
@@ -102,7 +101,10 @@ extension ControlUnits {
 
             case .byName:
                 let sortedControlUnits = controlUnits.sorted {
-                    guard $0.name != $1.name else {
+                    if $0.id == $1.id && $0.name == $1.name {
+                        return $0.status < $1.status
+                    }
+                    if $0.name == $1.name {
                         return $0.id < $1.id
                     }
                     return $0.name < $1.name
@@ -111,7 +113,10 @@ extension ControlUnits {
 
             case .byStatus:
                 let sortedControlUnits = controlUnits.sorted {
-                    guard $0.status != $1.status else {
+                    if $0.id == $1.id && $0.status == $1.status {
+                        return $0.name < $1.name
+                    }
+                    if $0.status == $1.status {
                         return $0.id < $1.id
                     }
                     return $0.status < $1.status

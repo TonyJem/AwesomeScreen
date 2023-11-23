@@ -71,7 +71,7 @@ extension ControlUnits {
                 listItemViewStates: viewStates,
                 sortButtonTitle: sortButtonTitle,
                 sortButtonImage: .awesomeImage(.sortOutline),
-                sortButtonAction: openSortingRuleSelectionPopUp
+                sortButtonAction: presentSortingRuleSelectionPopUp
             )
             viewState = .unitsAvailable(controlUnitsViewState)
         }
@@ -134,7 +134,7 @@ extension ControlUnits.Presenter {
 
 extension ControlUnits.Presenter {
 
-    private func openSortingRuleSelectionPopUp() {
+    private func presentSortingRuleSelectionPopUp() {
         let alertController = UIAlertController(
             title: "Sort by",
             message: nil,
