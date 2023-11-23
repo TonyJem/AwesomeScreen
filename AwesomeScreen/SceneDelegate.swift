@@ -10,6 +10,8 @@ import UIKit
 // TODO: Go across the whole code base and put Marks in consistent way
 // TODO: Check all clases in project and decide what clases should be markd as "final"
 // TODO: Review logic in presenter and interacator and all viewstates to presenter
+// TODO: Additional improvement could be done if save Sort button value in UserDefaults
+// Next time the app is loaded it could be arranged automatically previuosely selected sortRule
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
