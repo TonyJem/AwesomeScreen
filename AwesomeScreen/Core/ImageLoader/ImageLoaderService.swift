@@ -12,9 +12,7 @@ final class ImageLoaderService: ObservableObject {
         let task = URLSession.shared.dataTask(with: url) { data, _, _ in
             guard let data = data else { return }
             DispatchQueue.main.async {
-
-                // TODO: Choose proper placeholder image
-                self.image = UIImage(data: data) ?? .awesomeImage(.testImage00)
+                self.image = UIImage(data: data) ?? .awesomeImage(.noImage)
             }
         }
         task.resume()
