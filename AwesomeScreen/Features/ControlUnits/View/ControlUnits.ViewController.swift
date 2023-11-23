@@ -35,17 +35,27 @@ extension ControlUnits {
             navigationController?.navigationBar.titleTextAttributes = [
                 NSAttributedString.Key.foregroundColor: UIColor(cgColor: .Branded.foregroundPrimary)
             ]
-            // TODO: Move plain text to screen viewState and also use localized
-            title = "Control Units"
 
-            let rightBarButton = UIBarButtonItem(
-                image: UIImage(systemName: "arrow.clockwise.icloud"),
+            title = L10n.ControlUnits.screenTitle
+
+            let updateButton = UIBarButtonItem(
+                image: .awesomeSymbol(.arrowClockwiseIcloud),
                 style: .plain,
                 target: self,
-                action: #selector(didTapRefreshButton)
+                action: #selector(didTapUpdateButton)
             )
-            rightBarButton.tintColor = .Branded.foregroundHighlight
-            navigationItem.rightBarButtonItem = rightBarButton
+            updateButton.tintColor = .Branded.foregroundHighlight
+
+            // TODO: Show searchButton only on main screen
+            let searchButton = UIBarButtonItem(
+                image: .awesomeSymbol(.magnifyingGlass),
+                style: .plain,
+                target: self,
+                action: #selector(didTapSearchButton)
+            )
+            searchButton.tintColor = .Branded.foregroundPrimary
+
+            navigationItem.rightBarButtonItems = [updateButton, searchButton]
 
             // TODO: Think we have to set backgound color here, instead of settgin it in Host
 
@@ -57,9 +67,12 @@ extension ControlUnits {
             host.add(to: view, useSafeArea: true)
         }
 
-        @objc private func didTapRefreshButton() {
-            debugPrint("🟢 didTapRefreshButton")
+        @objc private func didTapUpdateButton() {
             presenter.reloadControlUnits()
+        }
+
+        @objc private func didTapSearchButton() {
+            debugPrint("🟢 didTapSearchButton")
         }
 
     }

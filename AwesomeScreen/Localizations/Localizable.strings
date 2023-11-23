@@ -13,6 +13,8 @@
 
 
 // MARK: - ControlUnits Screen
+"ControlUnits.ScreenTitle" = "Control Units";
+
 "ControlUnits.SortButton.StatusTitle" = "Status";
 "ControlUnits.SortButton.IdTitle" = "ID";
 "ControlUnits.SortButton.NameTitle" = "Name";
