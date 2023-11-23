@@ -173,20 +173,13 @@ extension ControlUnits.Presenter {
 
         sortByIdButton.setValue(true, forKey: "checked")
 
-        switch interactor.controlUnitsSortingRule {
-        case .byId:
-            sortByIdButton.setValue(true, forKey: "checked")
-            sortByNameButton.setValue(false, forKey: "checked")
-            sortByStatusButton.setValue(false, forKey: "checked")
-        case .byName:
-            sortByIdButton.setValue(false, forKey: "checked")
-            sortByNameButton.setValue(true, forKey: "checked")
-            sortByStatusButton.setValue(false, forKey: "checked")
-        case .byStatus:
-            sortByIdButton.setValue(false, forKey: "checked")
-            sortByNameButton.setValue(false, forKey: "checked")
-            sortByStatusButton.setValue(true, forKey: "checked")
-        }
+        let isSortedById = interactor.controlUnitsSortingRule == .byId
+        let isSortedByName = interactor.controlUnitsSortingRule == .byName
+        let isSortedByStatus = interactor.controlUnitsSortingRule == .byStatus
+
+        sortByIdButton.setValue(isSortedById, forKey: "checked")
+        sortByNameButton.setValue(isSortedByName, forKey: "checked")
+        sortByStatusButton.setValue(isSortedByStatus, forKey: "checked")
 
         alertController.addAction(sortByIdButton)
         alertController.addAction(sortByNameButton)
