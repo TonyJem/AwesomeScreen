@@ -9,13 +9,32 @@ struct ControlUnits {
 
 extension ControlUnits {
 
-    // TODO: Conform to protocol Iterable in order by naming
-    // and put comment that orer is important
-    enum SortingRule {
+    struct ControlUnitDomainModel {
 
-        case byId
-        case byName
+        enum Status {
+            case ok
+            case faulty
+            case notReachable
+            case other
+        }
+
+        let id: String
+        let name: String
+        let status: Status
+        let imageUrlString: String
+
+    }
+
+}
+
+extension ControlUnits {
+
+    // Order of declaration defines the comparison result (.byStatus < .byName < .byId)
+    enum SortingRule: Comparable {
+
         case byStatus
+        case byName
+        case byId
 
     }
 
