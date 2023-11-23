@@ -82,7 +82,7 @@ extension ControlUnits {
                 listItemViewStates: viewStates,
                 sortButtonTitle: sortButtonTitle,
                 sortButtonImage: .awesomeImage(.sortOutline),
-                sortButtonAction: didTapSortButton
+                sortButtonAction: openSortRuleSelectionPopUp
             )
             viewState = .unitsAvailable(controlUnitsViewState)
         }
@@ -98,48 +98,65 @@ extension ControlUnits {
             viewState = .loadingFailure(failureControlUnitsScreenViewState)
         }
 
-        private func didTapSortButton() {
-            createBottomMenu()
-        }
-
-        private func createBottomMenu() {
-            let alertController = UIAlertController(title: "Sort by", message: nil, preferredStyle: .actionSheet)
+        private func openSortRuleSelectionPopUp() {
+            let alertController = UIAlertController(
+                title: "Sort by",
+                message: nil,
+                preferredStyle: .actionSheet
+            )
 
             let sortByIdButton = UIAlertAction(
-                title: "Sort by ID",
+                title: L10n.ControlUnits.SortButton.idTitle,
                 style: .default,
                 handler: { [weak self] _ in
                     print("🟢 didTap sort By Id Button")
                     self?.interactor.setSortRule(.byId)
-                    self?.updateItems()
+//                    self?.updateItems()
                 }
             )
 
             let sortByNameButton = UIAlertAction(
-                title: "Sort by Name",
+                title: L10n.ControlUnits.SortButton.nameTitle,
                 style: .default,
                 handler: { [weak self] _ in
                     print("🟡 didTap sort By Name Button")
                     self?.interactor.setSortRule(.byName)
-                    self?.updateItems()
+//                    self?.updateItems()
                 }
             )
 
             let sortByStatusButton = UIAlertAction(
-                title: "Sort by Status",
+                title: L10n.ControlUnits.SortButton.statusTitle,
                 style: .default,
                 handler: { [weak self] _ in
-                    print("🟣 didTap sort By Status Button")
+                    print("🔴 didTap sort By Status Button")
                     self?.interactor.setSortRule(.byStatus)
-                    self?.updateItems()
+//                    self?.updateItems()
                 })
 
             let cancelButton = UIAlertAction(
                 title: "Cancel",
                 style: .cancel,
                 handler: { _ in
-                    print("Cancel button tapped")
+                    print("🟣🟣🟣 Cancel button tapped")
                 })
+
+            sortByIdButton.setValue(true, forKey: "checked")
+
+            switch interactor.sortRule {
+            case .byId:
+                sortByIdButton.setValue(true, forKey: "checked")
+                sortByNameButton.setValue(false, forKey: "checked")
+                sortByStatusButton.setValue(false, forKey: "checked")
+            case .byName:
+                sortByIdButton.setValue(false, forKey: "checked")
+                sortByNameButton.setValue(true, forKey: "checked")
+                sortByStatusButton.setValue(false, forKey: "checked")
+            case .byStatus:
+                sortByIdButton.setValue(false, forKey: "checked")
+                sortByNameButton.setValue(false, forKey: "checked")
+                sortByStatusButton.setValue(true, forKey: "checked")
+            }
 
             alertController.addAction(sortByIdButton)
             alertController.addAction(sortByNameButton)
