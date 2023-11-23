@@ -5,6 +5,8 @@ extension ControlUnits {
     // TODO: Create ControlUnitsView protocol
     final class ViewController: UIViewController {
 
+        let searchController = UISearchController(searchResultsController: nil)
+
         private let presenter: Presenter
 
         // MARK: - Init
@@ -23,6 +25,8 @@ extension ControlUnits {
 
         override func viewDidLoad() {
             super.viewDidLoad()
+
+            searchController.searchBar.delegate = self
 
             setupView()
         }
@@ -70,6 +74,7 @@ extension ControlUnits {
 
         @objc private func didTapSearchButton() {
             debugPrint("🟢 didTapSearchButton")
+            navigationItem.searchController = searchController
         }
 
         private func updateButton() -> UIBarButtonItem {
@@ -95,14 +100,12 @@ extension ControlUnits {
         }
 
         private func searchControllerSetup() {
-            let search = UISearchController(searchResultsController: nil)
-            search.searchResultsUpdater = self
-            search.obscuresBackgroundDuringPresentation = false
+            searchController.searchResultsUpdater = self
+            searchController.obscuresBackgroundDuringPresentation = false
+            searchController.searchBar.placeholder = L10n.ControlUnits.searchBarPlaceholder
+            definesPresentationContext = true
 
-            search.searchBar.placeholder = L10n.ControlUnits.searchBarPlaceholder
-            navigationItem.searchController = search
-
-            let textFieldInsideSearchBar = search.searchBar.value(forKey: "searchField") as? UITextField
+            let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
 
             textFieldInsideSearchBar?.textColor = .Branded.foregroundPrimary
 
@@ -127,6 +130,16 @@ extension ControlUnits.ViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
 
+    }
+
+}
+
+// MARK: - UISearchBarDelegate
+
+extension ControlUnits.ViewController: UISearchBarDelegate {
+
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        navigationItem.searchController = nil
     }
 
 }
