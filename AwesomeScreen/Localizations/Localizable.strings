@@ -14,6 +14,7 @@
 
 // MARK: - ControlUnits Screen
 "ControlUnits.ScreenTitle" = "Control Units";
+"ControlUnits.SearchBarPlaceholder" = "Search";
 
 "ControlUnits.SortButton.StatusTitle" = "Status";
 "ControlUnits.SortButton.IdTitle" = "ID";

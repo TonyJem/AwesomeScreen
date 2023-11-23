@@ -38,38 +38,21 @@ extension ControlUnits {
 
             title = L10n.ControlUnits.screenTitle
 
-            let updateButton = UIBarButtonItem(
-                image: .awesomeSymbol(.arrowClockwiseIcloud),
-                style: .plain,
-                target: self,
-                action: #selector(didTapUpdateButton)
-            )
-            updateButton.tintColor = .Branded.foregroundHighlight
+            searchControllerSetup()
 
             // TODO: Show searchButton only on main screen
-            let searchButton = UIBarButtonItem(
-                image: .awesomeSymbol(.magnifyingGlass),
-                style: .plain,
-                target: self,
-                action: #selector(didTapSearchButton)
+            let updateButton = updateButton()
+            let searchButton = searchButton()
+            navigationItem.rightBarButtonItems = [
+                updateButton,
+                searchButton
+            ]
+
+            let image = UIImage.awesomeSymbol(.magnifyingGlass).withTintColor(
+                .white,
+                renderingMode: .alwaysOriginal
             )
-            searchButton.tintColor = .Branded.foregroundPrimary
-
-            navigationItem.rightBarButtonItems = [updateButton, searchButton]
-
-            let search = UISearchController(searchResultsController: nil)
-            search.searchResultsUpdater = self
-            search.obscuresBackgroundDuringPresentation = false
-
-            search.searchBar.placeholder = "Search"
-            navigationItem.searchController = search
-
-            let textFieldInsideSearchBar = search.searchBar.value(forKey: "searchField") as? UITextField
-
-            textFieldInsideSearchBar?.textColor = .Branded.foregroundPrimary
-
-            let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
-            textFieldInsideSearchBarLabel?.textColor = .Branded.foregroundSecondary
+                UISearchBar.appearance().setImage(image, for: .search, state: .normal)
 
             // TODO: Think we have to set backgound color here, instead of settgin it in Host
 
@@ -87,6 +70,51 @@ extension ControlUnits {
 
         @objc private func didTapSearchButton() {
             debugPrint("🟢 didTapSearchButton")
+        }
+
+        private func updateButton() -> UIBarButtonItem {
+            let updateButton = UIBarButtonItem(
+                image: .awesomeSymbol(.arrowClockwiseIcloud),
+                style: .plain,
+                target: self,
+                action: #selector(didTapUpdateButton)
+            )
+            updateButton.tintColor = .Branded.foregroundHighlight
+            return updateButton
+        }
+
+        private func searchButton() -> UIBarButtonItem {
+            let searchButton = UIBarButtonItem(
+                image: .awesomeSymbol(.magnifyingGlass),
+                style: .plain,
+                target: self,
+                action: #selector(didTapSearchButton)
+            )
+            searchButton.tintColor = .Branded.foregroundPrimary
+            return searchButton
+        }
+
+        private func searchControllerSetup() {
+            let search = UISearchController(searchResultsController: nil)
+            search.searchResultsUpdater = self
+            search.obscuresBackgroundDuringPresentation = false
+
+            search.searchBar.placeholder = L10n.ControlUnits.searchBarPlaceholder
+            navigationItem.searchController = search
+
+            let textFieldInsideSearchBar = search.searchBar.value(forKey: "searchField") as? UITextField
+
+            textFieldInsideSearchBar?.textColor = .Branded.foregroundPrimary
+
+            // TODO: Redo force unwrap
+            let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
+            textFieldInsideSearchBarLabel?.textColor = .Branded.foregroundSecondary
+
+            // TODO: Try Add Branded color
+            let cancelButtonAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            UIBarButtonItem
+                .appearance()
+                .setTitleTextAttributes(cancelButtonAttributes, for: .normal)
         }
 
     }

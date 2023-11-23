@@ -6,6 +6,8 @@ extension LocalizedTranslations {
 
         static let screenTitle = "ControlUnits.ScreenTitle".localized
 
+        static let searchBarPlaceholder = "ControlUnits.SearchBarPlaceholder".localized
+
         enum SortButton {
 
             static let statusTitle = "ControlUnits.SortButton.StatusTitle".localized
