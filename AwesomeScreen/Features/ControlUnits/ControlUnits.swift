@@ -11,11 +11,13 @@ extension ControlUnits {
 
     struct ControlUnitDomainModel {
 
+        // Order of declaration defines the comparison result (.notReachable < .ok < .faulty)
         enum Status {
+
+            case notReachable
             case ok
             case faulty
-            case notReachable
-            case other
+
         }
 
         let id: String

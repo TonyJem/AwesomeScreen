@@ -2,7 +2,7 @@ import Foundation
 
 protocol ControlUnitsInteractor {
 
-    var controlUnits: [ControlUnit] { get }
+    var controlUnits: [ControlUnits.ControlUnitDomainModel] { get }
 
     var controlUnitsSortingRule: ControlUnits.SortingRule { get }
 
@@ -18,8 +18,18 @@ extension ControlUnits {
 
     final class Interactor: ControlUnitsInteractor {
 
-        var controlUnits: [ControlUnit] = []
+        private struct Constants {
+
+            static let okStatus = "ok" // String from JSON
+
+            static let faultyStatus = "faulty" // String from JSON
+
+        }
+
+        var controlUnits: [ControlUnitDomainModel] = []
+
         var controlUnitsSortingRule: ControlUnits.SortingRule = .byId
+
         var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)?
 
         private let controlUnitService: ControlUnitServiceInterface
@@ -38,9 +48,14 @@ extension ControlUnits {
         func getControlUnits() {
             controlUnitService.controlUnits { [weak self] result in
                 switch result {
-                case .success(let controlUnits):
+
+                case .success(let units):
+                    let controlUnits = units.compactMap { [weak self] unit in
+                        return self?.transform(unit)
+                    }
                     self?.updateControlUnits(controlUnits)
                     self?.notifyPresenter(with: .success(()))
+
                 case .failure(let error):
                     self?.notifyPresenter(with: .failure(error))
                 }
@@ -49,11 +64,30 @@ extension ControlUnits {
 
         // MARK: - Private
 
-        private func updateControlUnits(_ controlUnits: [ControlUnit]) {
+        private func transform(_ controlUnit: ControlUnit) -> ControlUnitDomainModel {
+            return ControlUnitDomainModel(
+                id: controlUnit.id,
+                name: controlUnit.name,
+                status: transform(controlUnit.status),
+                imageUrlString: controlUnit.imageUrlString
+            )
+        }
+
+        private func transform(_ status: String) -> ControlUnitDomainModel.Status {
+            if status == Constants.okStatus {
+                return ControlUnitDomainModel.Status.ok
+            }
+            if status == Constants.faultyStatus {
+                return ControlUnitDomainModel.Status.faulty
+            }
+            return ControlUnitDomainModel.Status.notReachable
+        }
+
+        private func updateControlUnits(_ controlUnits: [ControlUnitDomainModel]) {
             self.controlUnits = sorted(controlUnits)
         }
 
-        private func sorted(_ controlUnits: [ControlUnit]) -> [ControlUnit] {
+        private func sorted(_ controlUnits: [ControlUnitDomainModel]) -> [ControlUnitDomainModel] {
             switch controlUnitsSortingRule {
             case .byId:
                 let sortedControlUnits = controlUnits.sorted {

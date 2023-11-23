@@ -104,24 +104,27 @@ extension ControlUnits.Presenter {
         }
     }
 
-    private func transform(from controlUnit: ControlUnit) -> ControlUnits.ListView.ItemView.ViewState {
+    private func transform(from domainModel: ControlUnits.ControlUnitDomainModel) -> ControlUnits.ListView.ItemView.ViewState {
         return ControlUnits.ListView.ItemView.ViewState(
-            id: controlUnit.id,
-            title: controlUnit.name,
-            imageUrlString: controlUnit.imageUrlString,
-            configuration: getBadgeConfiguration(for: controlUnit.status),
+            id: domainModel.id,
+            title: domainModel.name,
+            imageUrlString: domainModel.imageUrlString,
+            configuration: getBadgeConfiguration(for: domainModel.status),
             action: {
-                debugPrint("🟢 didTap on ControlUnit: \(controlUnit.name)")
+                // Should be implemented when need to navigate into ControlUnits.Details.Screen
+                debugPrint("🟢 didTap on ControlUnit: \(domainModel.name)")
             }
         )
     }
 
-    private func getBadgeConfiguration(for status: String) -> BadgeLabel.Configuration? {
-        guard status != "ok" else { return nil } // if status is "ok" - we do not need to create the badge
-        if status == "faulty" {
-            return .faulty
-        } else {
+    private func getBadgeConfiguration(for status: ControlUnits.ControlUnitDomainModel.Status) -> BadgeLabel.Configuration? {
+        switch status {
+        case .notReachable:
             return .notReachable
+        case .ok:
+            return nil // if status is "ok" - we do not need to create the badge
+        case .faulty:
+            return .faulty
         }
     }
 
