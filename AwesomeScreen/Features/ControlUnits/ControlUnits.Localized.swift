@@ -8,6 +8,8 @@ extension LocalizedTranslations {
 
         static let searchBarPlaceholder = "ControlUnits.SearchBarPlaceholder".localized
 
+        static let sortingRuleSelectionPopUpTitle = "ControlUnits.SortingRuleSelectionPopUp.Title".localized
+
         enum SortButton {
 
             static let statusTitle = "ControlUnits.SortButton.StatusTitle".localized
@@ -15,6 +17,8 @@ extension LocalizedTranslations {
             static let idTitle = "ControlUnits.SortButton.IdTitle".localized
 
             static let nameTitle = "ControlUnits.SortButton.NameTitle".localized
+
+            static let cancelTitle = "ControlUnits.SortButton.CancelTitle".localized
 
         }
 

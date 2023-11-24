@@ -155,8 +155,7 @@ extension ControlUnits.Presenter {
 
     private func presentSortingRuleSelectionPopUp() {
         let alertController = UIAlertController(
-            // TODO: Move title String into localized
-            title: "Sort by",
+            title: L10n.ControlUnits.sortingRuleSelectionPopUpTitle,
             message: nil,
             preferredStyle: .actionSheet
         )
@@ -185,8 +184,7 @@ extension ControlUnits.Presenter {
             })
 
         let cancelButton = UIAlertAction(
-            // TODO: Move title String into localized
-            title: "Cancel",
+            title: L10n.ControlUnits.SortButton.cancelTitle,
             style: .cancel,
             handler: { _ in
                 debugPrint("🟣🟣🟣 didTap Cancel button")
