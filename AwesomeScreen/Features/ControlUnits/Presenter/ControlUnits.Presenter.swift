@@ -56,7 +56,6 @@ extension ControlUnits {
         // MARK: - Private
 
         private func updateContent() {
-
             updateControlUnitViewStates()
             if controlUnitViewStates.isEmpty {
                 showEmptyScreen()
@@ -100,7 +99,16 @@ extension ControlUnits {
 extension ControlUnits.Presenter {
 
     private func updateControlUnitViewStates() {
-        let controlUnits = interactor.controlUnits
+
+        let controlUnits: [ControlUnits.ControlUnitDomainModel]
+
+        if interactor.isFilterEnabled {
+            controlUnits = interactor.filteredControlUnits
+        } else {
+            controlUnits = interactor.controlUnits
+        }
+
+        // TODO: Create screen UI Showing zero search results and logic showing this screen
         if controlUnits.isEmpty {
             controlUnitViewStates = []
         } else {
@@ -140,6 +148,7 @@ extension ControlUnits.Presenter {
 
     private func presentSortingRuleSelectionPopUp() {
         let alertController = UIAlertController(
+            // TODO: Move title String into localized
             title: "Sort by",
             message: nil,
             preferredStyle: .actionSheet
@@ -150,7 +159,6 @@ extension ControlUnits.Presenter {
             style: .default,
             handler: { [weak self] _ in
                 self?.interactor.sortControlUnits(.byId)
-                self?.updateContent()
             }
         )
 
@@ -159,7 +167,6 @@ extension ControlUnits.Presenter {
             style: .default,
             handler: { [weak self] _ in
                 self?.interactor.sortControlUnits(.byName)
-                self?.updateContent()
             }
         )
 
@@ -168,10 +175,10 @@ extension ControlUnits.Presenter {
             style: .default,
             handler: { [weak self] _ in
                 self?.interactor.sortControlUnits(.byStatus)
-                self?.updateContent()
             })
 
         let cancelButton = UIAlertAction(
+            // TODO: Move title String into localized
             title: "Cancel",
             style: .cancel,
             handler: { _ in

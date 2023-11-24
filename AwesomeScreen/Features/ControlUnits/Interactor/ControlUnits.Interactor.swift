@@ -8,6 +8,8 @@ protocol ControlUnitsInteractor {
 
     var controlUnitsSortingRule: ControlUnits.SortingRule { get }
 
+    var isFilterEnabled: Bool { get }
+
     var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)? { get set }
 
     func getControlUnits()
@@ -68,6 +70,7 @@ extension ControlUnits {
         func sortControlUnits(_ rule: ControlUnits.SortingRule) {
             controlUnitsSortingRule = rule
             updateControlUnits(controlUnits)
+            notifyPresenter(with: .success(()))
         }
 
         func filterControlUnits(_ searchText: String) {
@@ -81,7 +84,7 @@ extension ControlUnits {
             } else {
                 filteredControlUnits = []
             }
-
+            notifyPresenter(with: .success(()))
         }
 
         // MARK: - Private

@@ -69,6 +69,7 @@ extension ControlUnits {
             host.add(to: view, useSafeArea: true)
         }
 
+        // TODO: Think if all actions shouldInformPreseneter
         @objc private func didTapUpdateButton() {
             presenter.reloadControlUnits()
         }
