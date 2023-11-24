@@ -14,7 +14,7 @@ protocol ControlUnitsInteractor {
 
     func sortControlUnits(_ rule: ControlUnits.SortingRule)
 
-    func filterControlUnits(by searchText: String)
+    func filterControlUnits(_ searchText: String)
 
 }
 
@@ -32,7 +32,7 @@ extension ControlUnits {
 
         var controlUnits: [ControlUnitDomainModel] = []
 
-        var isFiltering = false
+        var isFilterEnabled = false
 
         var filteredControlUnits: [ControlUnitDomainModel] = []
 
@@ -70,14 +70,14 @@ extension ControlUnits {
             updateControlUnits(controlUnits)
         }
 
-        func filterControlUnits(by searchText: String) {
+        func filterControlUnits(_ searchText: String) {
             // TODO: Add isNotEmpty in extension
-            isFiltering = !searchText.isEmpty
-            if isFiltering {
+            isFilterEnabled = !searchText.isEmpty
+            if isFilterEnabled {
                 filteredControlUnits = controlUnits.filter { controlUnit in
                     return controlUnit.name.lowercased().contains(searchText.lowercased())
                 }
-                debugPrint("🟢 Filtered Count: \(filteredControlUnits.count)")
+                debugPrint("🟢 Filtered Unit Count: \(filteredControlUnits.count)")
             } else {
                 filteredControlUnits = []
             }

@@ -74,7 +74,6 @@ extension ControlUnits {
         }
 
         @objc private func didTapSearchButton() {
-            debugPrint("🟢 didTapSearchButton")
             navigationItem.searchController = searchController
         }
 
@@ -100,6 +99,7 @@ extension ControlUnits {
             return searchButton
         }
 
+        // TODO: Need to setup text color an check Search field UI in general
         private func searchControllerSetup() {
             searchController.searchResultsUpdater = self
             searchController.obscuresBackgroundDuringPresentation = false
