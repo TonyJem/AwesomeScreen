@@ -58,15 +58,14 @@ extension ControlUnits {
                 .white,
                 renderingMode: .alwaysOriginal
             )
-                UISearchBar.appearance().setImage(image, for: .search, state: .normal)
+            UISearchBar.appearance().setImage(image, for: .search, state: .normal)
+            
 
             // TODO: Think we have to set backgound color here, instead of settgin it in Host
 
             let contentView = ControlUnits.ContentView(presenter: presenter)
             let host = ViewHostingController(contentView)
 
-            // TODO: Check UI and decide if we really need to accept useSafeArea,
-            // May be is better jsut to center Empty view in the screen, or lift it up if useSafeArea=true
             host.add(to: view, useSafeArea: true)
         }
 
