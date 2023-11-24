@@ -58,13 +58,22 @@ extension ControlUnits {
         private func updateContent() {
             updateControlUnitViewStates()
             if controlUnitViewStates.isEmpty {
-                showEmptyScreen()
+                if interactor.isFiltering {
+                    showEmptySearchResultsScreen()
+                } else {
+                    showEmptyScreen()
+                }
             } else {
                 showAvailableControlUnits(with: controlUnitViewStates)
             }
         }
 
         private func showEmptyScreen() {
+            let emptyControlUnitsScreenViewState = AwesomeEmptyView.State.emptyControlUnits.createViewState()
+            viewState = .empty(emptyControlUnitsScreenViewState)
+        }
+
+        private func showEmptySearchResultsScreen() {
             let emptyControlUnitsScreenViewState = AwesomeEmptyView.State.emptyControlUnits.createViewState()
             viewState = .empty(emptyControlUnitsScreenViewState)
         }
@@ -102,7 +111,7 @@ extension ControlUnits.Presenter {
 
         let controlUnits: [ControlUnits.ControlUnitDomainModel]
 
-        if interactor.isFilterEnabled {
+        if interactor.isFiltering {
             controlUnits = interactor.filteredControlUnits
         } else {
             controlUnits = interactor.controlUnits

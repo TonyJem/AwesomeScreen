@@ -8,7 +8,7 @@ protocol ControlUnitsInteractor {
 
     var controlUnitsSortingRule: ControlUnits.SortingRule { get }
 
-    var isFilterEnabled: Bool { get }
+    var isFiltering: Bool { get }
 
     var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)? { get set }
 
@@ -34,7 +34,7 @@ extension ControlUnits {
 
         var controlUnits: [ControlUnitDomainModel] = []
 
-        var isFilterEnabled = false
+        var isFiltering = false
 
         var filteredControlUnits: [ControlUnitDomainModel] = []
 
@@ -74,9 +74,8 @@ extension ControlUnits {
         }
 
         func filterControlUnits(_ searchText: String) {
-            // TODO: Add isNotEmpty in extension
-            isFilterEnabled = !searchText.isEmpty
-            if isFilterEnabled {
+            isFiltering = searchText.isNotEmpty
+            if isFiltering {
                 filteredControlUnits = controlUnits.filter { controlUnit in
                     return controlUnit.name.lowercased().contains(searchText.lowercased())
                 }
