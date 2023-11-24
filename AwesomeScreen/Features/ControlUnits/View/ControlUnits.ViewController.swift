@@ -1,5 +1,6 @@
 import UIKit
 
+// TODO: May be would be good to create badge showing how YY results appeared from XX possible total items
 extension ControlUnits {
 
     // TODO: Create ControlUnitsView protocol
@@ -75,6 +76,7 @@ extension ControlUnits {
         }
 
         @objc private func didTapSearchButton() {
+            // TODO: Put focus on search bar immediatelly, when keyboard opens
             navigationItem.searchController = searchController
         }
 

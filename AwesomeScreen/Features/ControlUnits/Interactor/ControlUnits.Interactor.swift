@@ -58,7 +58,7 @@ extension ControlUnits {
                     let controlUnits = units.compactMap { [weak self] unit in
                         return self?.transform(unit)
                     }
-                    self?.updateControlUnits(controlUnits)
+                    self?.sortAll(controlUnits)
                     self?.notifyPresenter(with: .success(()))
 
                 case .failure(let error):
@@ -69,7 +69,7 @@ extension ControlUnits {
 
         func sortControlUnits(_ rule: ControlUnits.SortingRule) {
             controlUnitsSortingRule = rule
-            updateControlUnits(controlUnits)
+            sortAll(controlUnits)
             notifyPresenter(with: .success(()))
         }
 
@@ -80,7 +80,6 @@ extension ControlUnits {
                 filteredControlUnits = controlUnits.filter { controlUnit in
                     return controlUnit.name.lowercased().contains(searchText.lowercased())
                 }
-                debugPrint("🟢 Filtered Unit Count: \(filteredControlUnits.count)")
             } else {
                 filteredControlUnits = []
             }
@@ -108,8 +107,9 @@ extension ControlUnits {
             return ControlUnitDomainModel.Status.notReachable
         }
 
-        private func updateControlUnits(_ controlUnits: [ControlUnitDomainModel]) {
+        private func sortAll(_ controlUnits: [ControlUnitDomainModel]) {
             self.controlUnits = sorted(controlUnits)
+            self.filteredControlUnits = sorted(filteredControlUnits)
         }
 
         private func sorted(_ controlUnits: [ControlUnitDomainModel]) -> [ControlUnitDomainModel] {
