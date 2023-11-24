@@ -59,7 +59,7 @@ extension ControlUnits {
             updateControlUnitViewStates()
             if controlUnitViewStates.isEmpty {
                 if interactor.isFiltering {
-                    showEmptySearchResultsScreen()
+                    showNoSearchResultsScreen()
                 } else {
                     showEmptyScreen()
                 }
@@ -73,9 +73,9 @@ extension ControlUnits {
             viewState = .empty(emptyControlUnitsScreenViewState)
         }
 
-        private func showEmptySearchResultsScreen() {
-            let emptyControlUnitsScreenViewState = AwesomeEmptyView.State.emptyControlUnits.createViewState()
-            viewState = .empty(emptyControlUnitsScreenViewState)
+        private func showNoSearchResultsScreen() {
+            let noSearchResultsScreenViewState = AwesomeEmptyView.State.noSearchResults.createViewState()
+            viewState = .empty(noSearchResultsScreenViewState)
         }
 
         private func showAvailableControlUnits(with viewStates: [ControlUnits.ListView.ItemView.ViewState]) {
@@ -108,20 +108,18 @@ extension ControlUnits {
 extension ControlUnits.Presenter {
 
     private func updateControlUnitViewStates() {
-
-        let controlUnits: [ControlUnits.ControlUnitDomainModel]
+        let controlUnitsToDisplay: [ControlUnits.ControlUnitDomainModel]
 
         if interactor.isFiltering {
-            controlUnits = interactor.filteredControlUnits
+            controlUnitsToDisplay = interactor.filteredControlUnits
         } else {
-            controlUnits = interactor.controlUnits
+            controlUnitsToDisplay = interactor.controlUnits
         }
 
-        // TODO: Create screen UI Showing zero search results and logic showing this screen
-        if controlUnits.isEmpty {
+        if controlUnitsToDisplay.isEmpty {
             controlUnitViewStates = []
         } else {
-            controlUnitViewStates = controlUnits.map { transform(from: $0) }
+            controlUnitViewStates = controlUnitsToDisplay.map { transform(from: $0) }
         }
     }
 

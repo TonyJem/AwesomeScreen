@@ -13,6 +13,14 @@ extension LocalizedTranslations {
 
         }
 
+        enum NoSearchResults {
+
+            static let title = "AwesomeEmptyView.NoSearchResults.Title".localized
+
+            static let subtitle = "AwesomeEmptyView.NoSearchResults.Subtitle".localized
+
+        }
+
     }
 
 }

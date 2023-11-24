@@ -12,7 +12,9 @@ struct AwesomeEmptyView: View {
     var body: some View {
         VStack(spacing: .spacingMedium) {
 
-            Image(uiImage: viewState.image)
+            if let image = viewState.image {
+                Image(uiImage: image)
+            }
 
             VStack(spacing: .spacing2XSmall) {
                 titleText()
@@ -50,12 +52,12 @@ extension AwesomeEmptyView {
 
         var title: String
         var subtitle: String
-        var image: UIImage
+        var image: UIImage?
 
         init(
             title: String,
             subtitle: String,
-            image: UIImage
+            image: UIImage?
         ) {
             self.title = title
             self.subtitle = subtitle
@@ -65,7 +67,7 @@ extension AwesomeEmptyView {
         static let intial: ViewState = ViewState(
             title: "",
             subtitle: "",
-            image: UIImage()
+            image: nil
         )
 
     }
