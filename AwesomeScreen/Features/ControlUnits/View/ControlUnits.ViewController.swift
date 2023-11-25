@@ -123,12 +123,12 @@ extension ControlUnits.ViewController {
 // MARK: - Setup SearchController
 extension ControlUnits.ViewController {
 
-    // TODO: Need to setup text color an check Search field UI in general
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
         setupSearchIcon()
+        setupSearchPointer()
         setupSearchCancelButton()
     }
 
@@ -136,6 +136,10 @@ extension ControlUnits.ViewController {
         let image = UIImage.awesomeSymbol(.magnifyingGlass)
             .withTintColor(UIColor.Branded.foregroundPrimary, renderingMode: .alwaysOriginal)
         UISearchBar.appearance().setImage(image, for: .search, state: .normal)
+    }
+
+    private func setupSearchPointer() {
+        searchController.searchBar.tintColor = .Branded.foregroundPrimary
     }
 
     private func setupSearchCancelButton() {
@@ -209,11 +213,9 @@ extension ControlUnits.ViewController: ControlUnitsViewProtocol {
 extension ControlUnits.ViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
-
         if let text = searchController.searchBar.text {
             presenter.updateSearch(text: text)
         }
-
     }
 
 }
