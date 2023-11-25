@@ -142,3 +142,17 @@ extension ControlUnits.ListView.ItemView {
     }
 
 }
+
+extension ControlUnits.ListView.ItemView.ViewState: Equatable {
+
+    static func == (
+        lhs: ControlUnits.ListView.ItemView.ViewState,
+        rhs: ControlUnits.ListView.ItemView.ViewState
+    ) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.title == rhs.title &&
+        lhs.imageUrlString == rhs.imageUrlString &&
+        lhs.configuration == rhs.configuration
+    }
+
+}

@@ -57,7 +57,7 @@ class DataProvider: ObservableObject {
             return
         }
 
-        if let _ = cacheService.getImage(with: url) {
+        if cacheService.getImage(with: url) != nil {
             debugPrint("🟢🟢🟢 Image already exists!")
         } else {
             let request = URLRequest(

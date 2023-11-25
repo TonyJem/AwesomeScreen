@@ -51,8 +51,7 @@ extension ControlUnits {
 
 extension ControlUnits.ListView {
 
-    // TODO: Perhaps is needed to make ViewState: Equatable <- we'll see when be setting SwiftUI bindings
-    struct ViewState {
+    struct ViewState: Equatable {
 
         let controlUnitsViewStates: [ControlUnits.ListView.ItemView.ViewState]
         let sortButtonTitle: String
@@ -69,6 +68,13 @@ extension ControlUnits.ListView {
             self.sortButtonTitle = sortButtonTitle
             self.sortButtonImage = sortButtonImage
             self.sortButtonAction = sortButtonAction
+        }
+
+        static func == (
+            lhs: ControlUnits.ListView.ViewState,
+            rhs: ControlUnits.ListView.ViewState
+        ) -> Bool {
+            lhs.controlUnitsViewStates == rhs.controlUnitsViewStates
         }
 
     }
