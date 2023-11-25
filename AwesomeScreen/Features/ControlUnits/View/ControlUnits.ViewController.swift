@@ -53,10 +53,9 @@ extension ControlUnits {
 
             // TODO: Show searchButton only on main screen
             let updateButton = updateButton()
-            let searchButton = searchButton()
+
             navigationItem.rightBarButtonItems = [
-                updateButton,
-                searchButton
+                updateButton
             ]
 
             let image = UIImage.awesomeSymbol(.magnifyingGlass).withTintColor(
@@ -128,11 +127,20 @@ extension ControlUnits {
         }
 
         private func showSearchButton() {
-            debugPrint("🟢 Show Search button here")
+            let searchButton = searchButton()
+            navigationItem.rightBarButtonItems?.append(searchButton)
         }
 
         private func hideSearchButton() {
-            debugPrint("🟡 Hide Search button here")
+            // Improvement suggestion: #01
+            // Here is a simple solution, made just for now, which looks to be working for current layout and
+            // which could be broken if more buttons in navBar will be needed to add in the future...
+            // In real case it would be a suggestion for Designer to move "Search" button to the "unitsAvailable" screen's contentView
+            // and avoid placing it in NavBar.
+            // With such improvement it could appear together with content view, and that will improve general UX impresion to the User.
+            if navigationItem.rightBarButtonItems?.count == 2 {
+                navigationItem.rightBarButtonItems?.removeLast()
+            }
         }
 
     }
