@@ -128,6 +128,11 @@ extension ControlUnits {
 
         private func showSearchButton() {
             let searchButton = searchButton()
+            // enables seamless "simple solution" mentioned in suggestion: #01
+            guard let items = navigationItem.rightBarButtonItems,
+                  items.count < 2 else {
+                return
+            }
             navigationItem.rightBarButtonItems?.append(searchButton)
         }
 
