@@ -3,19 +3,25 @@ import SwiftUI
 
 class DataProvider: ObservableObject {
 
-    var imageCache = NSCache<NSString, UIImage>()
+    @Published var image: UIImage = UIImage()
 
-    func downloadImage(urlString: String, completion: @escaping (UIImage?) -> Void) {
+    private let cacheService: CacheService
+
+    init(cacheService: CacheService) {
+        self.cacheService = cacheService
+    }
+
+    func downloadImage(urlString: String) {
 
         guard let url = URL(string: urlString) else {
-            debugPrint("🔴 Can't create URL for image.")
-            completion(.awesomeImage(.noImage))
+            debugPrint("🔴 Can't create URL from urlString for this image.")
+            self.image = .awesomeImage(.noImage)
             return
         }
 
-        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
+        if let cachedImage = cacheService.getImage(with: url) {
             debugPrint("🟢🟢🟢 Image used from the cache!")
-            completion(cachedImage)
+            self.image = cachedImage
         } else {
             let request = URLRequest(
                 url: url,
@@ -33,14 +39,11 @@ class DataProvider: ObservableObject {
                 }
 
                 guard let image = UIImage(data: data!) else { return }
-                debugPrint("🟣🟣 Image is going to be saved in cache....")
-                self.imageCache.setObject(image, forKey: url.absoluteString as NSString)
-
+                self.cacheService.setImage(image: image, url: url)
                 DispatchQueue.main.async {
                     debugPrint("🟣🟣🟣 Is first time downloaded image!")
-                    completion(image)
+                    self.image = image
                 }
-
             }
             dataTask.resume()
         }

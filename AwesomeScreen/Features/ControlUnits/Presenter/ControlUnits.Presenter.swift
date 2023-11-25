@@ -14,7 +14,7 @@ extension ControlUnits {
 
         private let interactor: ControlUnitsInteractor
 
-        private let dataProvider = DataProvider()
+        private let cacheService: CacheService
 
         weak var view: ControlUnitsViewProtocol?
 
@@ -33,6 +33,7 @@ extension ControlUnits {
 
         init(interactor: ControlUnitsInteractor) {
             self.interactor = interactor
+            self.cacheService = CacheService()
         }
 
         // MARK: - Public
@@ -135,12 +136,9 @@ extension ControlUnits.Presenter {
             title: domainModel.name,
             imageUrlString: domainModel.imageUrlString,
             configuration: getBadgeConfiguration(for: domainModel.status),
-            action: { [weak self] in
+            action: {
                 // Should be implemented when need to navigate into ControlUnits.Details.Screen
                 debugPrint("🟢 didTap on ControlUnit: \(domainModel.name)")
-                self?.dataProvider.downloadImage(urlString: domainModel.imageUrlString) { _ in
-                    debugPrint("🟢🟢 downloadImage completed")
-                }
             }
         )
     }
