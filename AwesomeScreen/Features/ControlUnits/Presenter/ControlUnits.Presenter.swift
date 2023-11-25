@@ -12,9 +12,9 @@ extension ControlUnits {
             }
         }
 
-        private let interactor: ControlUnitsInteractor
+        let cacheService: CacheService
 
-        private let cacheService: CacheService
+        private let interactor: ControlUnitsInteractor
 
         weak var view: ControlUnitsViewProtocol?
 

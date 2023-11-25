@@ -15,10 +15,15 @@ extension ControlUnits.ListView {
 
         }
 
-        let viewState: ControlUnits.ListView.ItemView.ViewState
+        private let viewState: ControlUnits.ListView.ItemView.ViewState
+        private let cacheService: CacheService
 
-        init(viewState: ControlUnits.ListView.ItemView.ViewState) {
+        init(
+            viewState: ControlUnits.ListView.ItemView.ViewState,
+            cacheService: CacheService
+        ) {
             self.viewState = viewState
+            self.cacheService = cacheService
         }
 
         var body: some View {
@@ -58,7 +63,10 @@ extension ControlUnits.ListView {
                         height: Constants.imageSize.height
                     )
 
-                AwesomeImageView(urlString: viewState.imageUrlString)
+                AwesomeImageView(
+                    urlString: viewState.imageUrlString,
+                    cacheService: cacheService
+                )
                     .aspectRatio(contentMode: .fit)
                     .frame(
                         width: Constants.imageSize.width,

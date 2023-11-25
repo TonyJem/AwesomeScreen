@@ -2,11 +2,19 @@ import SwiftUI
 
 struct AwesomeImageView: View {
 
-    var urlString: String
-
-    @ObservedObject var imageLoader = ImageLoaderService()
+    @ObservedObject var imageLoader: DataProvider
 
     @State private var image: UIImage = .awesomeImage(.noImage)
+
+    let urlString: String
+
+    init(
+        urlString: String,
+        cacheService: CacheService
+    ) {
+        self.urlString = urlString
+        self.imageLoader = DataProvider(cacheService: cacheService)
+    }
 
     var body: some View {
         Image(uiImage: image)
@@ -15,7 +23,8 @@ struct AwesomeImageView: View {
                 self.image = image
             }
             .onAppear {
-                imageLoader.loadImage(for: urlString)
+//                imageLoader.loadImage(for: urlString)
+                imageLoader.downloadImage(urlString: urlString)
             }
     }
 

@@ -22,7 +22,10 @@ extension ControlUnits {
                 AwesomeLoadingView()
 
             case .unitsAvailable(let viewState):
-                ListView(viewState: viewState)
+                ListView(
+                    viewState: viewState,
+                    cacheService: presenter.cacheService
+                )
 
             case .loadingFailure(let viewState):
                 AwesomeFailureView(viewState: viewState)

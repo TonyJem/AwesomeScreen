@@ -1,14 +1,19 @@
 import SwiftUI
 
-// TODO: Try to remove tiem separators (minor glitches I see here)
 extension ControlUnits {
 
     struct ListView: View {
 
-        var viewState: ControlUnits.ListView.ViewState
+        private var viewState: ControlUnits.ListView.ViewState
+        private var cacheService: CacheService
 
-        init(viewState: ControlUnits.ListView.ViewState) {
+        init(
+            viewState: ControlUnits.ListView.ViewState,
+            cacheService: CacheService
+
+        ) {
             self.viewState = viewState
+            self.cacheService = cacheService
         }
 
         var body: some View {
@@ -18,7 +23,10 @@ extension ControlUnits {
 
                 List {
                     ForEach(viewState.controlUnitsViewStates) { viewState in
-                        ItemView(viewState: viewState)
+                        ItemView(
+                            viewState: viewState,
+                            cacheService: cacheService
+                        )
                             .listRowBackground(Color.black)
                             .listRowInsets(EdgeInsets())
                     }
