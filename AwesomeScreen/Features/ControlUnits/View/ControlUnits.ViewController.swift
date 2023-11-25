@@ -34,6 +34,10 @@ extension ControlUnits {
             setupView()
         }
 
+        override func viewWillAppear(_ animated: Bool) {
+            setupSearchControllerPlaceholder()
+        }
+
         // MARK: - Private
 
         private func setupView() {
@@ -116,14 +120,7 @@ extension ControlUnits.ViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
         setupSearchIcon()
-        setupSearchPlaceholder()
         setupSearchCancelButton()
-
-//        let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
-//        textFieldInsideSearchBar?.textColor = .Branded.foregroundPrimary
-//        let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
-//        textFieldInsideSearchBarLabel?.textColor = .Branded.foregroundSecondary
-
     }
 
     private func setupSearchIcon() {
@@ -132,8 +129,13 @@ extension ControlUnits.ViewController {
         UISearchBar.appearance().setImage(image, for: .search, state: .normal)
     }
 
-    private func setupSearchPlaceholder() {
-        searchController.searchBar.placeholder = L10n.ControlUnits.searchBarPlaceholder
+    private func setupSearchControllerPlaceholder() {
+        let placeholderText = L10n.ControlUnits.searchBarPlaceholder
+        let attributedPlaceholder = NSAttributedString(
+            string: placeholderText,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.Branded.foregroundSecondary]
+        )
+        searchController.searchBar.searchTextField.attributedPlaceholder = attributedPlaceholder
     }
 
     private func setupSearchCancelButton() {
