@@ -1,9 +1,14 @@
 import UIKit
 
+protocol ControlUnitsViewProtocol: UIViewController {
+
+    func render(viewState: ControlUnits.ViewState)
+
+}
+
 // TODO: May be would be good to create badge showing how YY results appeared from XX possible total items
 extension ControlUnits {
 
-    // TODO: Create ControlUnitsView protocol
     final class ViewController: UIViewController {
 
         let searchController = UISearchController(searchResultsController: nil)
@@ -59,7 +64,6 @@ extension ControlUnits {
                 renderingMode: .alwaysOriginal
             )
             UISearchBar.appearance().setImage(image, for: .search, state: .normal)
-            
 
             // TODO: Think we have to set backgound color here, instead of settgin it in Host
 
@@ -123,6 +127,34 @@ extension ControlUnits {
                 .setTitleTextAttributes(cancelButtonAttributes, for: .normal)
         }
 
+        private func showSearchButton() {
+            debugPrint("🟢 Show Search button here")
+        }
+
+        private func hideSearchButton() {
+            debugPrint("🟡 Hide Search button here")
+        }
+
+    }
+
+}
+
+// MARK: - ControlUnitsViewProtocol
+
+extension ControlUnits.ViewController: ControlUnitsViewProtocol {
+
+    func render(viewState: ControlUnits.ViewState) {
+        switch viewState {
+        case
+                .empty,
+                .loading,
+                .loadingFailure:
+            hideSearchButton()
+
+        case
+                .unitsAvailable:
+            showSearchButton()
+        }
     }
 
 }

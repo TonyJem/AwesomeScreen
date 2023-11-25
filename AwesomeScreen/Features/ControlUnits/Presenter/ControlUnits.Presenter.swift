@@ -6,11 +6,15 @@ extension ControlUnits {
 
     final class Presenter: ObservableObject {
 
-        @Published var viewState: ViewState = .loading
+        @Published var viewState: ViewState = .loading {
+            didSet {
+                view?.render(viewState: viewState)
+            }
+        }
 
         private let interactor: ControlUnitsInteractor
 
-        weak var view: UIViewController?
+        weak var view: ControlUnitsViewProtocol?
 
         private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState] = []
 
