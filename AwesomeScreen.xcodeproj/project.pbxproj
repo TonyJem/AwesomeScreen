@@ -58,6 +58,7 @@
 		3A251A682B0D291E000F062A /* AwesomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A672B0D291E000F062A /* AwesomeImageView.swift */; };
 		3A251A6C2B0E5BEF000F062A /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A6B2B0E5BEF000F062A /* SmallButton.swift */; };
 		3A251A6E2B0E6D11000F062A /* ControlUnits.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */; };
+		3A251A712B1235C8000F062A /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A702B1235C7000F062A /* DataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		3A251A672B0D291E000F062A /* AwesomeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeImageView.swift; sourceTree = "<group>"; };
 		3A251A6B2B0E5BEF000F062A /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Localized.swift; sourceTree = "<group>"; };
+		3A251A702B1235C7000F062A /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 		3A2519F42B080C7F000F062A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3A251A6F2B1234EE000F062A /* ImageDownloader */,
 				3A251A642B0D2884000F062A /* ImageLoader */,
 				3A2519F72B080CA2000F062A /* Foundation */,
 			);
@@ -445,6 +448,14 @@
 			path = ImageLoader;
 			sourceTree = "<group>";
 		};
+		3A251A6F2B1234EE000F062A /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				3A251A702B1235C7000F062A /* DataProvider.swift */,
+			);
+			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -596,6 +607,7 @@
 				3A251A102B08E517000F062A /* ControlUnits.ViewState.swift in Sources */,
 				3A2519C42B07D6D3000F062A /* AppDelegate.swift in Sources */,
 				3A251A152B08FD11000F062A /* AwesomeFailureView.Localized.swift in Sources */,
+				3A251A712B1235C8000F062A /* DataProvider.swift in Sources */,
 				3A251A6E2B0E6D11000F062A /* ControlUnits.Localized.swift in Sources */,
 				3A251A4F2B0B00EA000F062A /* ControlUnitServiceRandomizer.swift in Sources */,
 				3A251A432B0AFF71000F062A /* ControlUnitServiceFailure.swift in Sources */,
