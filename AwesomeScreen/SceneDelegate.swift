@@ -39,6 +39,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             presenter?.onDidUpdateControlUnits(with: result)
         }
 
+        interactor.presenter = presenter
+
         let viewController = ControlUnits.ViewController(with: presenter)
 
         presenter.view = viewController

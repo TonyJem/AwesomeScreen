@@ -32,6 +32,8 @@ extension ControlUnits {
 
         }
 
+        weak var presenter: ControlUnits.Presenter?
+
         var controlUnits: [ControlUnitDomainModel] = []
 
         var isFiltering = false
@@ -59,6 +61,7 @@ extension ControlUnits {
                         return self?.transform(unit)
                     }
                     self?.sortAll(controlUnits)
+                    self?.presenter?.updateCache()
                     self?.notifyPresenter(with: .success(()))
 
                 case .failure(let error):

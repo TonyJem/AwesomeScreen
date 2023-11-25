@@ -20,6 +20,8 @@ extension ControlUnits {
 
         private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState] = []
 
+        var dataProvider: DataProvider
+
         var sortButtonTitle: String {
             switch interactor.controlUnitsSortingRule {
             case .byId:
@@ -32,8 +34,12 @@ extension ControlUnits {
         }
 
         init(interactor: ControlUnitsInteractor) {
+
+            let cacheService = CacheService()
+
             self.interactor = interactor
-            self.cacheService = CacheService()
+            self.cacheService = cacheService
+            self.dataProvider = DataProvider(cacheService: cacheService)
         }
 
         // MARK: - Public
@@ -54,6 +60,16 @@ extension ControlUnits {
         func reloadControlUnits() {
             showLoadingScreen()
             interactor.getControlUnits()
+        }
+
+        func updateCache() {
+            debugPrint("🟡 updateCache main function")
+            let units = interactor.controlUnits
+            units.forEach { unit in
+                let imageUrlString = unit.imageUrlString
+                debugPrint("🟡🟡🟡 updateCache in forEach")
+                dataProvider.setImageToCash(urlString: imageUrlString)
+            }
         }
 
         func updateSearch(text: String) {

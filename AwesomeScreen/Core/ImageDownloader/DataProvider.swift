@@ -50,4 +50,40 @@ class DataProvider: ObservableObject {
 
     }
 
+    func setImageToCash(urlString: String) {
+
+        guard let url = URL(string: urlString) else {
+            debugPrint("🔴 Can't create URL from urlString for this image.")
+            return
+        }
+
+        if let _ = cacheService.getImage(with: url) {
+            debugPrint("🟢🟢🟢 Image already exists!")
+        } else {
+            let request = URLRequest(
+                url: url,
+                cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad,
+                timeoutInterval: 10
+            )
+
+            let dataTask = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+                guard error == nil,
+                      data != nil,
+                      let response = response as? HTTPURLResponse,
+                      response.statusCode == 200,
+                      let `self` = self else {
+                    return
+                }
+
+                guard let image = UIImage(data: data!) else { return }
+                self.cacheService.setImage(image: image, url: url)
+                DispatchQueue.main.async {
+                    debugPrint("🟡🟡🟡🟡🟡🟡 Download only to cache!")
+                }
+            }
+            dataTask.resume()
+        }
+
+    }
+
 }
