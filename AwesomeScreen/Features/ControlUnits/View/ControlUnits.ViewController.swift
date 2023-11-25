@@ -103,10 +103,19 @@ extension ControlUnits.ViewController {
         return searchButton
     }
 
-    // TODO: didTapSearchButton should be handled in Presenter
+    // TODO: didTapSearchButton action should be handled via Presenter
     // TODO: Put focus on search bar immediatelly, when keyboard opens
     @objc private func didTapSearchButton() {
+        showSearchController()
+    }
+
+    private func showSearchController() {
         navigationItem.searchController = searchController
+        setupSearchControllerText()
+    }
+
+    private func hideSearchController() {
+        navigationItem.searchController = nil
     }
 
 }
@@ -129,6 +138,13 @@ extension ControlUnits.ViewController {
         UISearchBar.appearance().setImage(image, for: .search, state: .normal)
     }
 
+    private func setupSearchCancelButton() {
+        let cancelButtonAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Branded.foregroundPrimary]
+        UIBarButtonItem
+            .appearance()
+            .setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+    }
+
     private func setupSearchControllerPlaceholder() {
         let placeholderText = L10n.ControlUnits.searchBarPlaceholder
         let attributedPlaceholder = NSAttributedString(
@@ -138,11 +154,8 @@ extension ControlUnits.ViewController {
         searchController.searchBar.searchTextField.attributedPlaceholder = attributedPlaceholder
     }
 
-    private func setupSearchCancelButton() {
-        let cancelButtonAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Branded.foregroundPrimary]
-        UIBarButtonItem
-            .appearance()
-            .setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+    private func setupSearchControllerText() {
+        searchController.searchBar.searchTextField.textColor = .Branded.foregroundPrimary
     }
 
 }
@@ -209,8 +222,9 @@ extension ControlUnits.ViewController: UISearchResultsUpdating {
 
 extension ControlUnits.ViewController: UISearchBarDelegate {
 
+    // TODO: searchBarCancelButtonClicked action should be handled via Presenter
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        navigationItem.searchController = nil
+        hideSearchController()
     }
 
 }
