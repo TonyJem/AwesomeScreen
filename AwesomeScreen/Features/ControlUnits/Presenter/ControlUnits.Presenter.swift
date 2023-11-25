@@ -14,6 +14,8 @@ extension ControlUnits {
 
         private let interactor: ControlUnitsInteractor
 
+        private let dataProvider = DataProvider()
+
         weak var view: ControlUnitsViewProtocol?
 
         private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState] = []
@@ -133,9 +135,12 @@ extension ControlUnits.Presenter {
             title: domainModel.name,
             imageUrlString: domainModel.imageUrlString,
             configuration: getBadgeConfiguration(for: domainModel.status),
-            action: {
+            action: { [weak self] in
                 // Should be implemented when need to navigate into ControlUnits.Details.Screen
                 debugPrint("🟢 didTap on ControlUnit: \(domainModel.name)")
+                self?.dataProvider.downloadImage(urlString: domainModel.imageUrlString) { _ in
+                    debugPrint("🟢🟢 downloadImage completed")
+                }
             }
         )
     }

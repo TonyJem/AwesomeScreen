@@ -6,7 +6,7 @@ struct AwesomeImageView: View {
 
     @ObservedObject var imageLoader = ImageLoaderService()
 
-    @State private var image: UIImage = UIImage()
+    @State private var image: UIImage = .awesomeImage(.noImage)
 
     var body: some View {
         Image(uiImage: image)
