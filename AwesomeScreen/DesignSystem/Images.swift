@@ -10,6 +10,10 @@ extension UIImage {
         return awesomeImage.image()!
     }
 
+    static func awesomeSymbol(_ awesomeSymbol: AwesomeSymbol) -> UIImage {
+        return awesomeSymbol.image()!
+    }
+
 }
 
 extension Image {
@@ -44,4 +48,15 @@ enum AwesomeImage: String, CaseIterable {
     case testImage02
     case testImage03
     case testImage04
+}
+
+enum AwesomeSymbol: String, CaseIterable {
+
+    func image() -> UIImage? {
+        return UIImage(systemName: self.rawValue)
+    }
+
+    case arrowClockwiseIcloud = "arrow.clockwise.icloud"
+    case magnifyingGlass = "magnifyingglass"
+
 }

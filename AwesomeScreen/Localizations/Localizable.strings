@@ -2,6 +2,9 @@
 "AwesomeEmptyView.EmptyControlUnits.Title" = "Control Unit List is Empty";
 "AwesomeEmptyView.EmptyControlUnits.Subtitle" = "Vehicle contains no control units.";
 
+"AwesomeEmptyView.NoSearchResults.Title" = "No Results";
+"AwesomeEmptyView.NoSearchResults.Subtitle" = "Try searching again.";
+
 // MARK: - AwesomeFailureView.ViewState
 "AwesomeFailureView.ControlUnits.Title" = "Unable to Load Control Unit List";
 "AwesomeFailureView.ControlUnits.Subtitle" = "Please try again later.";
@@ -13,6 +16,11 @@
 
 
 // MARK: - ControlUnits Screen
+"ControlUnits.ScreenTitle" = "Control Units";
+"ControlUnits.SearchBarPlaceholder" = "Search";
+"ControlUnits.SortingRuleSelectionPopUp.Title" = "Sort by";
+
 "ControlUnits.SortButton.StatusTitle" = "Status";
 "ControlUnits.SortButton.IdTitle" = "ID";
 "ControlUnits.SortButton.NameTitle" = "Name";
+"ControlUnits.SortButton.CancelTitle" = "Cancel";

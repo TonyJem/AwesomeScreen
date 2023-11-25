@@ -4,13 +4,19 @@ protocol ControlUnitsInteractor {
 
     var controlUnits: [ControlUnits.ControlUnitDomainModel] { get }
 
+    var filteredControlUnits: [ControlUnits.ControlUnitDomainModel] { get }
+
     var controlUnitsSortingRule: ControlUnits.SortingRule { get }
+
+    var isFiltering: Bool { get }
 
     var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)? { get set }
 
+    func getControlUnits()
+
     func sortControlUnits(_ rule: ControlUnits.SortingRule)
 
-    func getControlUnits()
+    func filterControlUnits(_ searchText: String)
 
 }
 
@@ -27,7 +33,13 @@ extension ControlUnits {
         }
 
         var controlUnits: [ControlUnitDomainModel] = []
+
+        var isFiltering = false
+
+        var filteredControlUnits: [ControlUnitDomainModel] = []
+
         var controlUnitsSortingRule: ControlUnits.SortingRule = .byId
+
         var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)?
 
         private let controlUnitService: ControlUnitServiceInterface
@@ -38,11 +50,6 @@ extension ControlUnits {
 
         // MARK: - Public
 
-        func sortControlUnits(_ rule: ControlUnits.SortingRule) {
-            controlUnitsSortingRule = rule
-            updateControlUnits(controlUnits)
-        }
-
         func getControlUnits() {
             controlUnitService.controlUnits { [weak self] result in
                 switch result {
@@ -51,13 +58,31 @@ extension ControlUnits {
                     let controlUnits = units.compactMap { [weak self] unit in
                         return self?.transform(unit)
                     }
-                    self?.updateControlUnits(controlUnits)
+                    self?.sortAll(controlUnits)
                     self?.notifyPresenter(with: .success(()))
 
                 case .failure(let error):
                     self?.notifyPresenter(with: .failure(error))
                 }
             }
+        }
+
+        func sortControlUnits(_ rule: ControlUnits.SortingRule) {
+            controlUnitsSortingRule = rule
+            sortAll(controlUnits)
+            notifyPresenter(with: .success(()))
+        }
+
+        func filterControlUnits(_ searchText: String) {
+            isFiltering = searchText.isNotEmpty
+            if isFiltering {
+                filteredControlUnits = controlUnits.filter { controlUnit in
+                    return controlUnit.name.lowercased().contains(searchText.lowercased())
+                }
+            } else {
+                filteredControlUnits = []
+            }
+            notifyPresenter(with: .success(()))
         }
 
         // MARK: - Private
@@ -81,8 +106,9 @@ extension ControlUnits {
             return ControlUnitDomainModel.Status.notReachable
         }
 
-        private func updateControlUnits(_ controlUnits: [ControlUnitDomainModel]) {
+        private func sortAll(_ controlUnits: [ControlUnitDomainModel]) {
             self.controlUnits = sorted(controlUnits)
+            self.filteredControlUnits = sorted(filteredControlUnits)
         }
 
         private func sorted(_ controlUnits: [ControlUnitDomainModel]) -> [ControlUnitDomainModel] {

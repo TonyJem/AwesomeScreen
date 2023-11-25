@@ -6,11 +6,15 @@ extension ControlUnits {
 
     final class Presenter: ObservableObject {
 
-        @Published var viewState: ViewState = .loading
+        @Published var viewState: ViewState = .loading {
+            didSet {
+                view?.render(viewState: viewState)
+            }
+        }
 
         private let interactor: ControlUnitsInteractor
 
-        weak var view: UIViewController?
+        weak var view: ControlUnitsViewProtocol?
 
         private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState] = []
 
@@ -49,13 +53,20 @@ extension ControlUnits {
             interactor.getControlUnits()
         }
 
+        func updateSearch(text: String) {
+            interactor.filterControlUnits(text)
+        }
+
         // MARK: - Private
 
         private func updateContent() {
-
             updateControlUnitViewStates()
             if controlUnitViewStates.isEmpty {
-                showEmptyScreen()
+                if interactor.isFiltering {
+                    showNoSearchResultsScreen()
+                } else {
+                    showEmptyScreen()
+                }
             } else {
                 showAvailableControlUnits(with: controlUnitViewStates)
             }
@@ -64,6 +75,11 @@ extension ControlUnits {
         private func showEmptyScreen() {
             let emptyControlUnitsScreenViewState = AwesomeEmptyView.State.emptyControlUnits.createViewState()
             viewState = .empty(emptyControlUnitsScreenViewState)
+        }
+
+        private func showNoSearchResultsScreen() {
+            let noSearchResultsScreenViewState = AwesomeEmptyView.State.noSearchResults.createViewState()
+            viewState = .empty(noSearchResultsScreenViewState)
         }
 
         private func showAvailableControlUnits(with viewStates: [ControlUnits.ListView.ItemView.ViewState]) {
@@ -96,11 +112,18 @@ extension ControlUnits {
 extension ControlUnits.Presenter {
 
     private func updateControlUnitViewStates() {
-        let controlUnits = interactor.controlUnits
-        if controlUnits.isEmpty {
+        let controlUnitsToDisplay: [ControlUnits.ControlUnitDomainModel]
+
+        if interactor.isFiltering {
+            controlUnitsToDisplay = interactor.filteredControlUnits
+        } else {
+            controlUnitsToDisplay = interactor.controlUnits
+        }
+
+        if controlUnitsToDisplay.isEmpty {
             controlUnitViewStates = []
         } else {
-            controlUnitViewStates = controlUnits.map { transform(from: $0) }
+            controlUnitViewStates = controlUnitsToDisplay.map { transform(from: $0) }
         }
     }
 
@@ -136,7 +159,7 @@ extension ControlUnits.Presenter {
 
     private func presentSortingRuleSelectionPopUp() {
         let alertController = UIAlertController(
-            title: "Sort by",
+            title: L10n.ControlUnits.sortingRuleSelectionPopUpTitle,
             message: nil,
             preferredStyle: .actionSheet
         )
@@ -146,7 +169,6 @@ extension ControlUnits.Presenter {
             style: .default,
             handler: { [weak self] _ in
                 self?.interactor.sortControlUnits(.byId)
-                self?.updateContent()
             }
         )
 
@@ -155,7 +177,6 @@ extension ControlUnits.Presenter {
             style: .default,
             handler: { [weak self] _ in
                 self?.interactor.sortControlUnits(.byName)
-                self?.updateContent()
             }
         )
 
@@ -164,11 +185,10 @@ extension ControlUnits.Presenter {
             style: .default,
             handler: { [weak self] _ in
                 self?.interactor.sortControlUnits(.byStatus)
-                self?.updateContent()
             })
 
         let cancelButton = UIAlertAction(
-            title: "Cancel",
+            title: L10n.ControlUnits.SortButton.cancelTitle,
             style: .cancel,
             handler: { _ in
                 debugPrint("🟣🟣🟣 didTap Cancel button")

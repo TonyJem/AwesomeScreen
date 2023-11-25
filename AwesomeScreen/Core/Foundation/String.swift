@@ -10,4 +10,9 @@ extension String {
         return NSLocalizedString(self, comment: "\(self)_comment")
     }
 
+    /// Returns opposite to `self.isEmpty`.
+    var isNotEmpty: Bool {
+        return !self.isEmpty
+    }
+
 }
