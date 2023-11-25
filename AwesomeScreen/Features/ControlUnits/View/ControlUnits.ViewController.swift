@@ -6,15 +6,13 @@ protocol ControlUnitsViewProtocol: UIViewController {
 
 }
 
-// TODO: May be would be good to create badge showing how YY results appeared from XX possible total items
 extension ControlUnits {
 
     final class ViewController: UIViewController {
 
-        let searchController = UISearchController(searchResultsController: nil)
-
         // TODO: Create PresenterProtocol
         private let presenter: Presenter
+        private let searchController = UISearchController(searchResultsController: nil)
 
         // MARK: - Init
 
@@ -32,7 +30,6 @@ extension ControlUnits {
 
         override func viewDidLoad() {
             super.viewDidLoad()
-
             searchController.searchBar.delegate = self
             setupView()
         }
@@ -40,13 +37,11 @@ extension ControlUnits {
         // MARK: - Private
 
         private func setupView() {
-
             setupNavigationBar()
 
             // TODO: Think we have to set backgound color here, instead of settgin it in Host
             let contentView = ControlUnits.ContentView(presenter: presenter)
             let host = ViewHostingController(contentView)
-
             host.add(to: view, useSafeArea: true)
         }
 
@@ -63,13 +58,6 @@ extension ControlUnits {
             title = L10n.ControlUnits.screenTitle
         }
 
-        private func setupNavigationBarButtons() {
-            let updateButton = updateButton()
-            navigationItem.rightBarButtonItems = [
-                updateButton
-            ]
-        }
-
     }
 
 }
@@ -77,6 +65,28 @@ extension ControlUnits {
 // MARK: - Setup NavigationBar Buttons
 
 extension ControlUnits.ViewController {
+
+    private func setupNavigationBarButtons() {
+        let updateButton = updateButton()
+        navigationItem.rightBarButtonItems = [
+            updateButton
+        ]
+    }
+
+    private func updateButton() -> UIBarButtonItem {
+        let updateButton = UIBarButtonItem(
+            image: .awesomeSymbol(.arrowClockwiseIcloud),
+            style: .plain,
+            target: self,
+            action: #selector(didTapUpdateButton)
+        )
+        updateButton.tintColor = .Branded.foregroundHighlight
+        return updateButton
+    }
+
+    @objc private func didTapUpdateButton() {
+        presenter.reloadControlUnits()
+    }
 
     private func searchButton() -> UIBarButtonItem {
         let searchButton = UIBarButtonItem(
@@ -93,21 +103,6 @@ extension ControlUnits.ViewController {
     // TODO: Put focus on search bar immediatelly, when keyboard opens
     @objc private func didTapSearchButton() {
         navigationItem.searchController = searchController
-    }
-
-    private func updateButton() -> UIBarButtonItem {
-        let updateButton = UIBarButtonItem(
-            image: .awesomeSymbol(.arrowClockwiseIcloud),
-            style: .plain,
-            target: self,
-            action: #selector(didTapUpdateButton)
-        )
-        updateButton.tintColor = .Branded.foregroundHighlight
-        return updateButton
-    }
-
-    @objc private func didTapUpdateButton() {
-        presenter.reloadControlUnits()
     }
 
 }
@@ -131,11 +126,7 @@ extension ControlUnits.ViewController {
         let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
         textFieldInsideSearchBarLabel?.textColor = .Branded.foregroundSecondary
 
-        // TODO: Try Add Branded color
-        let cancelButtonAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UIBarButtonItem
-            .appearance()
-            .setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+        setupSearchCancelButton()
     }
 
     private func setupSearchImage() {
@@ -144,6 +135,13 @@ extension ControlUnits.ViewController {
             renderingMode: .alwaysOriginal
         )
         UISearchBar.appearance().setImage(image, for: .search, state: .normal)
+    }
+
+    private func setupSearchCancelButton() {
+        let cancelButtonAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Branded.foregroundPrimary]
+        UIBarButtonItem
+            .appearance()
+            .setTitleTextAttributes(cancelButtonAttributes, for: .normal)
     }
 
 }
