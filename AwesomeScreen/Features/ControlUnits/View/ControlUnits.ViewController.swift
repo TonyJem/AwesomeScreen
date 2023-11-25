@@ -114,27 +114,26 @@ extension ControlUnits.ViewController {
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = L10n.ControlUnits.searchBarPlaceholder
         definesPresentationContext = true
-
-        setupSearchImage()
-
-        let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
-        textFieldInsideSearchBar?.textColor = .Branded.foregroundPrimary
-
-        // TODO: Redo force unwrap
-        let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
-        textFieldInsideSearchBarLabel?.textColor = .Branded.foregroundSecondary
-
+        setupSearchIcon()
+        setupSearchPlaceholder()
         setupSearchCancelButton()
+
+//        let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
+//        textFieldInsideSearchBar?.textColor = .Branded.foregroundPrimary
+//        let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
+//        textFieldInsideSearchBarLabel?.textColor = .Branded.foregroundSecondary
+
     }
 
-    private func setupSearchImage() {
-        let image = UIImage.awesomeSymbol(.magnifyingGlass).withTintColor(
-            .white,
-            renderingMode: .alwaysOriginal
-        )
+    private func setupSearchIcon() {
+        let image = UIImage.awesomeSymbol(.magnifyingGlass)
+            .withTintColor(UIColor.Branded.foregroundPrimary, renderingMode: .alwaysOriginal)
         UISearchBar.appearance().setImage(image, for: .search, state: .normal)
+    }
+
+    private func setupSearchPlaceholder() {
+        searchController.searchBar.placeholder = L10n.ControlUnits.searchBarPlaceholder
     }
 
     private func setupSearchCancelButton() {
