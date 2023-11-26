@@ -64,6 +64,7 @@
 		3A251A7D2B139F70000F062A /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 3A251A7C2B139F70000F062A /* SnapshotTesting */; };
 		3A251A7F2B13A058000F062A /* XCTestCase+VCSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A7E2B13A058000F062A /* XCTestCase+VCSnapshot.swift */; };
 		3A251A832B13A70C000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A812B13A658000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift */; };
+		3A251A862B13A86A000F062A /* ControlUnits.Interactor.Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A842B13A814000F062A /* ControlUnits.Interactor.Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		3A251A792B139B58000F062A /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
 		3A251A7E2B13A058000F062A /* XCTestCase+VCSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+VCSnapshot.swift"; sourceTree = "<group>"; };
 		3A251A812B13A658000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.ViewController.Snapshot.Tests.swift; sourceTree = "<group>"; };
+		3A251A842B13A814000F062A /* ControlUnits.Interactor.Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Interactor.Mock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				3A251A242B0A6925000F062A /* ControlUnits.Interactor.swift */,
+				3A251A842B13A814000F062A /* ControlUnits.Interactor.Mock.swift */,
 				3A251A342B0A8E7E000F062A /* ControlUnits.Interactor.Tests.swift */,
 			);
 			path = Interactor;
@@ -655,6 +658,7 @@
 			files = (
 				3A251A832B13A70C000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift in Sources */,
 				3A251A5E2B0B02E2000F062A /* VehicleAPITests.swift in Sources */,
+				3A251A862B13A86A000F062A /* ControlUnits.Interactor.Mock.swift in Sources */,
 				3A251A362B0A8EE1000F062A /* ControlUnits.Interactor.Tests.swift in Sources */,
 				3A251A602B0B04A1000F062A /* ControlUnitServiceRandomizerMock.swift in Sources */,
 				3A251A7F2B13A058000F062A /* XCTestCase+VCSnapshot.swift in Sources */,
