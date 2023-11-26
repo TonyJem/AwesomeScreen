@@ -54,7 +54,6 @@
 		3A251A5F2B0B03D5000F062A /* ControlUnitsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A582B0B0190000F062A /* ControlUnitsRepositoryMock.swift */; };
 		3A251A602B0B04A1000F062A /* ControlUnitServiceRandomizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A562B0B0177000F062A /* ControlUnitServiceRandomizerMock.swift */; };
 		3A251A612B0B04E2000F062A /* ControlUnit+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A542B0B015D000F062A /* ControlUnit+Mock.swift */; };
-		3A251A662B0D2897000F062A /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A652B0D2897000F062A /* ImageLoaderService.swift */; };
 		3A251A682B0D291E000F062A /* AwesomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A672B0D291E000F062A /* AwesomeImageView.swift */; };
 		3A251A6C2B0E5BEF000F062A /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A6B2B0E5BEF000F062A /* SmallButton.swift */; };
 		3A251A6E2B0E6D11000F062A /* ControlUnits.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */; };
@@ -123,7 +122,6 @@
 		3A251A562B0B0177000F062A /* ControlUnitServiceRandomizerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnitServiceRandomizerMock.swift; sourceTree = "<group>"; };
 		3A251A582B0B0190000F062A /* ControlUnitsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnitsRepositoryMock.swift; sourceTree = "<group>"; };
 		3A251A5A2B0B01B7000F062A /* VehicleAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAPITests.swift; sourceTree = "<group>"; };
-		3A251A652B0D2897000F062A /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
 		3A251A672B0D291E000F062A /* AwesomeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeImageView.swift; sourceTree = "<group>"; };
 		3A251A6B2B0E5BEF000F062A /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Localized.swift; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 			children = (
 				3A251A722B126139000F062A /* CacheService */,
 				3A251A6F2B1234EE000F062A /* ImageService */,
-				3A251A642B0D2884000F062A /* ImageLoader */,
 				3A2519F72B080CA2000F062A /* Foundation */,
 			);
 			path = Core;
@@ -441,14 +438,6 @@
 				3A251A582B0B0190000F062A /* ControlUnitsRepositoryMock.swift */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		3A251A642B0D2884000F062A /* ImageLoader */ = {
-			isa = PBXGroup;
-			children = (
-				3A251A652B0D2897000F062A /* ImageLoaderService.swift */,
-			);
-			path = ImageLoader;
 			sourceTree = "<group>";
 		};
 		3A251A6F2B1234EE000F062A /* ImageService */ = {
@@ -627,7 +616,6 @@
 				3A251A1F2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift in Sources */,
 				3A251A532B0B0145000F062A /* ControlUnit+Equatable.swift in Sources */,
 				3A251A132B08F1F6000F062A /* AwesomeFailureView.swift in Sources */,
-				3A251A662B0D2897000F062A /* ImageLoaderService.swift in Sources */,
 				3A251A252B0A6925000F062A /* ControlUnits.Interactor.swift in Sources */,
 				3A251A0B2B08E2EF000F062A /* ControlUnits.ListView.swift in Sources */,
 				3A251A002B088512000F062A /* Spacings.swift in Sources */,
