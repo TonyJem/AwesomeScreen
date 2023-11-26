@@ -1,11 +1,9 @@
 import UIKit
 import SwiftUI
 
-// TODO: Rename DataProvider into ImageLoadingService and remove old ImageLoaderService
-// TODO: Remove debug prints in this file
+// TODO: Remove old ImageLoaderService
 // TODO: Think if we need 2 download methods here or is enought to have just one
-// TODO: Think if we should show laoder uring long image loading process
-class DataProvider: ObservableObject {
+final class ImageService: ObservableObject {
 
     @Published var image: UIImage = UIImage()
 
@@ -15,7 +13,7 @@ class DataProvider: ObservableObject {
         self.cacheService = cacheService
     }
 
-    func downloadImage(urlString: String) {
+    func getImage(by urlString: String) {
 
         guard let url = URL(string: urlString) else {
             debugPrint("🔴 Can't create URL from urlString for this image.")

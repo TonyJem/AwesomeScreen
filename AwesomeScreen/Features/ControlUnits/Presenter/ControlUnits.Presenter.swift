@@ -20,7 +20,7 @@ extension ControlUnits {
 
         private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState] = []
 
-        var dataProvider: DataProvider
+        var dataProvider: ImageService
 
         var sortButtonTitle: String {
             switch interactor.controlUnitsSortingRule {
@@ -39,7 +39,7 @@ extension ControlUnits {
 
             self.interactor = interactor
             self.cacheService = cacheService
-            self.dataProvider = DataProvider(cacheService: cacheService)
+            self.dataProvider = ImageService(cacheService: cacheService)
         }
 
         // MARK: - Public
