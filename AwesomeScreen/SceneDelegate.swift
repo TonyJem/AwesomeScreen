@@ -17,9 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    // TODO: Need to create main coordinator
-    // and from that coordinator need to create VIPER module
-    // Think where it should be puted!
     func scene(
         _ scene: UIScene,
         willConnectTo session: UISceneSession,
@@ -27,34 +24,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
+
+        let serviceProvider = createServiceProvider()
+        let controlUnitsModule = ControlUnits.Module(serviceProvider: serviceProvider)
+        let viewController = controlUnitsModule.getView()
+
         let navigationController = UINavigationController()
-
-        let controlUnitsService = ControlUnitService()
-
-//        let cacheService = CacheService()
-
-//        let serviceProvider = ServiceProvider(
-//            cacheService: cacheService
-//        )
-
-        let interactor = ControlUnits.Interactor(controlUnitService: controlUnitsService)
-
-        let presenter = ControlUnits.Presenter(interactor: interactor)
-
-        interactor.onDidUpdateControlUnits = { [weak presenter] result in
-            presenter?.onDidUpdateControlUnits(with: result)
-        }
-
-        interactor.presenter = presenter
-
-        let viewController = ControlUnits.ViewController(with: presenter)
-
-        presenter.view = viewController
-
         navigationController.viewControllers = [viewController]
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
+    }
+
+    private func createServiceProvider() -> ServiceProviderProtocol {
+        let controlUnitsService = ControlUnitService()
+        let cacheService = CacheService()
+
+        return ServiceProvider(
+            cacheService: cacheService,
+            controlUnitsService: controlUnitsService
+        )
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
