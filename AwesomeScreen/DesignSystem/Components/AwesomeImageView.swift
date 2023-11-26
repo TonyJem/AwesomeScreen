@@ -23,7 +23,6 @@ struct AwesomeImageView: View {
                 self.image = image
             }
             .onAppear {
-//                imageLoader.loadImage(for: urlString)
                 imageLoader.downloadImage(urlString: urlString)
             }
     }

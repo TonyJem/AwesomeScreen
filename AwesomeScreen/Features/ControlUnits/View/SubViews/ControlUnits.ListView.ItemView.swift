@@ -1,10 +1,5 @@
 import SwiftUI
 
-// TODO: Need to check UI deferneces on different iOS versions
-// TODO: Native separator lines are visible <- need to remove it somehow
-// TODO: Trailing part of separator does not touch trailig side of the screen <- need to solve it someHow
-// TODO: Avoid clicking on whole element
-// We need row do not respond to button action, only button arrea should respond on Tap
 extension ControlUnits.ListView {
 
     struct ItemView: View {
@@ -117,6 +112,7 @@ extension ControlUnits.ListView.ItemView {
 
     struct ViewState: Identifiable {
 
+        // TODO: Change id with real uniq ID jsut in case use UUID() when creating thi viewstate
         let id: String
         let title: String
         let imageUrlString: String

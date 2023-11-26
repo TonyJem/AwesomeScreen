@@ -1,6 +1,10 @@
 import UIKit
 import SwiftUI
 
+// TODO: Rename DataProvider into ImageLoadingService and remove old ImageLoaderService
+// TODO: Remove debug prints in this file
+// TODO: Think if we need 2 download methods here or is enought to have just one
+// TODO: Think if we should show laoder uring long image loading process
 class DataProvider: ObservableObject {
 
     @Published var image: UIImage = UIImage()
