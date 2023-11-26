@@ -14,10 +14,8 @@ extension ControlUnits {
 
         weak var view: ControlUnitsViewProtocol?
 
-        // TODO: Try to find smarter solution or incapsulate cacheService in the viewState
-        let cacheService: CacheServiceProtocol
-
         private let interactor: ControlUnitsInteractorProtocol
+        private let cacheService: CacheServiceProtocol
 
         private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState] = []
 
@@ -142,6 +140,7 @@ extension ControlUnits.Presenter {
             title: domainModel.name,
             imageUrlString: domainModel.imageUrlString,
             configuration: getBadgeConfiguration(for: domainModel.status),
+            cacheService: cacheService,
             action: {
                 // Should be implemented when need to navigate into ControlUnits.Details.Screen
                 debugPrint("🟢 didTap on ControlUnit: \(domainModel.name)")

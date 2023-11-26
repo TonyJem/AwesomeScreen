@@ -11,14 +11,9 @@ extension ControlUnits.ListView {
         }
 
         private let viewState: ControlUnits.ListView.ItemView.ViewState
-        private let cacheService: CacheServiceProtocol
 
-        init(
-            viewState: ControlUnits.ListView.ItemView.ViewState,
-            cacheService: CacheServiceProtocol
-        ) {
+        init(viewState: ControlUnits.ListView.ItemView.ViewState) {
             self.viewState = viewState
-            self.cacheService = cacheService
         }
 
         var body: some View {
@@ -60,7 +55,7 @@ extension ControlUnits.ListView {
 
                 AwesomeImageView(
                     urlString: viewState.imageUrlString,
-                    cacheService: cacheService
+                    cacheService: viewState.cacheService
                 )
                     .aspectRatio(contentMode: .fit)
                     .frame(
@@ -117,6 +112,7 @@ extension ControlUnits.ListView.ItemView {
         let title: String
         let imageUrlString: String
         let configuration: BadgeLabel.Configuration?
+        let cacheService: CacheServiceProtocol
         let action: (() -> Void)
 
         // TODO: Try remove this init, looks like is not needed
@@ -126,12 +122,14 @@ extension ControlUnits.ListView.ItemView {
             title: String,
             imageUrlString: String,
             configuration: BadgeLabel.Configuration?,
+            cacheService: CacheServiceProtocol,
             action: @escaping (() -> Void)
         ) {
             self.id = id
             self.title = title
             self.imageUrlString = imageUrlString
             self.configuration = configuration
+            self.cacheService = cacheService
             self.action = action
         }
 

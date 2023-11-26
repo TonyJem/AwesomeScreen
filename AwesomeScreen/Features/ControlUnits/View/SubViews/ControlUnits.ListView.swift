@@ -4,16 +4,10 @@ extension ControlUnits {
 
     struct ListView: View {
 
-        private var viewState: ControlUnits.ListView.ViewState
-        private var cacheService: CacheServiceProtocol
+        private let viewState: ControlUnits.ListView.ViewState
 
-        init(
-            viewState: ControlUnits.ListView.ViewState,
-            cacheService: CacheServiceProtocol
-
-        ) {
+        init(viewState: ControlUnits.ListView.ViewState) {
             self.viewState = viewState
-            self.cacheService = cacheService
         }
 
         var body: some View {
@@ -23,10 +17,7 @@ extension ControlUnits {
 
                 List {
                     ForEach(viewState.controlUnitsViewStates) { viewState in
-                        ItemView(
-                            viewState: viewState,
-                            cacheService: cacheService
-                        )
+                        ItemView(viewState: viewState)
                             .listRowBackground(Color.black)
                             .listRowInsets(EdgeInsets())
                     }
