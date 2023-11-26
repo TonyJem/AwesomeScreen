@@ -1,7 +1,5 @@
 import SwiftUI
 
-// TODO: Check properties and reconsder what should be private, public, let  and var and etc.
-// Need to do it in whole DesignSystem file!
 public struct LinkButton: View {
 
     private let title: String

@@ -1,8 +1,6 @@
 import UIKit
 import SwiftUI
 
-// TODO: Try to move Assets into DesignSystem
-
 extension UIImage {
 
     // TODO: Make sure we are using it, if not just remove
