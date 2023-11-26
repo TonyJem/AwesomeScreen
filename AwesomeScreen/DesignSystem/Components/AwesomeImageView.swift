@@ -2,7 +2,7 @@ import SwiftUI
 
 struct AwesomeImageView: View {
 
-    @ObservedObject var imageProvider: ImageService
+    @ObservedObject var imageProvider: ImageProvider
 
     @State private var image: UIImage = .awesomeImage(.noImage)
 
@@ -13,7 +13,7 @@ struct AwesomeImageView: View {
         cacheService: CacheServiceProtocol
     ) {
         self.urlString = urlString
-        self.imageProvider = ImageService(cacheService: cacheService)
+        self.imageProvider = ImageProvider(cacheService: cacheService)
     }
 
     var body: some View {

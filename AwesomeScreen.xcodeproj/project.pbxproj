@@ -57,7 +57,7 @@
 		3A251A682B0D291E000F062A /* AwesomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A672B0D291E000F062A /* AwesomeImageView.swift */; };
 		3A251A6C2B0E5BEF000F062A /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A6B2B0E5BEF000F062A /* SmallButton.swift */; };
 		3A251A6E2B0E6D11000F062A /* ControlUnits.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */; };
-		3A251A712B1235C8000F062A /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A702B1235C7000F062A /* ImageService.swift */; };
+		3A251A712B1235C8000F062A /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A702B1235C7000F062A /* ImageProvider.swift */; };
 		3A251A742B12614F000F062A /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A732B12614F000F062A /* CacheService.swift */; };
 /* End PBXBuildFile section */
 
@@ -125,7 +125,7 @@
 		3A251A672B0D291E000F062A /* AwesomeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeImageView.swift; sourceTree = "<group>"; };
 		3A251A6B2B0E5BEF000F062A /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Localized.swift; sourceTree = "<group>"; };
-		3A251A702B1235C7000F062A /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		3A251A702B1235C7000F062A /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		3A251A732B12614F000F062A /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +170,7 @@
 			children = (
 				3A251A372B0AFDF1000F062A /* iOSpracticalTaskMock */,
 				3A2519F42B080C7F000F062A /* Core */,
+				3A251A702B1235C7000F062A /* ImageProvider.swift */,
 				3A2519DE2B07E915000F062A /* DesignSystem */,
 				3A2519E92B080816000F062A /* Localizations */,
 				3A2519E22B07ED63000F062A /* Utilities */,
@@ -283,7 +284,6 @@
 			isa = PBXGroup;
 			children = (
 				3A251A722B126139000F062A /* CacheService */,
-				3A251A6F2B1234EE000F062A /* ImageService */,
 				3A2519F72B080CA2000F062A /* Foundation */,
 			);
 			path = Core;
@@ -438,14 +438,6 @@
 				3A251A582B0B0190000F062A /* ControlUnitsRepositoryMock.swift */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		3A251A6F2B1234EE000F062A /* ImageService */ = {
-			isa = PBXGroup;
-			children = (
-				3A251A702B1235C7000F062A /* ImageService.swift */,
-			);
-			path = ImageService;
 			sourceTree = "<group>";
 		};
 		3A251A722B126139000F062A /* CacheService */ = {
@@ -607,7 +599,7 @@
 				3A251A102B08E517000F062A /* ControlUnits.ViewState.swift in Sources */,
 				3A2519C42B07D6D3000F062A /* AppDelegate.swift in Sources */,
 				3A251A152B08FD11000F062A /* AwesomeFailureView.Localized.swift in Sources */,
-				3A251A712B1235C8000F062A /* ImageService.swift in Sources */,
+				3A251A712B1235C8000F062A /* ImageProvider.swift in Sources */,
 				3A251A6E2B0E6D11000F062A /* ControlUnits.Localized.swift in Sources */,
 				3A251A4F2B0B00EA000F062A /* ControlUnitServiceRandomizer.swift in Sources */,
 				3A251A432B0AFF71000F062A /* ControlUnitServiceFailure.swift in Sources */,

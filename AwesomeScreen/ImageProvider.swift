@@ -1,7 +1,7 @@
 import UIKit
 import SwiftUI
 
-final class ImageService: ObservableObject {
+final class ImageProvider: ObservableObject {
 
     @Published var image: UIImage = UIImage()
 
