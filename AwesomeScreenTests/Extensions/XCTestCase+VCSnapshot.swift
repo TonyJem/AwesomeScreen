@@ -16,7 +16,7 @@ extension XCTestCase {
             "iPhoneSe": .iPhoneSe,
             "iPhone8": .iPhone8,
             "iPhoneX": .iPhoneX,
-            "iPhoneXsMax": .iPhoneXsMax,
+            "iPhoneXsMax": .iPhoneXsMax
         ]
 
         let results = devices.map { device in
