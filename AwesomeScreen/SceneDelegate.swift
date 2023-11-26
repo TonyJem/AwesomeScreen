@@ -1,18 +1,5 @@
 import UIKit
 
-// TODO: Need to sort all folders in project in ABC
-// TODO: Might it would be relevant to deveide DesignSystem into separate Module
-// TODO: Check if all clases that should be final are final ?
-// TODO: Clean SwiftLint errors or redifine rules
-// TODO: We can look at design System and ring all needd colors and elements that are needed
-// TODO: Probably all emtyScreens we can bring into one an set all needed Viewstates for it
-// TODO: Remove all test images from the Assets
-// TODO: Go across the whole code base and put Marks in consistent way
-// TODO: Check all clases in project and decide what clases should be markd as "final"
-// TODO: Review logic in presenter and interacator and all viewstates to presenter
-// TODO: Additional improvement could be done if save Sort button value in UserDefaults
-// Next time the app is loaded it could be arranged automatically previuosely selected sortRule
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
