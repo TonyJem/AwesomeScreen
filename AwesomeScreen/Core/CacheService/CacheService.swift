@@ -1,6 +1,12 @@
 import UIKit
 
-final class CacheService {
+protocol CacheServiceProtocol {
+
+    func downloadImage(from urlString: String, completion: @escaping (UIImage) -> Void)
+
+}
+
+final class CacheService: CacheServiceProtocol {
 
     private struct Constants {
 

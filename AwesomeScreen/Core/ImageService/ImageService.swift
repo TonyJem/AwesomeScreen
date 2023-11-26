@@ -5,9 +5,9 @@ final class ImageService: ObservableObject {
 
     @Published var image: UIImage = UIImage()
 
-    private let cacheService: CacheService
+    private let cacheService: CacheServiceProtocol
 
-    init(cacheService: CacheService) {
+    init(cacheService: CacheServiceProtocol) {
         self.cacheService = cacheService
     }
 

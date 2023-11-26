@@ -11,11 +11,11 @@ extension ControlUnits.ListView {
         }
 
         private let viewState: ControlUnits.ListView.ItemView.ViewState
-        private let cacheService: CacheService
+        private let cacheService: CacheServiceProtocol
 
         init(
             viewState: ControlUnits.ListView.ItemView.ViewState,
-            cacheService: CacheService
+            cacheService: CacheServiceProtocol
         ) {
             self.viewState = viewState
             self.cacheService = cacheService

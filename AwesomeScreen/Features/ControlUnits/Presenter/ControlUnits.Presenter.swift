@@ -12,7 +12,7 @@ extension ControlUnits {
             }
         }
 
-        let cacheService: CacheService
+        let cacheService: CacheServiceProtocol
 
         private let interactor: ControlUnitsInteractor
 

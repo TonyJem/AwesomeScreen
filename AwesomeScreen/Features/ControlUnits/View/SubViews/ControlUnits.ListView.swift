@@ -5,11 +5,11 @@ extension ControlUnits {
     struct ListView: View {
 
         private var viewState: ControlUnits.ListView.ViewState
-        private var cacheService: CacheService
+        private var cacheService: CacheServiceProtocol
 
         init(
             viewState: ControlUnits.ListView.ViewState,
-            cacheService: CacheService
+            cacheService: CacheServiceProtocol
 
         ) {
             self.viewState = viewState

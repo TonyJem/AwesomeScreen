@@ -10,7 +10,7 @@ struct AwesomeImageView: View {
 
     init(
         urlString: String,
-        cacheService: CacheService
+        cacheService: CacheServiceProtocol
     ) {
         self.urlString = urlString
         self.imageProvider = ImageService(cacheService: cacheService)
