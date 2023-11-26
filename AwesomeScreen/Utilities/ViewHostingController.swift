@@ -17,9 +17,6 @@ public final class ViewHostingController<T: View> {
     public init(_ rootView: T) {
         self.hostingController = UIHostingController(rootView: rootView)
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-
-        // TODO: Need to decide where do we want to set background color
-        // Should we leave it here - or is better to move into more relevant place ?
         hostingController.view.backgroundColor = .Branded.backgroundDark
     }
 

@@ -10,7 +10,6 @@ extension ControlUnits {
 
     final class ViewController: UIViewController {
 
-        // TODO: Create PresenterProtocol
         private let presenter: Presenter
         private let searchController = UISearchController(searchResultsController: nil)
 
@@ -43,7 +42,6 @@ extension ControlUnits {
         private func setupView() {
             setupNavigationBar()
 
-            // TODO: Think we have to set backgound color here, instead of settgin it in Host
             let contentView = ControlUnits.ContentView(presenter: presenter)
             let host = ViewHostingController(contentView)
             host.add(to: view, useSafeArea: true)
