@@ -1,12 +1,12 @@
 import UIKit
 
-protocol CacheServiceProtocol {
+public protocol CacheServiceProtocol {
 
     func downloadImage(from urlString: String, completion: @escaping (UIImage) -> Void)
 
 }
 
-final class CacheService: CacheServiceProtocol {
+final public class CacheService: CacheServiceProtocol {
 
     private struct Constants {
 
@@ -18,7 +18,7 @@ final class CacheService: CacheServiceProtocol {
 
     // MARK: - Public
 
-    func downloadImage(from urlString: String, completion: @escaping (UIImage) -> Void) {
+    public func downloadImage(from urlString: String, completion: @escaping (UIImage) -> Void) {
         guard let url = URL(string: urlString) else {
             debugPrint("in CacheService: 🔴 Can't create URL for image.")
             completion(.awesomeImage(.noImage))

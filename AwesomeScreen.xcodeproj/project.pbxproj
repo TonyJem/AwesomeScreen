@@ -59,6 +59,7 @@
 		3A251A6E2B0E6D11000F062A /* ControlUnits.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */; };
 		3A251A712B1235C8000F062A /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A702B1235C7000F062A /* ImageProvider.swift */; };
 		3A251A742B12614F000F062A /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A732B12614F000F062A /* CacheService.swift */; };
+		3A251A762B13208C000F062A /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A752B13208C000F062A /* ServiceProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Localized.swift; sourceTree = "<group>"; };
 		3A251A702B1235C7000F062A /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		3A251A732B12614F000F062A /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		3A251A752B13208C000F062A /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 			children = (
 				3A251A722B126139000F062A /* CacheService */,
 				3A2519F72B080CA2000F062A /* Foundation */,
+				3A251A752B13208C000F062A /* ServiceProvider.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				3A251A432B0AFF71000F062A /* ControlUnitServiceFailure.swift in Sources */,
 				3A2519FE2B087E31000F062A /* FontWithLineHeight.swift in Sources */,
 				3A2519EE2B0809B8000F062A /* AwesomeEmptyView.Localized.swift in Sources */,
+				3A251A762B13208C000F062A /* ServiceProvider.swift in Sources */,
 				3A251A1F2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift in Sources */,
 				3A251A532B0B0145000F062A /* ControlUnit+Equatable.swift in Sources */,
 				3A251A132B08F1F6000F062A /* AwesomeFailureView.swift in Sources */,
