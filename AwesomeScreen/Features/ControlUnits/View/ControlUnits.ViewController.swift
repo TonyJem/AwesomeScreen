@@ -1,3 +1,4 @@
+import SwiftUI
 import UIKit
 
 protocol ControlUnitsViewProtocol: UIViewController {
@@ -101,7 +102,6 @@ extension ControlUnits.ViewController {
         return searchButton
     }
 
-    // TODO: didTapSearchButton action should be handled via Presenter
     @objc private func didTapSearchButton() {
         showSearchController()
     }
@@ -221,7 +221,6 @@ extension ControlUnits.ViewController: UISearchResultsUpdating {
 
 extension ControlUnits.ViewController: UISearchBarDelegate {
 
-    // TODO: searchBarCancelButtonClicked action should be handled via Presenter
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         hideSearchController()
     }
