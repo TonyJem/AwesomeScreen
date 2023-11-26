@@ -52,15 +52,12 @@ extension ControlUnits {
             }
         }
 
-        // TODO: Make it private
-        // create public, viewDidTapReloadButton
-        func reloadControlUnits() {
-            showLoadingScreen()
-            interactor.getControlUnits()
-        }
-
         func updateSearch(text: String) {
             interactor.filterControlUnits(text)
+        }
+
+        func onDidTapUpdateButton() {
+            reloadControlUnits()
         }
 
         // MARK: - Private
@@ -107,6 +104,11 @@ extension ControlUnits {
                 reloadAction: reloadControlUnits
             )
             viewState = .loadingFailure(failureControlUnitsScreenViewState)
+        }
+
+        private func reloadControlUnits() {
+            showLoadingScreen()
+            interactor.getControlUnits()
         }
 
     }

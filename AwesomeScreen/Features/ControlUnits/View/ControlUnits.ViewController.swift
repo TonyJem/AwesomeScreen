@@ -87,7 +87,7 @@ extension ControlUnits.ViewController {
     }
 
     @objc private func didTapUpdateButton() {
-        presenter.reloadControlUnits()
+        presenter.onDidTapUpdateButton()
     }
 
     private func searchButton() -> UIBarButtonItem {
@@ -102,7 +102,6 @@ extension ControlUnits.ViewController {
     }
 
     // TODO: didTapSearchButton action should be handled via Presenter
-    // TODO: Put focus on search bar immediatelly, when keyboard opens
     @objc private func didTapSearchButton() {
         showSearchController()
     }
