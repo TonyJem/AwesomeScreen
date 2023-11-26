@@ -34,7 +34,10 @@ extension ControlUnits {
                 controlUnitService: serviceProvider.controlUnitsService,
                 cacheService: serviceProvider.cacheService
             )
-            let presenter = ControlUnits.Presenter(interactor: interactor)
+            let presenter = ControlUnits.Presenter(
+                interactor: interactor,
+                cacheService: serviceProvider.cacheService
+            )
             interactor.onDidUpdateControlUnits = { [weak presenter] result in
                 presenter?.onDidUpdateControlUnits(with: result)
             }

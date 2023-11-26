@@ -4,13 +4,11 @@ protocol ControlUnitsInteractorProtocol {
 
     var controlUnits: [ControlUnits.ControlUnitDomainModel] { get }
 
-    var cacheService: CacheServiceProtocol { get }
+    var isFiltering: Bool { get }
 
     var filteredControlUnits: [ControlUnits.ControlUnitDomainModel] { get }
 
     var controlUnitsSortingRule: ControlUnits.SortingRule { get }
-
-    var isFiltering: Bool { get }
 
     var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)? { get set }
 
@@ -35,19 +33,13 @@ extension ControlUnits {
         }
 
         var controlUnits: [ControlUnitDomainModel] = []
-
         var isFiltering = false
-
         var filteredControlUnits: [ControlUnitDomainModel] = []
-
         var controlUnitsSortingRule: ControlUnits.SortingRule = .byId
-
         var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)?
 
         private let controlUnitService: ControlUnitServiceInterface
-
-        // TODO: Find the other way how to inject cacheService into AwesomeView
-        let cacheService: CacheServiceProtocol
+        private let cacheService: CacheServiceProtocol
 
         init(
             controlUnitService: ControlUnitServiceInterface,

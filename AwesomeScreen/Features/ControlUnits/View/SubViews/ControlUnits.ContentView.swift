@@ -24,7 +24,7 @@ extension ControlUnits {
             case .unitsAvailable(let viewState):
                 ListView(
                     viewState: viewState,
-                    cacheService: presenter.interactor.cacheService
+                    cacheService: presenter.cacheService
                 )
 
             case .loadingFailure(let viewState):

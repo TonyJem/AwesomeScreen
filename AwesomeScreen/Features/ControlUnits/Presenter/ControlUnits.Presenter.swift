@@ -14,8 +14,10 @@ extension ControlUnits {
 
         weak var view: ControlUnitsViewProtocol?
 
-        // TODO: Avoid opening interactor
-        let interactor: ControlUnitsInteractorProtocol
+        // TODO: Try to find smarter solution or incapsulate cacheService in the viewState
+        let cacheService: CacheServiceProtocol
+
+        private let interactor: ControlUnitsInteractorProtocol
 
         private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState] = []
 
@@ -30,8 +32,12 @@ extension ControlUnits {
             }
         }
 
-        init(interactor: ControlUnitsInteractorProtocol) {
+        init(
+            interactor: ControlUnitsInteractorProtocol,
+            cacheService: CacheServiceProtocol
+        ) {
             self.interactor = interactor
+            self.cacheService = cacheService
         }
 
         // MARK: - Public
