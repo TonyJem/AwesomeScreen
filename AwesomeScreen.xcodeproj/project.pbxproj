@@ -39,7 +39,6 @@
 		3A251A1F2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A1E2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift */; };
 		3A251A212B0940CF000F062A /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A202B0940CF000F062A /* BadgeLabel.swift */; };
 		3A251A252B0A6925000F062A /* ControlUnits.Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A242B0A6925000F062A /* ControlUnits.Interactor.swift */; };
-		3A251A2E2B0A8D97000F062A /* AwesomeScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A2D2B0A8D97000F062A /* AwesomeScreenTests.swift */; };
 		3A251A362B0A8EE1000F062A /* ControlUnits.Interactor.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A342B0A8E7E000F062A /* ControlUnits.Interactor.Tests.swift */; };
 		3A251A402B0AFF47000F062A /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A3F2B0AFF47000F062A /* Factory.swift */; };
 		3A251A432B0AFF71000F062A /* ControlUnitServiceFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A422B0AFF71000F062A /* ControlUnitServiceFailure.swift */; };
@@ -61,6 +60,7 @@
 		3A251A742B12614F000F062A /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A732B12614F000F062A /* CacheService.swift */; };
 		3A251A762B13208C000F062A /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A752B13208C000F062A /* ServiceProvider.swift */; };
 		3A251A782B1323D8000F062A /* ControlUnits.Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A772B1323D8000F062A /* ControlUnits.Module.swift */; };
+		3A251A7A2B139B58000F062A /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A251A792B139B58000F062A /* TestAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +109,6 @@
 		3A251A202B0940CF000F062A /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 		3A251A242B0A6925000F062A /* ControlUnits.Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Interactor.swift; sourceTree = "<group>"; };
 		3A251A2B2B0A8D97000F062A /* AwesomeScreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeScreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A251A2D2B0A8D97000F062A /* AwesomeScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeScreenTests.swift; sourceTree = "<group>"; };
 		3A251A342B0A8E7E000F062A /* ControlUnits.Interactor.Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Interactor.Tests.swift; sourceTree = "<group>"; };
 		3A251A3F2B0AFF47000F062A /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		3A251A422B0AFF71000F062A /* ControlUnitServiceFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnitServiceFailure.swift; sourceTree = "<group>"; };
@@ -131,6 +130,7 @@
 		3A251A732B12614F000F062A /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		3A251A752B13208C000F062A /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		3A251A772B1323D8000F062A /* ControlUnits.Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Module.swift; sourceTree = "<group>"; };
+		3A251A792B139B58000F062A /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +178,6 @@
 				3A2519E92B080816000F062A /* Localizations */,
 				3A2519E22B07ED63000F062A /* Utilities */,
 				3A2519F02B0809F9000F062A /* Features */,
-				3A2519CC2B07D6D6000F062A /* Assets.xcassets */,
 				3A2519CE2B07D6D6000F062A /* LaunchScreen.storyboard */,
 				3A2519C32B07D6D3000F062A /* AppDelegate.swift */,
 				3A2519C52B07D6D3000F062A /* SceneDelegate.swift */,
@@ -225,6 +224,7 @@
 			children = (
 				3A2519FC2B087DDA000F062A /* ViewModifiers */,
 				3A2519DF2B07E923000F062A /* Components */,
+				3A2519CC2B07D6D6000F062A /* Assets.xcassets */,
 				3A2519E72B07FDDC000F062A /* Images.swift */,
 				3A2519F82B080FCF000F062A /* Colors.swift */,
 				3A2519FA2B081B65000F062A /* Fonts.swift */,
@@ -349,7 +349,7 @@
 		3A251A2C2B0A8D97000F062A /* AwesomeScreenTests */ = {
 			isa = PBXGroup;
 			children = (
-				3A251A2D2B0A8D97000F062A /* AwesomeScreenTests.swift */,
+				3A251A792B139B58000F062A /* TestAssets.xcassets */,
 			);
 			path = AwesomeScreenTests;
 			sourceTree = "<group>";
@@ -549,6 +549,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A251A7A2B139B58000F062A /* TestAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +637,6 @@
 				3A251A362B0A8EE1000F062A /* ControlUnits.Interactor.Tests.swift in Sources */,
 				3A251A602B0B04A1000F062A /* ControlUnitServiceRandomizerMock.swift in Sources */,
 				3A251A5F2B0B03D5000F062A /* ControlUnitsRepositoryMock.swift in Sources */,
-				3A251A2E2B0A8D97000F062A /* AwesomeScreenTests.swift in Sources */,
 				3A251A612B0B04E2000F062A /* ControlUnit+Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

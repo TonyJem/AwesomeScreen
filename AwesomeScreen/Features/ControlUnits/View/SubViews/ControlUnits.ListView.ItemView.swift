@@ -78,7 +78,7 @@ extension ControlUnits.ListView {
 
         private func subtitleView() -> some View {
             AwesomeText(
-                title: viewState.id,
+                title: viewState.identifier,
                 style: .bodyMedium
             )
         }
@@ -87,7 +87,7 @@ extension ControlUnits.ListView {
             Button {
                 viewState.action()
             } label: {
-                Image(uiImage: .awesomeImage(.chevronRight))
+                Image.awesomeImage(.chevronRight)
             }
         }
 
@@ -101,24 +101,21 @@ extension ControlUnits.ListView {
 
 }
 
-// TODO: Think if might be relevant to remove ItemView from ListView hierarchy
-// just to avoid long type and redundant naming, a ?
 extension ControlUnits.ListView.ItemView {
 
     struct ViewState: Identifiable {
 
-        // TODO: Change id with real uniq ID jsut in case use UUID() when creating thi viewstate
-        let id: String
+        var id: UUID
+        let identifier: String
         let title: String
         let imageUrlString: String
         let configuration: BadgeLabel.Configuration?
         let cacheService: CacheServiceProtocol
         let action: (() -> Void)
 
-        // TODO: Try remove this init, looks like is not needed
-        // Try to find more redundant inits
         init(
-            id: String,
+            id: UUID = UUID(),
+            identifier: String,
             title: String,
             imageUrlString: String,
             configuration: BadgeLabel.Configuration?,
@@ -126,6 +123,7 @@ extension ControlUnits.ListView.ItemView {
             action: @escaping (() -> Void)
         ) {
             self.id = id
+            self.identifier = identifier
             self.title = title
             self.imageUrlString = imageUrlString
             self.configuration = configuration

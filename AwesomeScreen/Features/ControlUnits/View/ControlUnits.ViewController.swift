@@ -1,3 +1,4 @@
+import SwiftUI
 import UIKit
 
 protocol ControlUnitsViewProtocol: UIViewController {
@@ -10,7 +11,6 @@ extension ControlUnits {
 
     final class ViewController: UIViewController {
 
-        // TODO: Create PresenterProtocol
         private let presenter: Presenter
         private let searchController = UISearchController(searchResultsController: nil)
 
@@ -43,7 +43,6 @@ extension ControlUnits {
         private func setupView() {
             setupNavigationBar()
 
-            // TODO: Think we have to set backgound color here, instead of settgin it in Host
             let contentView = ControlUnits.ContentView(presenter: presenter)
             let host = ViewHostingController(contentView)
             host.add(to: view, useSafeArea: true)
@@ -89,7 +88,7 @@ extension ControlUnits.ViewController {
     }
 
     @objc private func didTapUpdateButton() {
-        presenter.reloadControlUnits()
+        presenter.onDidTapUpdateButton()
     }
 
     private func searchButton() -> UIBarButtonItem {
@@ -103,8 +102,6 @@ extension ControlUnits.ViewController {
         return searchButton
     }
 
-    // TODO: didTapSearchButton action should be handled via Presenter
-    // TODO: Put focus on search bar immediatelly, when keyboard opens
     @objc private func didTapSearchButton() {
         showSearchController()
     }
@@ -224,7 +221,6 @@ extension ControlUnits.ViewController: UISearchResultsUpdating {
 
 extension ControlUnits.ViewController: UISearchBarDelegate {
 
-    // TODO: searchBarCancelButtonClicked action should be handled via Presenter
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         hideSearchController()
     }

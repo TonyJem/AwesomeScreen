@@ -32,9 +32,8 @@ struct AwesomeEmptyView: View {
         .multilineTextAlignment(.center)
     }
 
-    // TODO: May be is possible to create Color extension with Branded
-    // need to check this option!
-    // TODO: Check if I need to put limitation of number of row + truncation at the end may be...
+    // TODO: When doing snapshots:
+    // Check if I need to put limitation of number of row + truncation at the end may be...
     private func subtitleText() -> some View {
         AwesomeText(
             title: viewState.subtitle,

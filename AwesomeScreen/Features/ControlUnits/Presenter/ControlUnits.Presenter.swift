@@ -1,6 +1,5 @@
-// TODO: Put all imports in all project in one same consistent order (may be ABC sorted)
-import UIKit
 import SwiftUI
+import UIKit
 
 extension ControlUnits {
 
@@ -53,15 +52,12 @@ extension ControlUnits {
             }
         }
 
-        // TODO: Make it private
-        // create public, viewDidTapReloadButton
-        func reloadControlUnits() {
-            showLoadingScreen()
-            interactor.getControlUnits()
-        }
-
         func updateSearch(text: String) {
             interactor.filterControlUnits(text)
+        }
+
+        func onDidTapUpdateButton() {
+            reloadControlUnits()
         }
 
         // MARK: - Private
@@ -110,6 +106,11 @@ extension ControlUnits {
             viewState = .loadingFailure(failureControlUnitsScreenViewState)
         }
 
+        private func reloadControlUnits() {
+            showLoadingScreen()
+            interactor.getControlUnits()
+        }
+
     }
 
 }
@@ -136,7 +137,7 @@ extension ControlUnits.Presenter {
 
     private func transform(from domainModel: ControlUnits.ControlUnitDomainModel) -> ControlUnits.ListView.ItemView.ViewState {
         return ControlUnits.ListView.ItemView.ViewState(
-            id: domainModel.id,
+            identifier: domainModel.id,
             title: domainModel.name,
             imageUrlString: domainModel.imageUrlString,
             configuration: getBadgeConfiguration(for: domainModel.status),

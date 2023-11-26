@@ -1,6 +1,5 @@
 import SwiftUI
 
-// TODO: Try to adjust calcualtion of lineSpacing, cause result is bigger then in Figma
 struct FontWithLineHeight: ViewModifier {
     let font: UIFont
     let lineHeight: CGFloat

@@ -1,11 +1,8 @@
-import UIKit
 import SwiftUI
-
-// TODO: Try to move Assets into DesignSystem
+import UIKit
 
 extension UIImage {
 
-    // TODO: Make sure we are using it, if not just remove
     static func awesomeImage(_ awesomeImage: AwesomeImage) -> UIImage {
         return awesomeImage.image()!
     }
@@ -14,19 +11,16 @@ extension UIImage {
         return awesomeSymbol.image()!
     }
 
+    static func empty() -> UIImage {
+        return .awesomeImage(.noImage)
+    }
+
 }
 
 extension Image {
 
-    // TODO: Make sure we are using it, if not just remove
     static func awesomeImage(_ awesomeImage: AwesomeImage) -> Image {
         return Image(uiImage: .awesomeImage(awesomeImage))
-    }
-
-    // TODO: Make sure we are using it, if not just remove
-    // TODO: Dgi into CIImage <- what is this ?
-    static func empty() -> Image {
-        return Image(uiImage: UIImage(ciImage: CIImage.empty()))
     }
 
 }

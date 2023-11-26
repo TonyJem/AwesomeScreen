@@ -1,6 +1,6 @@
-import UIKit
 import CoreGraphics
 import SwiftUI
+import UIKit
 
 /**
  * This private namespace defines available colors as hex RGB values.

@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 extension AwesomeEmptyView {
@@ -21,9 +20,8 @@ extension AwesomeEmptyView.State {
 
         switch self {
         case .emptyControlUnits:
-
-            title = L10n.AwesomeEmptyView.EmptyControlUnits.title
-            subtitle = L10n.AwesomeEmptyView.EmptyControlUnits.subtitle
+            title = L10n.AwesomeEmptyView.ControlUnits.title
+            subtitle = L10n.AwesomeEmptyView.ControlUnits.subtitle
             image = .awesomeImage(.ecu)
 
         case .noSearchResults:

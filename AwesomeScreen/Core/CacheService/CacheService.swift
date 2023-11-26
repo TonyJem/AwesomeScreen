@@ -21,7 +21,7 @@ final public class CacheService: CacheServiceProtocol {
     public func downloadImage(from urlString: String, completion: @escaping (UIImage) -> Void) {
         guard let url = URL(string: urlString) else {
             debugPrint("in CacheService: 🔴 Can't create URL for image.")
-            completion(.awesomeImage(.noImage))
+            completion(UIImage.empty())
             return
         }
 
@@ -41,7 +41,7 @@ final public class CacheService: CacheServiceProtocol {
                       let self = self,
                       let image = UIImage(data: data)
                 else {
-                    completion(.awesomeImage(.noImage))
+                    completion(UIImage.empty())
                     return
                 }
 
