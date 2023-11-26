@@ -63,12 +63,11 @@ extension ControlUnits {
         }
 
         func updateCache() {
-            debugPrint("🟡 updateCache main function")
             let units = interactor.controlUnits
             units.forEach { unit in
                 let imageUrlString = unit.imageUrlString
-                debugPrint("🟡🟡🟡 updateCache in forEach")
-                dataProvider.setImageToCash(urlString: imageUrlString)
+                cacheService.downloadImage(from: imageUrlString) { _ in
+                }
             }
         }
 
