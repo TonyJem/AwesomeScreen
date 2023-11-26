@@ -12,13 +12,14 @@ extension ControlUnits {
             }
         }
 
-        private let interactor: ControlUnitsInteractor
-
         weak var view: ControlUnitsViewProtocol?
+
+        private let interactor: ControlUnitsInteractorProtocol
+        private let cacheService: CacheServiceProtocol
 
         private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState] = []
 
-        var sortButtonTitle: String {
+        private var sortButtonTitle: String {
             switch interactor.controlUnitsSortingRule {
             case .byId:
                 return L10n.ControlUnits.SortButton.idTitle
@@ -29,8 +30,12 @@ extension ControlUnits {
             }
         }
 
-        init(interactor: ControlUnitsInteractor) {
+        init(
+            interactor: ControlUnitsInteractorProtocol,
+            cacheService: CacheServiceProtocol
+        ) {
             self.interactor = interactor
+            self.cacheService = cacheService
         }
 
         // MARK: - Public
@@ -48,6 +53,8 @@ extension ControlUnits {
             }
         }
 
+        // TODO: Make it private
+        // create public, viewDidTapReloadButton
         func reloadControlUnits() {
             showLoadingScreen()
             interactor.getControlUnits()
@@ -133,6 +140,7 @@ extension ControlUnits.Presenter {
             title: domainModel.name,
             imageUrlString: domainModel.imageUrlString,
             configuration: getBadgeConfiguration(for: domainModel.status),
+            cacheService: cacheService,
             action: {
                 // Should be implemented when need to navigate into ControlUnits.Details.Screen
                 debugPrint("🟢 didTap on ControlUnit: \(domainModel.name)")

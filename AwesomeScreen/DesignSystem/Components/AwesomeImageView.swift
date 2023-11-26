@@ -2,21 +2,30 @@ import SwiftUI
 
 struct AwesomeImageView: View {
 
-    var urlString: String
+    @ObservedObject var imageProvider: ImageProvider
 
-    @ObservedObject var imageLoader = ImageLoaderService()
+    @State private var image: UIImage = .awesomeImage(.noImage)
 
-    @State private var image: UIImage = UIImage()
+    private let urlString: String
+
+    init(
+        urlString: String,
+        cacheService: CacheServiceProtocol
+    ) {
+        self.urlString = urlString
+        self.imageProvider = ImageProvider(cacheService: cacheService)
+    }
 
     var body: some View {
         Image(uiImage: image)
             .resizable()
-            .onReceive(imageLoader.$image) { image in
+            .onReceive(imageProvider.$image) { image in
                 self.image = image
             }
             .onAppear {
-                imageLoader.loadImage(for: urlString)
+                imageProvider.getImage(by: urlString)
             }
+
     }
 
 }

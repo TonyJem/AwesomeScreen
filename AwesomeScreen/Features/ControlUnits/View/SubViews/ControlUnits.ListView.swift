@@ -1,11 +1,10 @@
 import SwiftUI
 
-// TODO: Try to remove tiem separators (minor glitches I see here)
 extension ControlUnits {
 
     struct ListView: View {
 
-        var viewState: ControlUnits.ListView.ViewState
+        private let viewState: ControlUnits.ListView.ViewState
 
         init(viewState: ControlUnits.ListView.ViewState) {
             self.viewState = viewState
@@ -43,8 +42,7 @@ extension ControlUnits {
 
 extension ControlUnits.ListView {
 
-    // TODO: Perhaps is needed to make ViewState: Equatable <- we'll see when be setting SwiftUI bindings
-    struct ViewState {
+    struct ViewState: Equatable {
 
         let controlUnitsViewStates: [ControlUnits.ListView.ItemView.ViewState]
         let sortButtonTitle: String
@@ -61,6 +59,13 @@ extension ControlUnits.ListView {
             self.sortButtonTitle = sortButtonTitle
             self.sortButtonImage = sortButtonImage
             self.sortButtonAction = sortButtonAction
+        }
+
+        static func == (
+            lhs: ControlUnits.ListView.ViewState,
+            rhs: ControlUnits.ListView.ViewState
+        ) -> Bool {
+            lhs.controlUnitsViewStates == rhs.controlUnitsViewStates
         }
 
     }

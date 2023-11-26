@@ -1,14 +1,14 @@
 import Foundation
 
-protocol ControlUnitsInteractor {
+protocol ControlUnitsInteractorProtocol {
 
     var controlUnits: [ControlUnits.ControlUnitDomainModel] { get }
+
+    var isFiltering: Bool { get }
 
     var filteredControlUnits: [ControlUnits.ControlUnitDomainModel] { get }
 
     var controlUnitsSortingRule: ControlUnits.SortingRule { get }
-
-    var isFiltering: Bool { get }
 
     var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)? { get set }
 
@@ -22,7 +22,7 @@ protocol ControlUnitsInteractor {
 
 extension ControlUnits {
 
-    final class Interactor: ControlUnitsInteractor {
+    final class Interactor: ControlUnitsInteractorProtocol {
 
         private struct Constants {
 
@@ -33,19 +33,20 @@ extension ControlUnits {
         }
 
         var controlUnits: [ControlUnitDomainModel] = []
-
         var isFiltering = false
-
         var filteredControlUnits: [ControlUnitDomainModel] = []
-
         var controlUnitsSortingRule: ControlUnits.SortingRule = .byId
-
         var onDidUpdateControlUnits: ((Result<Void, Error>) -> Void)?
 
         private let controlUnitService: ControlUnitServiceInterface
+        private let cacheService: CacheServiceProtocol
 
-        init(controlUnitService: ControlUnitServiceInterface) {
+        init(
+            controlUnitService: ControlUnitServiceInterface,
+            cacheService: CacheServiceProtocol
+        ) {
             self.controlUnitService = controlUnitService
+            self.cacheService = cacheService
         }
 
         // MARK: - Public
@@ -60,6 +61,7 @@ extension ControlUnits {
                     }
                     self?.sortAll(controlUnits)
                     self?.notifyPresenter(with: .success(()))
+                    self?.downLoadAllImagesToCache()
 
                 case .failure(let error):
                     self?.notifyPresenter(with: .failure(error))
@@ -160,7 +162,14 @@ extension ControlUnits {
             DispatchQueue.main.async {
                 onDidUpdateControlUnits(result)
             }
+        }
 
+        private func downLoadAllImagesToCache() {
+            controlUnits.forEach { unit in
+                let imageUrlString = unit.imageUrlString
+                cacheService.downloadImage(from: imageUrlString) { _ in
+                }
+            }
         }
 
     }

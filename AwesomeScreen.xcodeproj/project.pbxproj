@@ -54,10 +54,13 @@
 		3A251A5F2B0B03D5000F062A /* ControlUnitsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A582B0B0190000F062A /* ControlUnitsRepositoryMock.swift */; };
 		3A251A602B0B04A1000F062A /* ControlUnitServiceRandomizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A562B0B0177000F062A /* ControlUnitServiceRandomizerMock.swift */; };
 		3A251A612B0B04E2000F062A /* ControlUnit+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A542B0B015D000F062A /* ControlUnit+Mock.swift */; };
-		3A251A662B0D2897000F062A /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A652B0D2897000F062A /* ImageLoaderService.swift */; };
 		3A251A682B0D291E000F062A /* AwesomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A672B0D291E000F062A /* AwesomeImageView.swift */; };
 		3A251A6C2B0E5BEF000F062A /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A6B2B0E5BEF000F062A /* SmallButton.swift */; };
 		3A251A6E2B0E6D11000F062A /* ControlUnits.Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */; };
+		3A251A712B1235C8000F062A /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A702B1235C7000F062A /* ImageProvider.swift */; };
+		3A251A742B12614F000F062A /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A732B12614F000F062A /* CacheService.swift */; };
+		3A251A762B13208C000F062A /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A752B13208C000F062A /* ServiceProvider.swift */; };
+		3A251A782B1323D8000F062A /* ControlUnits.Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A772B1323D8000F062A /* ControlUnits.Module.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,10 +124,13 @@
 		3A251A562B0B0177000F062A /* ControlUnitServiceRandomizerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnitServiceRandomizerMock.swift; sourceTree = "<group>"; };
 		3A251A582B0B0190000F062A /* ControlUnitsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnitsRepositoryMock.swift; sourceTree = "<group>"; };
 		3A251A5A2B0B01B7000F062A /* VehicleAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAPITests.swift; sourceTree = "<group>"; };
-		3A251A652B0D2897000F062A /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
 		3A251A672B0D291E000F062A /* AwesomeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeImageView.swift; sourceTree = "<group>"; };
 		3A251A6B2B0E5BEF000F062A /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Localized.swift; sourceTree = "<group>"; };
+		3A251A702B1235C7000F062A /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
+		3A251A732B12614F000F062A /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		3A251A752B13208C000F062A /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		3A251A772B1323D8000F062A /* ControlUnits.Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Module.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,7 @@
 				3A251A0C2B08E464000F062A /* Presenter */,
 				3A2519DA2B07E851000F062A /* View */,
 				3A2519D82B07E727000F062A /* ControlUnits.swift */,
+				3A251A772B1323D8000F062A /* ControlUnits.Module.swift */,
 				3A251A6D2B0E6D11000F062A /* ControlUnits.Localized.swift */,
 			);
 			path = ControlUnits;
@@ -280,8 +287,10 @@
 		3A2519F42B080C7F000F062A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				3A251A642B0D2884000F062A /* ImageLoader */,
 				3A2519F72B080CA2000F062A /* Foundation */,
+				3A251A722B126139000F062A /* CacheService */,
+				3A251A752B13208C000F062A /* ServiceProvider.swift */,
+				3A251A702B1235C7000F062A /* ImageProvider.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -437,12 +446,12 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		3A251A642B0D2884000F062A /* ImageLoader */ = {
+		3A251A722B126139000F062A /* CacheService */ = {
 			isa = PBXGroup;
 			children = (
-				3A251A652B0D2897000F062A /* ImageLoaderService.swift */,
+				3A251A732B12614F000F062A /* CacheService.swift */,
 			);
-			path = ImageLoader;
+			path = CacheService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -596,18 +605,21 @@
 				3A251A102B08E517000F062A /* ControlUnits.ViewState.swift in Sources */,
 				3A2519C42B07D6D3000F062A /* AppDelegate.swift in Sources */,
 				3A251A152B08FD11000F062A /* AwesomeFailureView.Localized.swift in Sources */,
+				3A251A712B1235C8000F062A /* ImageProvider.swift in Sources */,
 				3A251A6E2B0E6D11000F062A /* ControlUnits.Localized.swift in Sources */,
 				3A251A4F2B0B00EA000F062A /* ControlUnitServiceRandomizer.swift in Sources */,
 				3A251A432B0AFF71000F062A /* ControlUnitServiceFailure.swift in Sources */,
 				3A2519FE2B087E31000F062A /* FontWithLineHeight.swift in Sources */,
 				3A2519EE2B0809B8000F062A /* AwesomeEmptyView.Localized.swift in Sources */,
+				3A251A762B13208C000F062A /* ServiceProvider.swift in Sources */,
 				3A251A1F2B093E1D000F062A /* ControlUnits.ListView.ItemView.swift in Sources */,
+				3A251A782B1323D8000F062A /* ControlUnits.Module.swift in Sources */,
 				3A251A532B0B0145000F062A /* ControlUnit+Equatable.swift in Sources */,
 				3A251A132B08F1F6000F062A /* AwesomeFailureView.swift in Sources */,
-				3A251A662B0D2897000F062A /* ImageLoaderService.swift in Sources */,
 				3A251A252B0A6925000F062A /* ControlUnits.Interactor.swift in Sources */,
 				3A251A0B2B08E2EF000F062A /* ControlUnits.ListView.swift in Sources */,
 				3A251A002B088512000F062A /* Spacings.swift in Sources */,
+				3A251A742B12614F000F062A /* CacheService.swift in Sources */,
 				3A251A092B08DFA8000F062A /* AwesomeLoadingView.swift in Sources */,
 				3A251A0E2B08E48E000F062A /* ControlUnits.Presenter.swift in Sources */,
 				3A2519F32B080AE6000F062A /* LocalizedTranslations.swift in Sources */,

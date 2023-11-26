@@ -1,10 +1,5 @@
 import SwiftUI
 
-// TODO: Need to check UI deferneces on different iOS versions
-// TODO: Native separator lines are visible <- need to remove it somehow
-// TODO: Trailing part of separator does not touch trailig side of the screen <- need to solve it someHow
-// TODO: Avoid clicking on whole element
-// We need row do not respond to button action, only button arrea should respond on Tap
 extension ControlUnits.ListView {
 
     struct ItemView: View {
@@ -15,7 +10,7 @@ extension ControlUnits.ListView {
 
         }
 
-        let viewState: ControlUnits.ListView.ItemView.ViewState
+        private let viewState: ControlUnits.ListView.ItemView.ViewState
 
         init(viewState: ControlUnits.ListView.ItemView.ViewState) {
             self.viewState = viewState
@@ -58,7 +53,10 @@ extension ControlUnits.ListView {
                         height: Constants.imageSize.height
                     )
 
-                AwesomeImageView(urlString: viewState.imageUrlString)
+                AwesomeImageView(
+                    urlString: viewState.imageUrlString,
+                    cacheService: viewState.cacheService
+                )
                     .aspectRatio(contentMode: .fit)
                     .frame(
                         width: Constants.imageSize.width,
@@ -109,10 +107,12 @@ extension ControlUnits.ListView.ItemView {
 
     struct ViewState: Identifiable {
 
+        // TODO: Change id with real uniq ID jsut in case use UUID() when creating thi viewstate
         let id: String
         let title: String
         let imageUrlString: String
         let configuration: BadgeLabel.Configuration?
+        let cacheService: CacheServiceProtocol
         let action: (() -> Void)
 
         // TODO: Try remove this init, looks like is not needed
@@ -122,15 +122,31 @@ extension ControlUnits.ListView.ItemView {
             title: String,
             imageUrlString: String,
             configuration: BadgeLabel.Configuration?,
+            cacheService: CacheServiceProtocol,
             action: @escaping (() -> Void)
         ) {
             self.id = id
             self.title = title
             self.imageUrlString = imageUrlString
             self.configuration = configuration
+            self.cacheService = cacheService
             self.action = action
         }
 
+    }
+
+}
+
+extension ControlUnits.ListView.ItemView.ViewState: Equatable {
+
+    static func == (
+        lhs: ControlUnits.ListView.ItemView.ViewState,
+        rhs: ControlUnits.ListView.ItemView.ViewState
+    ) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.title == rhs.title &&
+        lhs.imageUrlString == rhs.imageUrlString &&
+        lhs.configuration == rhs.configuration
     }
 
 }
