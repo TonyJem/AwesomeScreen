@@ -1,8 +1,10 @@
 import Foundation
 
-protocol ControlUnitsInteractor {
+protocol ControlUnitsInteractorProtocol {
 
     var controlUnits: [ControlUnits.ControlUnitDomainModel] { get }
+
+    var cacheService: CacheServiceProtocol { get }
 
     var filteredControlUnits: [ControlUnits.ControlUnitDomainModel] { get }
 
@@ -22,7 +24,7 @@ protocol ControlUnitsInteractor {
 
 extension ControlUnits {
 
-    final class Interactor: ControlUnitsInteractor {
+    final class Interactor: ControlUnitsInteractorProtocol {
 
         private struct Constants {
 
@@ -31,8 +33,6 @@ extension ControlUnits {
             static let faultyStatus = "faulty" // String from JSON
 
         }
-
-        weak var presenter: ControlUnits.Presenter?
 
         var controlUnits: [ControlUnitDomainModel] = []
 
@@ -46,8 +46,15 @@ extension ControlUnits {
 
         private let controlUnitService: ControlUnitServiceInterface
 
-        init(controlUnitService: ControlUnitServiceInterface) {
+        // TODO: Find the other way how to inject cacheService into AwesomeView
+        let cacheService: CacheServiceProtocol
+
+        init(
+            controlUnitService: ControlUnitServiceInterface,
+            cacheService: CacheServiceProtocol
+        ) {
             self.controlUnitService = controlUnitService
+            self.cacheService = cacheService
         }
 
         // MARK: - Public
@@ -61,7 +68,7 @@ extension ControlUnits {
                         return self?.transform(unit)
                     }
                     self?.sortAll(controlUnits)
-                    self?.presenter?.updateCache()
+                    self?.downLoadImagesToCache()
                     self?.notifyPresenter(with: .success(()))
 
                 case .failure(let error):
@@ -163,7 +170,14 @@ extension ControlUnits {
             DispatchQueue.main.async {
                 onDidUpdateControlUnits(result)
             }
+        }
 
+        private func downLoadImagesToCache() {
+            controlUnits.forEach { unit in
+                let imageUrlString = unit.imageUrlString
+                cacheService.downloadImage(from: imageUrlString) { _ in
+                }
+            }
         }
 
     }

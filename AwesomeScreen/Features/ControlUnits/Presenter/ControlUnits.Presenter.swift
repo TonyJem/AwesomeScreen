@@ -12,17 +12,14 @@ extension ControlUnits {
             }
         }
 
-        let cacheService: CacheServiceProtocol
-
-        private let interactor: ControlUnitsInteractor
-
         weak var view: ControlUnitsViewProtocol?
+
+        // TODO: Avoid opening interactor
+        let interactor: ControlUnitsInteractorProtocol
 
         private var controlUnitViewStates: [ControlUnits.ListView.ItemView.ViewState] = []
 
-        var dataProvider: ImageProvider
-
-        var sortButtonTitle: String {
+        private var sortButtonTitle: String {
             switch interactor.controlUnitsSortingRule {
             case .byId:
                 return L10n.ControlUnits.SortButton.idTitle
@@ -33,13 +30,8 @@ extension ControlUnits {
             }
         }
 
-        init(interactor: ControlUnitsInteractor) {
-
-            let cacheService = CacheService()
-
+        init(interactor: ControlUnitsInteractorProtocol) {
             self.interactor = interactor
-            self.cacheService = cacheService
-            self.dataProvider = ImageProvider(cacheService: cacheService)
         }
 
         // MARK: - Public
@@ -57,18 +49,11 @@ extension ControlUnits {
             }
         }
 
+        // TODO: Make it private
+        // create public, viewDidTapReloadButton
         func reloadControlUnits() {
             showLoadingScreen()
             interactor.getControlUnits()
-        }
-
-        func updateCache() {
-            let units = interactor.controlUnits
-            units.forEach { unit in
-                let imageUrlString = unit.imageUrlString
-                cacheService.downloadImage(from: imageUrlString) { _ in
-                }
-            }
         }
 
         func updateSearch(text: String) {
