@@ -1,5 +1,5 @@
-import UIKit
 import SwiftUI
+import UIKit
 
 /// `SwiftUI` wrapper class.
 public final class ViewHostingController<T: View> {
