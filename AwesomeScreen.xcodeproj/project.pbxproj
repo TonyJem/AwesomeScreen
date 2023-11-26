@@ -62,6 +62,8 @@
 		3A251A782B1323D8000F062A /* ControlUnits.Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A772B1323D8000F062A /* ControlUnits.Module.swift */; };
 		3A251A7A2B139B58000F062A /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A251A792B139B58000F062A /* TestAssets.xcassets */; };
 		3A251A7D2B139F70000F062A /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 3A251A7C2B139F70000F062A /* SnapshotTesting */; };
+		3A251A7F2B13A058000F062A /* XCTestCase+VCSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A7E2B13A058000F062A /* XCTestCase+VCSnapshot.swift */; };
+		3A251A832B13A70C000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A812B13A658000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		3A251A752B13208C000F062A /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		3A251A772B1323D8000F062A /* ControlUnits.Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Module.swift; sourceTree = "<group>"; };
 		3A251A792B139B58000F062A /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
+		3A251A7E2B13A058000F062A /* XCTestCase+VCSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+VCSnapshot.swift"; sourceTree = "<group>"; };
+		3A251A812B13A658000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.ViewController.Snapshot.Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,7 @@
 			children = (
 				3A2519DB2B07E864000F062A /* SubViews */,
 				3A2519C72B07D6D3000F062A /* ControlUnits.ViewController.swift */,
+				3A251A812B13A658000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift */,
 				3A251A0F2B08E517000F062A /* ControlUnits.ViewState.swift */,
 			);
 			path = View;
@@ -352,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				3A251A792B139B58000F062A /* TestAssets.xcassets */,
+				3A251A802B13A602000F062A /* Extensions */,
 			);
 			path = AwesomeScreenTests;
 			sourceTree = "<group>";
@@ -454,6 +460,14 @@
 				3A251A732B12614F000F062A /* CacheService.swift */,
 			);
 			path = CacheService;
+			sourceTree = "<group>";
+		};
+		3A251A802B13A602000F062A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A251A7E2B13A058000F062A /* XCTestCase+VCSnapshot.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -639,9 +653,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A251A832B13A70C000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift in Sources */,
 				3A251A5E2B0B02E2000F062A /* VehicleAPITests.swift in Sources */,
 				3A251A362B0A8EE1000F062A /* ControlUnits.Interactor.Tests.swift in Sources */,
 				3A251A602B0B04A1000F062A /* ControlUnitServiceRandomizerMock.swift in Sources */,
+				3A251A7F2B13A058000F062A /* XCTestCase+VCSnapshot.swift in Sources */,
 				3A251A5F2B0B03D5000F062A /* ControlUnitsRepositoryMock.swift in Sources */,
 				3A251A612B0B04E2000F062A /* ControlUnit+Mock.swift in Sources */,
 			);
