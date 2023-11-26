@@ -1,6 +1,6 @@
 // MARK: - AwesomeEmptyView.ViewState
-"AwesomeEmptyView.EmptyControlUnits.Title" = "Control Unit List is Empty";
-"AwesomeEmptyView.EmptyControlUnits.Subtitle" = "Vehicle contains no control units.";
+"AwesomeEmptyView.ControlUnits.Title" = "Control Unit List is Empty";
+"AwesomeEmptyView.ControlUnits.Subtitle" = "Vehicle contains no control units.";
 
 "AwesomeEmptyView.NoSearchResults.Title" = "No Results";
 "AwesomeEmptyView.NoSearchResults.Subtitle" = "Try searching again.";
