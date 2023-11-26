@@ -31,6 +31,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let controlUnitsService = ControlUnitService()
 
+//        let cacheService = CacheService()
+
+//        let serviceProvider = ServiceProvider(
+//            cacheService: cacheService
+//        )
+
         let interactor = ControlUnits.Interactor(controlUnitService: controlUnitsService)
 
         let presenter = ControlUnits.Presenter(interactor: interactor)
