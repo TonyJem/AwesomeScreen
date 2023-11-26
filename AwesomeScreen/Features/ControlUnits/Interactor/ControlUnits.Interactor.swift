@@ -60,8 +60,8 @@ extension ControlUnits {
                         return self?.transform(unit)
                     }
                     self?.sortAll(controlUnits)
-                    self?.downLoadImagesToCache()
                     self?.notifyPresenter(with: .success(()))
+                    self?.downLoadAllImagesToCache()
 
                 case .failure(let error):
                     self?.notifyPresenter(with: .failure(error))
@@ -164,7 +164,7 @@ extension ControlUnits {
             }
         }
 
-        private func downLoadImagesToCache() {
+        private func downLoadAllImagesToCache() {
             controlUnits.forEach { unit in
                 let imageUrlString = unit.imageUrlString
                 cacheService.downloadImage(from: imageUrlString) { _ in
