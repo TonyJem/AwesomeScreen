@@ -61,7 +61,6 @@
 		3A251A762B13208C000F062A /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A752B13208C000F062A /* ServiceProvider.swift */; };
 		3A251A782B1323D8000F062A /* ControlUnits.Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A772B1323D8000F062A /* ControlUnits.Module.swift */; };
 		3A251A7A2B139B58000F062A /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A251A792B139B58000F062A /* TestAssets.xcassets */; };
-		3A251A7D2B139F70000F062A /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 3A251A7C2B139F70000F062A /* SnapshotTesting */; };
 		3A251A7F2B13A058000F062A /* XCTestCase+VCSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A7E2B13A058000F062A /* XCTestCase+VCSnapshot.swift */; };
 		3A251A832B13A70C000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A812B13A658000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift */; };
 		3A251A862B13A86A000F062A /* ControlUnits.Interactor.Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A842B13A814000F062A /* ControlUnits.Interactor.Mock.swift */; };
@@ -145,7 +144,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A251A7D2B139F70000F062A /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +489,6 @@
 			);
 			name = AwesomeScreen;
 			packageProductDependencies = (
-				3A251A7C2B139F70000F062A /* SnapshotTesting */,
 			);
 			productName = AwesomeScreen;
 			productReference = 3A2519C02B07D6D3000F062A /* AwesomeScreen.app */;
@@ -544,7 +541,6 @@
 			);
 			mainGroup = 3A2519B72B07D6D3000F062A;
 			packageReferences = (
-				3A251A7B2B139F70000F062A /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 3A2519C12B07D6D3000F062A /* Products */;
 			projectDirPath = "";
@@ -928,25 +924,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3A251A7B2B139F70000F062A /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3A251A7C2B139F70000F062A /* SnapshotTesting */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3A251A7B2B139F70000F062A /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
-			productName = SnapshotTesting;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A2519B82B07D6D3000F062A /* Project object */;
 }
