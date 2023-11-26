@@ -1,14 +1,14 @@
 import SwiftUI
 
-struct AwesomeEmptyView: View {
+public struct AwesomeEmptyView: View {
 
-    var viewState: AwesomeEmptyView.ViewState
+    public var viewState: AwesomeEmptyView.ViewState
 
-    init(viewState: AwesomeEmptyView.ViewState) {
+    public init(viewState: AwesomeEmptyView.ViewState) {
         self.viewState = viewState
     }
 
-    var body: some View {
+    public var body: some View {
         VStack(spacing: .spacingMedium) {
 
             if let image = viewState.image {
@@ -46,13 +46,13 @@ struct AwesomeEmptyView: View {
 
 extension AwesomeEmptyView {
 
-    final class ViewState {
+    public final class ViewState {
 
         var title: String
         var subtitle: String
         var image: UIImage?
 
-        init(
+        public init(
             title: String,
             subtitle: String,
             image: UIImage?
