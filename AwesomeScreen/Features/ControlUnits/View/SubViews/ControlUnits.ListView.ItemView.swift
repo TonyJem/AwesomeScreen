@@ -87,7 +87,7 @@ extension ControlUnits.ListView {
             Button {
                 viewState.action()
             } label: {
-                Image(uiImage: .awesomeImage(.chevronRight))
+                Image.awesomeImage(.chevronRight)
             }
         }
 

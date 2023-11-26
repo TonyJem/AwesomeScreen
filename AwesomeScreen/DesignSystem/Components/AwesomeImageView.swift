@@ -4,7 +4,7 @@ struct AwesomeImageView: View {
 
     @ObservedObject var imageProvider: ImageProvider
 
-    @State private var image: UIImage = .awesomeImage(.noImage)
+    @State private var image: UIImage = UIImage.empty()
 
     private let urlString: String
 
