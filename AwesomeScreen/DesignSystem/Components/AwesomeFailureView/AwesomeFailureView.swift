@@ -22,7 +22,7 @@ struct AwesomeFailureView: View {
             .padding(.vertical, .spacingXSmall)
 
         }
-        .padding(.horizontal, .spacingXL)
+        .padding(.horizontal, .spacingXLarge)
     }
 
     private func titleText() -> some View {

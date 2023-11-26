@@ -2,7 +2,6 @@ import SwiftUI
 
 struct AwesomeEmptyView: View {
 
-    // TODO: Add "refreshAction"
     var viewState: AwesomeEmptyView.ViewState
 
     init(viewState: AwesomeEmptyView.ViewState) {
@@ -22,7 +21,7 @@ struct AwesomeEmptyView: View {
             }
 
         }
-        .padding(.horizontal, .spacingXL)
+        .padding(.horizontal, .spacingXLarge)
     }
 
     private func titleText() -> some View {

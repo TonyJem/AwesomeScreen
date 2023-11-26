@@ -1,36 +1,31 @@
 import Foundation
 
-// TODO: Add general comment here explaining the situation with spacings in general
-
-// TODO: Review after all project is finished and remove sapcings that are ugly
-// or not used and comment this situation
-// TODO: Decide if rename spacing in accordance to names in Figma or leave it as it is.
-// Shorter names seems are better for codebase readability...
-// But let's try both concept and deside which is preferable...
-
+/**
+ * This extension adds predifined values of spacing.
+ *
+ * The constants defined here should be used for spacing,
+ * inset, padding and margin definitions as much as possible.
+ * Extending `ExpressibleByIntegerLiteral` adds these constants
+ * to all types that can be initialized with an integer, such as `Int`, `Double` or `CGFLoat`.
+ */
 extension ExpressibleByIntegerLiteral {
 
-    // TODO: Add comment for each spacing
+    /// Represents empty space with size of 1 pt
     public static var separatorHeight: Self { 1 }
 
+    /// Represents empty space with size of 2 pt
     public static var spacing3XSmall: Self { 2 }
 
+    /// Represents empty space with size of 4 pt
     public static var spacing2XSmall: Self { 4 }
 
+    /// Represents empty space with size of 8 pt
     public static var spacingXSmall: Self { 8 }
 
-    public static var spacingS: Self { 12 }
-
+    /// Represents empty space with size of 16 pt
     public static var spacingMedium: Self { 16 }
 
-    public static var spacingL: Self { 24 }
-
-    public static var spacingXL: Self { 32 }
-
-    public static var spacingXXL: Self { 48 }
-
-    public static var spacingXXML: Self { 56 }
-
-    public static var spacingXXXL: Self { 64 }
+    /// Represents empty space with size of 32 pt
+    public static var spacingXLarge: Self { 32 }
 
 }
