@@ -137,7 +137,7 @@ extension ControlUnits.Presenter {
 
     private func transform(from domainModel: ControlUnits.ControlUnitDomainModel) -> ControlUnits.ListView.ItemView.ViewState {
         return ControlUnits.ListView.ItemView.ViewState(
-            id: domainModel.id,
+            identifier: domainModel.id,
             title: domainModel.name,
             imageUrlString: domainModel.imageUrlString,
             configuration: getBadgeConfiguration(for: domainModel.status),
