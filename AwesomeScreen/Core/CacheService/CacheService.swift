@@ -1,31 +1,12 @@
-// TODO: Delete it when is not needed
-/*
- import SwiftUI
-
- final class ImageLoaderService: ObservableObject {
-     @Published var image: UIImage = UIImage()
-
-     func loadImage(for urlString: String) {
-         guard let url = URL(string: urlString) else { return }
-
-         // TODO: Decide if we should handle "response"
-         // TODO: Decide if we should handle "error"
-
-         let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-             guard let data = data else { return }
-             DispatchQueue.main.async {
-                 self.image = UIImage(data: data) ?? .awesomeImage(.noImage)
-             }
-         }
-         task.resume()
-     }
-
- }
- */
-
 import UIKit
 
 final class CacheService {
+
+    private struct Constants {
+
+        static let timeoutInterval = 10.0 // Reduces request timeout interval value from default 60.0
+
+    }
 
     private var imageCache = NSCache<NSString, UIImage>()
 
@@ -44,7 +25,7 @@ final class CacheService {
             let request = URLRequest(
                 url: url,
                 cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad,
-                timeoutInterval: 10
+                timeoutInterval: Constants.timeoutInterval
             )
             let dataTask = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
                 guard error == nil,
@@ -70,6 +51,7 @@ final class CacheService {
     }
 
     // MARK: - Private:
+
     private func setImage(image: UIImage, url: URL) {
         imageCache.setObject(image, forKey: url.absoluteString as NSString)
     }

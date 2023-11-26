@@ -13,9 +13,7 @@ final class ImageService: ObservableObject {
 
     func getImage(by urlString: String) {
         cacheService.downloadImage(from: urlString) { image in
-            DispatchQueue.main.async {
-                self.image = image
-            }
+            self.image = image
         }
     }
 
