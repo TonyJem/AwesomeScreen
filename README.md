@@ -5,6 +5,8 @@ Simple iOS App, done as test task project for learning purposes in 2023 November
 
 [Implementation](#implementation)
 
+[Demonstration](#demonstration)
+
 ## Description:
 This App fetches a list of Control Units from Mock AP (which imitatates Network requests and fetching of the Data) and manages these cotrol items later.
 
@@ -71,9 +73,17 @@ After adding all esential ToDo's information, in top-right screen's corner it wi
 <br>
 <br>
 
-
 ## Demonstration: 
 
-Here it will be added text for demo....
+1. Update Control Items list and swithing between different states:
 
-<img src="/AwesomeScreenSchots/02_failedControls.png" width="33%"> 
+![00_Update-Demo](https://github.com/TonyJem/AwesomeScreen/assets/62282734/28222294-5ba8-4042-9c32-afd850d23ac7)
+
+   
+2. Search Control Items:
+
+
+
+3. Sort Control Items:
+
+
