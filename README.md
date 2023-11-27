@@ -32,9 +32,6 @@ This Apps helps to User to get Units and navigate accross them. User can view, s
 ## Implementation: 
 There App currently consists of one Screen, which has 4 posible states. Below are displayed all of them:
 
-<img src="/ToDoList-screens/tableViews.png" width="95%">
-<br>
-
 1. The __first Table View__ is a Prototype Table View and initially is a list displaying retrieved from disk data that was saved previuosly, since App was used last time. In that list each raw represents one single ToDo:
 
 <img src="/ToDoList-screens/to-do-list_01.png" width="33%"> 
