@@ -75,14 +75,16 @@ After adding all esential ToDo's information, in top-right screen's corner it wi
 
 ## Demonstration: 
 
-1. Update Control Items list and swithing between different states:
+1. Update Control Units list and switching between different states:
 
 <img src="/AwesomeScreenSchots/00_Update-Demo.gif" width="33%">  
    
-2. Search Control Items:
+2. Search Control Units:
 
+<img src="/AwesomeScreenSchots/01_Search.gif" width="33%"> 
 
+3. Sort Control Units:
 
-3. Sort Control Items:
+<img src="/AwesomeScreenSchots/02_Sort.gif" width="33%"> 
 
 
