@@ -61,10 +61,8 @@
 		3A251A762B13208C000F062A /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A752B13208C000F062A /* ServiceProvider.swift */; };
 		3A251A782B1323D8000F062A /* ControlUnits.Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A772B1323D8000F062A /* ControlUnits.Module.swift */; };
 		3A251A7A2B139B58000F062A /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A251A792B139B58000F062A /* TestAssets.xcassets */; };
-		3A251A7F2B13A058000F062A /* XCTestCase+VCSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A7E2B13A058000F062A /* XCTestCase+VCSnapshot.swift */; };
 		3A251A832B13A70C000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A812B13A658000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift */; };
 		3A251A862B13A86A000F062A /* ControlUnits.Interactor.Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A251A842B13A814000F062A /* ControlUnits.Interactor.Mock.swift */; };
-		3AC5D6542B13BEE100C163A8 /* AwesomeEmptyViewSnapshot.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC5D6522B13BDD600C163A8 /* AwesomeEmptyViewSnapshot.Tests.swift */; };
 		3AC5D6572B13BF5B00C163A8 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC5D6562B13BF5B00C163A8 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,10 +134,8 @@
 		3A251A752B13208C000F062A /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		3A251A772B1323D8000F062A /* ControlUnits.Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Module.swift; sourceTree = "<group>"; };
 		3A251A792B139B58000F062A /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
-		3A251A7E2B13A058000F062A /* XCTestCase+VCSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+VCSnapshot.swift"; sourceTree = "<group>"; };
 		3A251A812B13A658000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.ViewController.Snapshot.Tests.swift; sourceTree = "<group>"; };
 		3A251A842B13A814000F062A /* ControlUnits.Interactor.Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUnits.Interactor.Mock.swift; sourceTree = "<group>"; };
-		3AC5D6522B13BDD600C163A8 /* AwesomeEmptyViewSnapshot.Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeEmptyViewSnapshot.Tests.swift; sourceTree = "<group>"; };
 		3AC5D6562B13BF5B00C163A8 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,7 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				3A2519E02B07E963000F062A /* AwesomeEmptyView.swift */,
-				3AC5D6522B13BDD600C163A8 /* AwesomeEmptyViewSnapshot.Tests.swift */,
 				3A2519E52B07F571000F062A /* AwesomeEmptyView.States.swift */,
 				3A2519ED2B0809B8000F062A /* AwesomeEmptyView.Localized.swift */,
 			);
@@ -364,7 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				3A251A792B139B58000F062A /* TestAssets.xcassets */,
-				3A251A802B13A602000F062A /* Extensions */,
 			);
 			path = AwesomeScreenTests;
 			sourceTree = "<group>";
@@ -467,14 +461,6 @@
 				3A251A732B12614F000F062A /* CacheService.swift */,
 			);
 			path = CacheService;
-			sourceTree = "<group>";
-		};
-		3A251A802B13A602000F062A /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				3A251A7E2B13A058000F062A /* XCTestCase+VCSnapshot.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3AC5D6552B13BF3300C163A8 /* UIKit */ = {
@@ -669,11 +655,9 @@
 			files = (
 				3A251A832B13A70C000F062A /* ControlUnits.ViewController.Snapshot.Tests.swift in Sources */,
 				3A251A5E2B0B02E2000F062A /* VehicleAPITests.swift in Sources */,
-				3AC5D6542B13BEE100C163A8 /* AwesomeEmptyViewSnapshot.Tests.swift in Sources */,
 				3A251A862B13A86A000F062A /* ControlUnits.Interactor.Mock.swift in Sources */,
 				3A251A362B0A8EE1000F062A /* ControlUnits.Interactor.Tests.swift in Sources */,
 				3A251A602B0B04A1000F062A /* ControlUnitServiceRandomizerMock.swift in Sources */,
-				3A251A7F2B13A058000F062A /* XCTestCase+VCSnapshot.swift in Sources */,
 				3A251A5F2B0B03D5000F062A /* ControlUnitsRepositoryMock.swift in Sources */,
 				3A251A612B0B04E2000F062A /* ControlUnit+Mock.swift in Sources */,
 			);
