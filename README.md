@@ -5,8 +5,6 @@ Simple iOS App, done as test task project for learning purposes in 2023 November
 
 [Implementation](#implementation)
 
-[References](#references)
-
 ## Description:
 This App fetches a list of Control Units from Mock AP (which imitatates Network requests and fetching of the Data) and manages these cotrol items later.
 
@@ -32,41 +30,50 @@ This Apps helps to User to get Units and navigate accross them. User can view, s
 ## Implementation: 
 There App currently consists of one Screen, which has 4 posible states. Below are displayed all of them:
 
-1. The __first Table View__ is a Prototype Table View and initially is a list displaying retrieved from disk data that was saved previuosly, since App was used last time. In that list each raw represents one single ToDo:
+1. The __Control Units View__ is a Prototype Table View and initially is a list displaying retrieved from disk data that was saved previuosly, since App was used last time. In that list each raw represents one single ToDo:
 
-<img src="/ToDoList-screens/to-do-list_01.png" width="33%"> 
+<img src="/AwesomeScreenSchots/00_controlUnits.png" width="33%"> 
 
 There is possible to add new ToDo by pressing _Add_ button in top-right screen corner. After User has pressed _Add_ button, next will be initialized _second Table View_.
 <br>
 <br>
 
-2. The __second Table View__ is a Static Table View, where each cell is in it's own section. There are three sections, where is essential to:
+2. The __Emtpy Control Units View__ is a Static Table View, where each cell is in it's own section. There are three sections, where is essential to:
   * Add Basic Info
   * Set Due Date
   * Add some Notes for better ToDo's description
   
-<img src="/ToDoList-screens/to-do-list_02.png" width="33%"> 
+<img src="/AwesomeScreenSchots/01_emptyControls.png" width="33%">  
 
-After adding all esential ToDo's information, in top-right screen's corner it will be enabled _Save_ button, which enables to save new ToDo to the list. When new ToDo was added and _Save_ button was pressed, App will come back to the first screen. Here again will be provided a list containing all ToDos with included recently saved ToDo:
+After adding all esential ToDo's information, in top-right screen's corner it will be enabled _Save_ button, which enables to save new ToDo to the list. When new ToDo was added and _Save_ button was pressed, App will come back to the first screen. Here again will be provided a.
+<br>
+<br>
 
+3. The __Loading Controls Failure view__ is a Static Table View, where each cell is in it's own section. There are three sections, where is essential to:
+  * Add Basic Info
+  * Set Due Date
+  * Add some Notes for better ToDo's description
+  
+<img src="/AwesomeScreenSchots/02_failedControls.png" width="33%">  
 
-Other ScreenShots:
+After adding all esential ToDo's information, in top-right screen's corner it will be enabled _Save_ button, which enables to save new ToDo to the list. When new ToDo was added and _Save_ button was pressed, App will come back to the first screen. Here again will be provided a 
+<br>
+<br>
 
+4. The __Loading View__ is a Static Table View, where each cell is in it's own section. There are three sections, where is essential to:
+  * Add Basic Info
+  * Set Due Date
+  * Add some Notes for better ToDo's description
+  
+<img src="/AwesomeScreenSchots/02_failedControls.png" width="33%">  
 
-
-<img src="/ToDoList-screens/to-do-list_03.png" width="33%"> <img src="/ToDoList-screens/to-do-list_04.png" width="33%"> <img src="/ToDoList-screens/to-do-list_05.png" width="33%">
-
-
+After adding all esential ToDo's information, in top-right screen's corner it will be enabled _Save_ button, which enables to save new ToDo to the list. When new ToDo was added and _Save_ button was pressed, App will come back to the first screen. Here again will be provided a 
 <br>
 <br>
 
 
+## Demonstration: 
 
-<img src="/ToDoList-screens/to-do-list_05.png" width="33%"> <img src="/ToDoList-screens/to-do-list_06.png" width="33%">
-<br>   
-<br>
-<br>
+Here it will be added text for demo....
 
-## References:
-“App Development with Swift”. Apple Inc. - Education, 2019. Apple Books. pages: 737-779
-https://books.apple.com/us/book/app-development-with-swift/id1465002990
+<img src="/AwesomeScreenSchots/02_failedControls.png" width="33%"> 
