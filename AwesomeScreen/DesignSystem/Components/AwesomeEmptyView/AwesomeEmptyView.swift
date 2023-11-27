@@ -32,8 +32,6 @@ public struct AwesomeEmptyView: View {
         .multilineTextAlignment(.center)
     }
 
-    // TODO: When doing snapshots:
-    // Check if I need to put limitation of number of row + truncation at the end may be...
     private func subtitleText() -> some View {
         AwesomeText(
             title: viewState.subtitle,
