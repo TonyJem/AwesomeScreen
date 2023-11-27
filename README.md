@@ -77,8 +77,7 @@ After adding all esential ToDo's information, in top-right screen's corner it wi
 
 1. Update Control Items list and swithing between different states:
 
-![00_Update-Demo](https://github.com/TonyJem/AwesomeScreen/assets/62282734/28222294-5ba8-4042-9c32-afd850d23ac7)
-
+<img src="/AwesomeScreenSchots/00_Update-Demo.gif" width="33%">  
    
 2. Search Control Items:
 
