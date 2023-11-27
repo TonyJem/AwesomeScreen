@@ -65,7 +65,7 @@ After adding all esential ToDo's information, in top-right screen's corner it wi
   * Set Due Date
   * Add some Notes for better ToDo's description
   
-<img src="/AwesomeScreenSchots/02_failedControls.png" width="33%">  
+https://github.com/TonyJem/AwesomeScreen/assets/62282734/f0d77167-6138-4c74-8337-92791435b4a6
 
 After adding all esential ToDo's information, in top-right screen's corner it will be enabled _Save_ button, which enables to save new ToDo to the list. When new ToDo was added and _Save_ button was pressed, App will come back to the first screen. Here again will be provided a 
 <br>
